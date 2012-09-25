@@ -2,6 +2,15 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    watch: {
+      files: [
+        'grunt.js',
+        'src/bootstrap/**/*.{js,less}',
+        'src/*.js',
+        'tests/**/*.js'
+      ],
+      tasks: 'default'
+    },
     lint: {
       all: [
         'grunt.js',
