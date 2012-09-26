@@ -47,19 +47,19 @@ module.exports = function(grunt) {
         src: [
           'lib/*.js',
           // Bootstrap files must preserve order.
-          'bootstrap-transition.js',
-          'bootstrap-alert.js',
-          'bootstrap-button.js',
-          'bootstrap-carousel.js',
-          'bootstrap-collapse.js',
-          'bootstrap-dropdown.js',
-          'bootstrap-modal.js',
-          'bootstrap-tooltip.js',
-          'bootstrap-popover.js',
-          'bootstrap-scrollspy.js',
-          'bootstrap-tab.js',
-          'bootstrap-typeahead.js',
-          'bootstrap-affix.js'
+          'src/bootstrap/js/bootstrap-transition.js',
+          'src/bootstrap/js/bootstrap-alert.js',
+          'src/bootstrap/js/bootstrap-button.js',
+          'src/bootstrap/js/bootstrap-carousel.js',
+          'src/bootstrap/js/bootstrap-collapse.js',
+          'src/bootstrap/js/bootstrap-dropdown.js',
+          'src/bootstrap/js/bootstrap-modal.js',
+          'src/bootstrap/js/bootstrap-tooltip.js',
+          'src/bootstrap/js/bootstrap-popover.js',
+          'src/bootstrap/js/bootstrap-scrollspy.js',
+          'src/bootstrap/js/bootstrap-tab.js',
+          'src/bootstrap/js/bootstrap-typeahead.js',
+          'src/bootstrap/js/bootstrap-affix.js'
         ],
         dest: 'dist/ivi-webui.js'
       }
