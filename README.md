@@ -1,8 +1,10 @@
-# Components
+# COWHIDE
+
+## Components
 
 Twitter Bootstrap 2.1.1
 
-# Buiding
+## Buiding
 
 Building requires `npm` and `make`.
 

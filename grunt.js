@@ -59,7 +59,10 @@ module.exports = function(grunt) {
           'src/bootstrap/js/bootstrap-scrollspy.js',
           'src/bootstrap/js/bootstrap-tab.js',
           'src/bootstrap/js/bootstrap-typeahead.js',
-          'src/bootstrap/js/bootstrap-affix.js'
+          'src/bootstrap/js/bootstrap-affix.js',
+
+          'src/cowhide-widget.js',
+          'src/cowhide-button.js'
         ],
         dest: 'dist/ivi-webui.js'
       }
