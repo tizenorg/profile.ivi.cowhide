@@ -21,11 +21,12 @@
                 data = $this.data('ch_button'),
                 options = typeof option == 'object' && option;
 
-            if (!data)
+            if (!data) {
                 $this.data('ch_button', (data = new ChButton(this, options)));
+                data.forceMaxWidth();
+            }
 
             $this.button(option);
-            data.forceMaxWidth();
         });
     };
 
