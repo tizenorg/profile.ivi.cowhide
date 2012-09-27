@@ -7,13 +7,13 @@
     };
 
     ChWidget.prototype.forceMaxWidth = function() {
-        if (this.$element.width() > this.options.maxWidth)
+        if (this.$element.width() > this.options.maxWidth && this.options.maxWidth > 0)
             this.$element.width(this.options.maxWidth);
     };
 
     $.fn.ch_widget = function() {}
     $.fn.ch_widget.defaults = {
-        maxWidth: 120
+        maxWidth: 0
     };
     $.fn.ch_widget.Constructor = ChWidget;
 })(window.jQuery);

@@ -6,7 +6,8 @@ module.exports = function(grunt) {
       files: [
         'grunt.js',
         'src/bootstrap/**/*.{js,less}',
-        'src/*.js',
+        'src/*.{js,less}',
+        'src/themes/*.less',
         'tests/**/*.js'
       ],
       tasks: 'default'
@@ -36,9 +37,14 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      bootstrap: {
+      default_theme: {
         files: {
-          'dist/ivi-webui.css': 'src/bootstrap/less/bootstrap.less'
+          'dist/cowhide-default.css': 'src/cowhide-default.less'
+        }
+      },
+      cyborg: {
+        files: {
+          'dist/cowhide-cyborg.css': 'src/cowhide-cyborg.less'
         }
       }
     },
@@ -64,19 +70,23 @@ module.exports = function(grunt) {
           'src/cowhide-widget.js',
           'src/cowhide-button.js'
         ],
-        dest: 'dist/ivi-webui.js'
+        dest: 'dist/cowhide.js'
       }
     },
     min: {
       all: {
-        src: ['dist/ivi-webui.js'],
-        dest: 'dist/ivi-webui.min.js'
+        src: ['dist/cowhide.js'],
+        dest: 'dist/cowhide.min.js'
       }
     },
     cssmin: {
-      all: {
-        src: ['dist/ivi-webui.css'],
-        dest: 'dist/ivi-webui.min.css'
+      default_theme: {
+        src: ['dist/cowhide-default.css'],
+        dest: 'dist/cowhide-default.min.css'
+      },
+      cyborg: {
+        src: ['dist/cowhide-cyborg.css'],
+        dest: 'dist/cowhide-cyborg.min.css'
       }
     }
   });

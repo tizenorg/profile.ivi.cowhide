@@ -4,14 +4,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>ivi-webui example</title>
+    <title>Cowhide example</title>
     <meta name="description" content="An example showcasing ivi-webui's capabilities.">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="../dist/ivi-webui.css">
+    <link rel="stylesheet" href="../dist/cowhide-cyborg.css">
   </head>
 
   <body>
-    <script src="../dist/ivi-webui.js"></script>
+    <div class="container">
+      <h1>
+        Cowhide
+        <small>An HTML5 framework built on top of Twitter Bootstrap.</small>
+      </h1>
+
+      <div class="row">
+        <div class="span8">
+          <h2>Example application: music player.</h2>
+        </div> <!-- example app span -->
+
+        <div class="span4">
+          <h2>Controls</h2>
+          <div class="well">
+            <button class="btn btn-primary" data-toggle="ch-button">Night mode</button>
+            <button class="btn btn-primary" data-toggle="ch-button">Driving mode</button>
+          </div>
+        </div> <!-- controls span -->
+      </div> <!-- row -->
+    </div> <!-- container -->
+
+    <script src="../dist/cowhide.js"></script>
   </body>
 </html>
