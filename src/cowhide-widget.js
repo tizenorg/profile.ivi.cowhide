@@ -4,7 +4,6 @@
     var ChWidget = function(element, options) {
         this.$element = $(element);
         this.options = $.extend({}, $.fn.ch_widget.defaults);
-        console.log(this.options);
     };
 
     ChWidget.prototype.forceMaxWidth = function() {
@@ -14,7 +13,7 @@
 
     $.fn.ch_widget = function() {}
     $.fn.ch_widget.defaults = {
-        maxWidth: 30
+        maxWidth: 120
     };
     $.fn.ch_widget.Constructor = ChWidget;
 })(window.jQuery);

@@ -42,5 +42,7 @@
                 $btn.ch_button('toggle');
             }
         });
+
+        $('.btn, button, input[type=button]').ch_button();
     })
 })(window.jQuery);
