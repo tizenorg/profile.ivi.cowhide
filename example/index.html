@@ -8,7 +8,7 @@
     <meta name="description" content="An example showcasing ivi-webui's capabilities.">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="../dist/cowhide-cyborg.css">
+    <link id="cowhide-theme" rel="stylesheet" href="../dist/cowhide-default.css">
   </head>
 
   <body>
@@ -26,7 +26,7 @@
         <div class="span4">
           <h2>Controls</h2>
           <div class="well">
-            <button class="btn btn-primary" data-toggle="ch-button">Night mode</button>
+            <button id="night-mode-toggle" class="btn btn-primary" data-toggle="ch-button">Night mode</button>
             <button class="btn btn-primary" data-toggle="ch-button">Driving mode</button>
           </div>
         </div> <!-- controls span -->
@@ -34,5 +34,6 @@
     </div> <!-- container -->
 
     <script src="../dist/cowhide.js"></script>
+    <script src="example.js"></script>
   </body>
 </html>
