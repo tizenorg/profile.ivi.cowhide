@@ -3,7 +3,10 @@
 
     var Router = Ember.Router.extend({
         location: 'none',
+
         root: Ember.Route.extend({
+            showArtists: Ember.Route.transitionTo('index'),
+
             index: Ember.Route.extend({
                 route: '/',
                 connectOutlets: function(router) {
