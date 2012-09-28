@@ -19,4 +19,4 @@
     });
 
     app.ArtistsController = ArtistsController;
-})(window.CowhideMusic, window.Ember);
+})(window.Calf, window.Ember);

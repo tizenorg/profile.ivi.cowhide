@@ -2,8 +2,10 @@
     'use strict';
 
     var ArtistsView = Ember.View.extend({
-        templateName: 'artists'
+        templateName: 'artists',
+        tagName: 'ul',
+        classNames: ['item-list', 'striped']
     });
 
     app.ArtistsView = ArtistsView;
-})(window.CowhideMusic, window.Ember);
+})(window.Calf, window.Ember);

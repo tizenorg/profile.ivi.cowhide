@@ -6,4 +6,4 @@
     });
 
     app.ApplicationView = ApplicationView;
-})(window.CowhideMusic, window.Ember);
+})(window.Calf, window.Ember);

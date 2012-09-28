@@ -1,0 +1,39 @@
+ul.item-list {
+    margin-left: 0;
+
+    li {
+        list-style: none;
+        padding: 16px 8px;
+        background-color: darken(@bodyBackground, 5%);
+        border-left: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        border-color: darken(@bodyBackground, 10%);
+
+        &:first-of-type, &:first-child {
+            .border-top-radius(4px);
+            border-top: 1px solid;
+            border-top-color: darken(@bodyBackground, 2.5%);
+        }
+        &:last-of-type, &:first-child {
+            .border-bottom-radius(4px);
+            border-bottom: 1px solid;
+            border-bottom-color: darken(@bodyBackground, 15%);
+        }
+
+        &:hover {
+            background-color: darken(@bodyBackground, 1%);
+        }
+    }
+}
+
+ul.item-list.striped {
+    li {
+        &:nth-child(even), &:nth-of-type(even) {
+            background-color: darken(@bodyBackground, 3%);
+            &:hover {
+                background-color: darken(@bodyBackground, 2%);
+            }
+        }
+    }
+}

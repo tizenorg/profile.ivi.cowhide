@@ -5,12 +5,16 @@ module.exports = function(grunt) {
     watch: {
       files: [
         'grunt.js',
+
         'src/bootstrap/**/*.{js,less}',
         'src/*.{js,less}',
         'src/themes/*.less',
+        'src/cowhide-less/*.less',
+
         'example/javascripts/*.js',
         'example/javascripts/app/*.js',
         'example/javascripts/app/**/*.js',
+
         'tests/**/*.js'
       ],
       tasks: 'default'

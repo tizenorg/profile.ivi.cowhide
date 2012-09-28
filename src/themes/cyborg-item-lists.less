@@ -1,0 +1,21 @@
+ul.item-list {
+    li {
+        background-color: lighten(@bodyBackground, 5%);
+        border-color: lighten(@bodyBackground, 10%);
+
+        &:first-of-type, &:first-child {
+            border-top-color: lighten(@bodyBackground, 2.5%);
+        }
+        &:last-of-type, &:first-child {
+            border-bottom-color: lighten(@bodyBackground, 15%);
+        }
+    }
+}
+
+ul.item-list.striped {
+    li {
+        &:nth-child(even), &:nth-of-type(even) {
+            background-color: lighten(@bodyBackground, 3%);
+        }
+    }
+}

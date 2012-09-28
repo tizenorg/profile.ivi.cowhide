@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Cowhide example</title>
+    <title>Calf: a Cowhide example</title>
     <meta name="description" content="An example showcasing ivi-webui's capabilities.">
     <meta name="viewport" content="width=device-width">
 
@@ -24,19 +24,32 @@
         <button class="btn btn-primary" data-toggle="ch-button">Driving mode</button>
       </div>
 
-      <h2>Example application: music player.</h2>
+      <h2>Calf Music Player<small>A Cowhide example application.</small></h2>
       <div id="application"></div>
     </div> <!-- container -->
 
     <!-- initial template of our application; it just installs the outlet. -->
     <script type="text/x-handlebars" data-template-name="application">
-      {{outlet}}
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="#">Calf</a>
+          <ul class="nav">
+            <li><a href="/">Artists</a></li>
+            <li><a href="/">Albums</a></li>
+            <li><a href="/">Songs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        {{outlet}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
-      <h3>Artists</h3>
       {{#each artist in controller}}
-        <p>{{artist.lastName}}, {{artist.firstName}}
+        <li>
+          <strong>{{artist.lastName}}</strong>, {{artist.firstName}}
+        </li>
       {{/each}}
     </script>
 
