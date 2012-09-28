@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link id="cowhide-theme" rel="stylesheet" href="../dist/cowhide-default.css">
+    <link rel="stylesheet" href="styles/example.css">
   </head>
 
   <body>
@@ -18,22 +19,46 @@
         <small>An HTML5 framework built on top of Twitter Bootstrap.</small>
       </h1>
 
-      <div class="row">
-        <div class="span8">
-          <h2>Example application: music player.</h2>
-        </div> <!-- example app span -->
+      <div class="well">
+        <button id="night-mode-toggle" class="btn btn-primary" data-toggle="ch-button">Night mode</button>
+        <button class="btn btn-primary" data-toggle="ch-button">Driving mode</button>
+      </div>
 
-        <div class="span4">
-          <h2>Controls</h2>
-          <div class="well">
-            <button id="night-mode-toggle" class="btn btn-primary" data-toggle="ch-button">Night mode</button>
-            <button class="btn btn-primary" data-toggle="ch-button">Driving mode</button>
-          </div>
-        </div> <!-- controls span -->
-      </div> <!-- row -->
+      <h2>Example application: music player.</h2>
+      <div id="application"></div>
     </div> <!-- container -->
 
+    <!-- initial template of our application; it just installs the outlet. -->
+    <script type="text/x-handlebars" data-template-name="application">
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="artists">
+      <h3>Artists</h3>
+      {{#each artist in controller}}
+        <p>{{artist.lastName}}, {{artist.firstName}}
+      {{/each}}
+    </script>
+
+    <!-- The glorious cowhide framework. -->
     <script src="../dist/cowhide.js"></script>
-    <script src="example.js"></script>
+
+    <!-- handlebars is used in the example app for the templating. -->
+    <script src="javascripts/lib/handlebars-1.0.rc.1.js"></script>
+    <!-- ember is used in the example app for MVC. -->
+    <script src="javascripts/lib/ember-1.0.pre.js"></script>
+
+    <!-- Our glorious example app -->
+    <script src="javascripts/app/app.js"></script>
+    <script src="javascripts/app/router.js"></script>
+
+    <script src="javascripts/app/views/application.js"></script>
+    <script src="javascripts/app/views/artists.js"></script>
+
+    <script src="javascripts/app/controllers/application.js"></script>
+    <script src="javascripts/app/controllers/artists.js"></script>
+
+    <!-- This file contains other code needed by the example app. -->
+    <script src="javascripts/example.js"></script>
   </body>
 </html>

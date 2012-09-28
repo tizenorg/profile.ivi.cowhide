@@ -8,6 +8,9 @@ module.exports = function(grunt) {
         'src/bootstrap/**/*.{js,less}',
         'src/*.{js,less}',
         'src/themes/*.less',
+        'example/javascripts/*.js',
+        'example/javascripts/app/*.js',
+        'example/javascripts/app/**/*.js',
         'tests/**/*.js'
       ],
       tasks: 'default'
@@ -18,6 +21,10 @@ module.exports = function(grunt) {
 
         'src/bootstrap/js/*.js',
         'src/*.js',
+
+        'example/javascripts/*.js',
+        'example/javascripts/app/*.js',
+        'example/javascripts/app/**/*.js',
 
         'test/**/*.js'
       ]
