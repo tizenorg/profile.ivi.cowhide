@@ -99,11 +99,23 @@ module.exports = function(grunt) {
         src: ['dist/cowhide-cyborg.css'],
         dest: 'dist/cowhide-cyborg.min.css'
       }
+    },
+    growl : {
+      started : {
+        message : "Grunt compilation started.",
+        title : "Cowhide"
+      },
+      finished : {
+          message : "Grunt compilation finished.",
+          title : "Cowhide"
+      }
     }
   });
 
   // Default task.
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-css');
-  grunt.registerTask('default', 'lint less concat min cssmin');
+  grunt.loadNpmTasks('grunt-growl');
+
+  grunt.registerTask('default', 'growl:started lint less concat min cssmin growl:finished');
 };
