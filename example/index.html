@@ -46,11 +46,20 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
-      {{#each artist in controller}}
-        <li>
-          <strong>{{artist.lastName}}</strong>, {{artist.firstName}}
-        </li>
+      {{#each artist in controller.arrangedContent}}
+        <li>{{view Calf.ArtistView contentBinding="artist"}}</li>
       {{/each}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="artist">
+      {{#if artist.isBandOnly}}
+        <strong>{{artist.bandName}}</strong>
+      {{else}}
+        <strong>{{artist.lastName}}</strong>, {{artist.firstName}}
+        {{#if artist.bandName}}
+          <em>({{artist.bandName}})</em>
+        {{/if}}
+      {{/if}}
     </script>
 
     <!-- The glorious cowhide framework. -->
@@ -60,13 +69,19 @@
     <script src="javascripts/lib/handlebars-1.0.rc.1.js"></script>
     <!-- ember is used in the example app for MVC. -->
     <script src="javascripts/lib/ember-1.0.pre.js"></script>
+    <!-- underscore is used in the example app for its myriad of useful functions. -->
+    <script src="javascripts/lib/underscore-min.js"></script>
 
     <!-- Our glorious example app -->
     <script src="javascripts/app/app.js"></script>
     <script src="javascripts/app/router.js"></script>
+    <script src="javascripts/app/store.js"></script>
+
+    <script src="javascripts/app/models/artist.js"></script>
 
     <script src="javascripts/app/views/application.js"></script>
     <script src="javascripts/app/views/artists.js"></script>
+    <script src="javascripts/app/views/artist.js"></script>
 
     <script src="javascripts/app/controllers/application.js"></script>
     <script src="javascripts/app/controllers/artists.js"></script>
