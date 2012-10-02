@@ -11,7 +11,21 @@
              "albums": [
                 {"id": 0,
                  "name": "11:11",
-                 "year": 2001
+                 "year": 2001,
+                 "songs": [
+                    {"id": 0,
+                     "title": "Love Affair",
+                     "duration": "2:22"
+                    },
+                    {"id": 1,
+                     "title": "Rejazz",
+                     "duration": "3:37"
+                    },
+                    {"id": 2,
+                     "title": "Back of a Truck",
+                     "duration": "5:52"
+                    }
+                 ]
                 },
                 {"id": 1,
                  "name": "Songs",
@@ -67,6 +81,26 @@
             });
 
             return albums;
+        },
+
+        getSongs: function(artist, album) {
+            var songs = [];
+
+            _.each(this.data, function(artist_data) {
+                if (artist_data.albums &&
+                    (artist === undefined || artist_data.id === artist.geT('id'))) {
+                    _.each(artist_data.albums, function(album_data) {
+                        if (album_data.songs &&
+                            (album === undefined || album_data.id === album.get('id'))) {
+                            _.each(album_data.songs, function(song_data) {
+                                songs.push(app.Song.create(song_data));
+                            });
+                        }
+                    });
+                }
+            });
+
+            return songs;
         }
     };
 

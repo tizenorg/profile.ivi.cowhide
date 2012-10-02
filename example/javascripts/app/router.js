@@ -7,6 +7,7 @@
         root: Ember.Route.extend({
             showArtists: Ember.Route.transitionTo('artists'),
             showAlbums: Ember.Route.transitionTo('albums'),
+            showSongs: Ember.Route.transitionTo('songs'),
 
             index: Ember.Route.extend({
                 route: '/',
@@ -26,6 +27,14 @@
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
                     controller.connectOutlet('albums');
+                }
+            }),
+
+            songs: Ember.Route.extend({
+                route: '/songs',
+                connectOutlets: function(router) {
+                    var controller = router.get('applicationController');
+                    controller.connectOutlet('songs');
                 }
             })
         })

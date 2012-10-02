@@ -36,7 +36,7 @@
           <ul class="nav">
             <li><a {{action showArtists href=true}}>Artists</a></li>
             <li><a {{action showAlbums href=true}}>Albums</a></li>
-            <li><a href="#">Songs</a></li>
+            <li><a {{action showSongs href=true}}>Songs</a></li>
           </ul>
         </div>
       </div>
@@ -72,6 +72,16 @@
         <strong>{{album.name}}</strong> ({{album.year}})
     </script>
 
+    <script type="text/x-handlebars" data-template-name="songs">
+      {{#each song in controller.arrangedContent}}
+        <li>{{view Calf.SongView contentBinding="song"}}</li>
+      {{/each}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="song">
+        <strong>{{song.title}}</strong> ({{song.duration}})
+    </script>
+
     <!-- The glorious cowhide framework. -->
     <script src="../dist/cowhide.js"></script>
 
@@ -89,16 +99,20 @@
 
     <script src="javascripts/app/models/artist.js"></script>
     <script src="javascripts/app/models/album.js"></script>
+    <script src="javascripts/app/models/song.js"></script>
 
     <script src="javascripts/app/views/application.js"></script>
     <script src="javascripts/app/views/artists.js"></script>
     <script src="javascripts/app/views/artist.js"></script>
     <script src="javascripts/app/views/albums.js"></script>
     <script src="javascripts/app/views/album.js"></script>
+    <script src="javascripts/app/views/songs.js"></script>
+    <script src="javascripts/app/views/song.js"></script>
 
     <script src="javascripts/app/controllers/application.js"></script>
     <script src="javascripts/app/controllers/artists.js"></script>
     <script src="javascripts/app/controllers/albums.js"></script>
+    <script src="javascripts/app/controllers/songs.js"></script>
 
     <!-- This file contains other code needed by the example app. -->
     <script src="javascripts/example.js"></script>
