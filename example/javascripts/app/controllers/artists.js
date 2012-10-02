@@ -16,4 +16,5 @@
     });
 
     app.ArtistsController = ArtistsController;
+    app.artistsController = ArtistsController.create();
 })(window.Calf, window.Ember, window._);
