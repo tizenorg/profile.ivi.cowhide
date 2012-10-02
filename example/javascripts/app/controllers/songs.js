@@ -1,20 +1,11 @@
-(function(app, Ember, _) {
+(function(app, Ember) {
     'use strict';
 
     var SongsController = Ember.ArrayController.extend({
         content: [],
-        sortProperties: ['title'],
-
-        init: function() {
-            var self = this;
-            var data = [];
-
-            _.each(app.Store.getSongs(), function(song) {
-                self.pushObject(song);
-            });
-        }
+        sortProperties: ['title']
     });
 
     app.SongsController = SongsController;
     app.songsController = SongsController.create();
-})(window.Calf, window.Ember, window._);
+})(window.Calf, window.Ember);

@@ -52,14 +52,16 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="artist">
-      {{#if artist.isBandOnly}}
-        <strong>{{artist.bandName}}</strong>
-      {{else}}
-        <strong>{{artist.lastName}}</strong>, {{artist.firstName}}
-        {{#if artist.bandName}}
-          <em>({{artist.bandName}})</em>
+      <a {{action showArtistsAlbums artist href=true}}>
+        {{#if artist.isBandOnly}}
+          <strong>{{artist.bandName}}</strong>
+        {{else}}
+          <strong>{{artist.lastName}}</strong>, {{artist.firstName}}
+          {{#if artist.bandName}}
+            <em>({{artist.bandName}})</em>
+          {{/if}}
         {{/if}}
-      {{/if}}
+      </a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="albums">
@@ -69,7 +71,9 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="album">
-        <strong>{{album.name}}</strong> ({{album.year}})
+        <a {{action showAlbumsSongs album href=true}}>
+          <strong>{{album.name}}</strong> ({{album.year}})
+        </a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="songs">

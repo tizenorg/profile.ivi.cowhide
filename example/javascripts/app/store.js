@@ -64,8 +64,14 @@
             }
         ],
 
-        getArtist: function(artist_data) {
-            return app.Artist.create(artist_data);
+        getArtists: function() {
+            var artists = [];
+
+            _.each(this.data, function(artist_data) {
+                artists.push(app.Artist.create(artist_data));
+            });
+
+            return artists;
         },
 
         getAlbums: function(artist) {
@@ -75,7 +81,10 @@
                 if (artist_data.albums &&
                     (artist === undefined || artist_data.id === artist.get('id'))) {
                     _.each(artist_data.albums, function(album_data) {
-                        albums.push(app.Album.create(album_data));
+                        var album = app.Album.create(album_data);
+                        var artist = app.Artist.create(artist_data);
+                        album.set('artist', artist);
+                        albums.push(album);
                     });
                 }
             });
@@ -88,7 +97,7 @@
 
             _.each(this.data, function(artist_data) {
                 if (artist_data.albums &&
-                    (artist === undefined || artist_data.id === artist.geT('id'))) {
+                    (artist === undefined || artist_data.id === artist.get('id'))) {
                     _.each(artist_data.albums, function(album_data) {
                         if (album_data.songs &&
                             (album === undefined || album_data.id === album.get('id'))) {

@@ -31,5 +31,12 @@
         }.property('firstName', 'lastName', 'bandName')
     });
 
+
+    Artist.reopenClass({
+        find: function() {
+            return app.Store.getArtists();
+        }
+    });
+
     app.Artist = Artist;
 })(window.Calf, window.Ember);
