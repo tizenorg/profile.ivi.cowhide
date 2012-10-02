@@ -8,8 +8,8 @@
     });
 
     Song.reopenClass({
-        find: function(artist, album) {
-            return app.Store.getSongs(artist, album);
+        find: function(album) {
+            return app.Store.getSongs(album);
         }
     });
 

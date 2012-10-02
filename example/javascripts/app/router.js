@@ -42,11 +42,10 @@
             }),
 
             albums_songs: Ember.Route.extend({
-                route: '/artist/:artist_id/album/:album_id/songs',
+                route: '/albums/:album_id/songs',
                 connectOutlets: function(router, album) {
                     var controller = router.get('applicationController');
-                    var artist = album.get('artist');
-                    controller.connectOutlet('songs', app.Song.find(artist, album));
+                    controller.connectOutlet('songs', app.Song.find(album));
                 }
             }),
 
