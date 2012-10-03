@@ -1,7 +1,7 @@
 (function(app, Ember) {
     'use strict';
 
-    var SongsView = Ember.View.extend({
+    var SongsView = app.Page.extend({
         templateName: 'songs',
         tagName: 'ul',
         classNames: ['item-list', 'striped']
