@@ -2,7 +2,8 @@
     'use strict';
 
     var NowPlayingView = Ember.View.extend({
-        templateName: 'now-playing'
+        templateName: 'now-playing',
+        classNames: ['now-playing']
     });
 
     app.NowPlayingView = NowPlayingView;

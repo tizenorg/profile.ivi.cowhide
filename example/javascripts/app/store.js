@@ -7,20 +7,24 @@
         artists: [
             {"id": 0,
              "firstName": "Regina",
-             "lastName": "Spektor"
+             "lastName": "Spektor",
+             "picture": "regina-spektor.jpg"
             },
             {"id": 1,
              "firstName": "Ani",
-             "lastName": "diFranco"
+             "lastName": "diFranco",
+             "picture": "ani-difranco.jpg"
             },
             {"id": 2,
              "firstName": "Emily",
              "lastName": "Haynes",
-             "bandName": "Metric"
+             "bandName": "Metric",
+             "picture": "emily-haines.jpg"
             },
             {"id": 3,
              "firstName": "Casey",
-             "lastName": "Dienel"
+             "lastName": "Dienel",
+             "picture": "casey-dienel.jpg"
             }
         ],
 

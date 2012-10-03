@@ -55,7 +55,7 @@
     <script type="text/x-handlebars" data-template-name="artists">
       {{#if controller.arrangedContent}}
         {{#each artist in controller.arrangedContent}}
-          <li>{{view Calf.ArtistView contentBinding="artist"}}</li>
+          {{view Calf.ArtistView contentBinding="artist"}}
         {{/each}}
       {{else}}
         <li>No artists in your library</li>
@@ -106,7 +106,16 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="now-playing">
-      Now playing.
+      <div class="album-art">
+        <img {{bindAttr src="picture"}}/>
+      </div>
+      <ul class="nav nav-pills play-controls">
+        <li class="backward"><a><i class="icon-step-backward"></i></a></li>
+        <li class="play"><a><i class="icon-play"></i></a></li>
+        <li class="stop"><a><i class="icon-stop"></i></a></li>
+        <li class="forward"><a><i class="icon-step-forward"></i></a></li>
+        <li class="volume"><a><i class="icon-volume-up"></i></a></li>
+      </div>
     </script>
 
     <!-- The glorious cowhide framework. -->
