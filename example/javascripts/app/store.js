@@ -108,12 +108,13 @@
         },
         getAlbums: function(artist) {
             var albums = [];
+            var self = this;
 
             _.each(this.albums, function(album_data) {
                 var album = app.Album.create(album_data);
-                var album_artist = this.getArtist(album_data.artist_id);
+                var album_artist = self.getArtist(album_data.artist_id);
 
-                if (artist === undefined || artist === album_artist) {
+                if (artist === undefined || artist.get('id') === album_artist.get('id')) {
                     album.set('artist', album_artist);
                     albums.push(album);
                 }
@@ -124,12 +125,13 @@
 
         getSongs: function(album) {
             var songs = [];
+            var self = this;
 
             _.each(this.songs, function(song_data) {
                 var song = app.Album.create(song_data);
-                var song_album = this.getAlbum(song_data.album_id);
+                var song_album = self.getAlbum(song_data.album_id);
 
-                if (album === undefined || album === song_album) {
+                if (album === undefined || album.get('id') === song_album.get('id')) {
                     song.set('album', song_album);
                     songs.push(song);
                 }
