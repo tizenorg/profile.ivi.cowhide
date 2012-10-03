@@ -46,9 +46,13 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
-      {{#each artist in controller.arrangedContent}}
-        <li>{{view Calf.ArtistView contentBinding="artist"}}</li>
-      {{/each}}
+      {{#if controller.arrangedContent}}
+        {{#each artist in controller.arrangedContent}}
+          <li>{{view Calf.ArtistView contentBinding="artist"}}</li>
+        {{/each}}
+      {{else}}
+        <li>No artists in your library</li>
+      {{/if}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="artist">
@@ -65,9 +69,13 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="albums">
-      {{#each album in controller.arrangedContent}}
-        <li>{{view Calf.AlbumView contentBinding="album"}}</li>
-      {{/each}}
+      {{#if controller.arrangedContent}}
+        {{#each album in controller.arrangedContent}}
+          <li>{{view Calf.AlbumView contentBinding="album"}}</li>
+        {{/each}}
+      {{else}}
+        <li>No albums found.</li>
+      {{/if}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="album">
@@ -77,9 +85,13 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="songs">
-      {{#each song in controller.arrangedContent}}
-        <li>{{view Calf.SongView contentBinding="song"}}</li>
-      {{/each}}
+      {{#if controller.arrangedContent}}
+        {{#each song in controller.arrangedContent}}
+          <li>{{view Calf.SongView contentBinding="song"}}</li>
+        {{/each}}
+      {{else}}
+        <li>No songs found.</li>
+      {{/if}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="song">
