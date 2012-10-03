@@ -41,8 +41,15 @@
         </div>
       </div>
       <div class="content">
-        {{outlet}}
-      </div>
+        <div class="row">
+          <div class="span8">
+            {{outlet library}}
+          </div>
+          <div class="span4">
+            {{outlet now_playing}}
+          </div>
+        </div> <!-- row -->
+      </div> <!-- content ->
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
@@ -98,6 +105,10 @@
         <strong>{{song.title}}</strong> ({{song.duration}})
     </script>
 
+    <script type="text/x-handlebars" data-template-name="now-playing">
+      Now playing.
+    </script>
+
     <!-- The glorious cowhide framework. -->
     <script src="../dist/cowhide.js"></script>
 
@@ -119,6 +130,7 @@
 
     <script src="javascripts/app/views/application.js"></script>
     <script src="javascripts/app/views/page.js"></script>
+    <script src="javascripts/app/views/nowplaying.js"></script>
     <script src="javascripts/app/views/artists.js"></script>
     <script src="javascripts/app/views/artist.js"></script>
     <script src="javascripts/app/views/albums.js"></script>
@@ -127,6 +139,7 @@
     <script src="javascripts/app/views/song.js"></script>
 
     <script src="javascripts/app/controllers/application.js"></script>
+    <script src="javascripts/app/controllers/nowplaying.js"></script>
     <script src="javascripts/app/controllers/artists.js"></script>
     <script src="javascripts/app/controllers/albums.js"></script>
     <script src="javascripts/app/controllers/songs.js"></script>

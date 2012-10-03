@@ -21,7 +21,8 @@
                 route: '/artists',
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
-                    controller.connectOutlet('artists', app.Artist.find());
+                    controller.connectOutlet('library', 'artists', app.Artist.find());
+                    controller.connectOutlet('now_playing', 'nowPlaying');
                 }
             }),
 
@@ -29,7 +30,8 @@
                 route: '/artist/:artist_id/albums',
                 connectOutlets: function (router, artist) {
                     var controller = router.get('applicationController');
-                    controller.connectOutlet('albums', app.Album.find(artist));
+                    controller.connectOutlet('library', 'albums', app.Album.find(artist));
+                    controller.connectOutlet('now_playing', 'nowPlaying');
                 }
             }),
 
@@ -37,7 +39,8 @@
                 route: '/albums',
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
-                    controller.connectOutlet('albums', app.Album.find());
+                    controller.connectOutlet('library', 'albums', app.Album.find());
+                    controller.connectOutlet('now_playing', 'nowPlaying');
                 }
             }),
 
@@ -45,7 +48,8 @@
                 route: '/albums/:album_id/songs',
                 connectOutlets: function(router, album) {
                     var controller = router.get('applicationController');
-                    controller.connectOutlet('songs', app.Song.find(album));
+                    controller.connectOutlet('library', 'songs', app.Song.find(album));
+                    controller.connectOutlet('now_playing', 'nowPlaying');
                 }
             }),
 
@@ -53,7 +57,8 @@
                 route: '/songs',
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
-                    controller.connectOutlet('songs', app.Song.find());
+                    controller.connectOutlet('library', 'songs', app.Song.find());
+                    controller.connectOutlet('now_playing', 'nowPlaying');
                 }
             })
         })
