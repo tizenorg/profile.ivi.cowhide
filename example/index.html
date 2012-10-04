@@ -48,8 +48,11 @@
           <div class="span4">
             {{outlet now_playing}}
           </div>
-        </div> <!-- row -->
-      </div> <!-- content ->
+        </div>
+
+        // Connecting this outlet here because it's a modal window.
+        {{outlet volume_control}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
@@ -114,7 +117,22 @@
         <li class="play"><a><i class="icon-play"></i></a></li>
         <li class="stop"><a><i class="icon-stop"></i></a></li>
         <li class="forward"><a><i class="icon-step-forward"></i></a></li>
-        <li class="volume"><a><i class="icon-volume-up"></i></a></li>
+        <li class="volume">
+          <a {{action showVolumeControl}}>
+            <i class="icon-volume-up"></i>
+          </a>
+        </li>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="volume-control">
+      <div class="modal-header">
+        <h3>Volume control</h3>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" {{action hideVolumeControl}}>Close</a>
       </div>
     </script>
 
@@ -148,12 +166,14 @@
     <script src="javascripts/app/views/album.js"></script>
     <script src="javascripts/app/views/songs.js"></script>
     <script src="javascripts/app/views/song.js"></script>
+    <script src="javascripts/app/views/volumecontrol.js"></script>
 
     <script src="javascripts/app/controllers/application.js"></script>
     <script src="javascripts/app/controllers/nowplaying.js"></script>
     <script src="javascripts/app/controllers/artists.js"></script>
     <script src="javascripts/app/controllers/albums.js"></script>
     <script src="javascripts/app/controllers/songs.js"></script>
+    <script src="javascripts/app/controllers/volumecontrol.js"></script>
 
     <!-- This file contains other code needed by the example app. -->
     <script src="javascripts/example.js"></script>

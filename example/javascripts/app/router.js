@@ -12,6 +12,16 @@
             showAlbumsSongs: Ember.Route.transitionTo('albums_songs'),
             showSongs: Ember.Route.transitionTo('songs'),
 
+            showVolumeControl: function(router) {
+                var controller = router.get('volumeControlController');
+                controller.set("display", true);
+            },
+
+            hideVolumeControl: function(router) {
+                var controller = router.get('volumeControlController');
+                controller.set("display", false);
+            },
+
             index: Ember.Route.extend({
                 route: '/',
                 redirectsTo: 'artists'
@@ -23,6 +33,7 @@
                     var controller = router.get('applicationController');
                     controller.connectOutlet('library', 'artists', app.Artist.find());
                     controller.connectOutlet('now_playing', 'nowPlaying');
+                    controller.connectOutlet('volume_control', 'volumeControl');
                 }
             }),
 
@@ -32,6 +43,7 @@
                     var controller = router.get('applicationController');
                     controller.connectOutlet('library', 'albums', app.Album.find(artist));
                     controller.connectOutlet('now_playing', 'nowPlaying');
+                    controller.connectOutlet('volume_control', 'volumeControl');
                 }
             }),
 
@@ -41,6 +53,7 @@
                     var controller = router.get('applicationController');
                     controller.connectOutlet('library', 'albums', app.Album.find());
                     controller.connectOutlet('now_playing', 'nowPlaying');
+                    controller.connectOutlet('volume_control', 'volumeControl');
                 }
             }),
 
@@ -50,6 +63,7 @@
                     var controller = router.get('applicationController');
                     controller.connectOutlet('library', 'songs', app.Song.find(album));
                     controller.connectOutlet('now_playing', 'nowPlaying');
+                    controller.connectOutlet('volume_control', 'volumeControl');
                 }
             }),
 
@@ -59,6 +73,7 @@
                     var controller = router.get('applicationController');
                     controller.connectOutlet('library', 'songs', app.Song.find());
                     controller.connectOutlet('now_playing', 'nowPlaying');
+                    controller.connectOutlet('volume_control', 'volumeControl');
                 }
             })
         })
