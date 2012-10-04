@@ -7,7 +7,8 @@ module.exports = function(grunt) {
         'grunt.js',
 
         'src/bootstrap/**/*.{js,less}',
-        'src/*.{js,less}',
+        'src/javascripts/*.js',
+        'src/less/*.less',
         'src/themes/*.less',
         'src/cowhide-less/*.less',
 
@@ -24,7 +25,7 @@ module.exports = function(grunt) {
         'grunt.js',
 
         'src/bootstrap/js/*.js',
-        'src/*.js',
+        'src/javascripts/*.js',
 
         'examples/calf/javascripts/*.js',
         'examples/calf/javascripts/app/*.js',
@@ -50,12 +51,12 @@ module.exports = function(grunt) {
     less: {
       default_theme: {
         files: {
-          'dist/cowhide-default.css': 'src/cowhide-default.less'
+          'dist/cowhide-default.css': 'src/less/cowhide-default.less'
         }
       },
       cyborg: {
         files: {
-          'dist/cowhide-cyborg.css': 'src/cowhide-cyborg.less'
+          'dist/cowhide-cyborg.css': 'src/less/cowhide-cyborg.less'
         }
       }
     },
@@ -78,8 +79,9 @@ module.exports = function(grunt) {
           'src/bootstrap/js/bootstrap-typeahead.js',
           'src/bootstrap/js/bootstrap-affix.js',
 
-          'src/cowhide-widget.js',
-          'src/cowhide-button.js'
+          'src/javascripts/cowhide-widget.js',
+          'src/javascripts/cowhide-button.js',
+          'src/javascripts/cowhide-seat-selector.js'
         ],
         dest: 'dist/cowhide.js'
       }

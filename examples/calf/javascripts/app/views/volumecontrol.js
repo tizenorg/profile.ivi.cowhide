@@ -11,6 +11,7 @@
                 backdrop: 'static',
                 show: false
             });
+            this.$('.ch-seat-selector').ch_seat_selector();
         },
 
         displayChanged: function() {
