@@ -33,32 +33,37 @@
              "artist_id": 0,
              "name": "11:11",
              "year": 2001,
-             "picture": "regina-spektor/1111.jpg"
+             "picture": "regina-spektor/11-11.jpg"
             },
             {"id": 1,
              "artist_id": 0,
              "name": "Songs",
-             "year": 2002
+             "year": 2002,
+             "picture": "regina-spektor/songs.jpg"
             },
             {"id": 2,
              "artist_id": 0,
              "name": "Soviet Kitsch",
-             "year": 2004
+             "year": 2004,
+             "picture": "regina-spektor/soviet-kitsch.jpg"
             },
             {"id": 3,
              "artist_id": 0,
              "name": "Begin to Hope",
-             "year": 2006
+             "year": 2006,
+             "picture": "regina-spektor/begin-to-hope.jpg"
             },
             {"id": 4,
              "artist_id": 0,
              "name": "Far",
-             "year": 2009
+             "year": 2009,
+             "picture": "regina-spektor/far.jpg"
             },
             {"id": 5,
              "artist_id": 0,
              "name": "What We Saw from the Cheap Seats",
-             "year": 2012
+             "year": 2012,
+             "picture": "regina-spektor/what-we-saw-from-the-cheap-seats.jpg"
             }
         ],
 
