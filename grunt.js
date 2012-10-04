@@ -11,9 +11,9 @@ module.exports = function(grunt) {
         'src/themes/*.less',
         'src/cowhide-less/*.less',
 
-        'example/javascripts/*.js',
-        'example/javascripts/app/*.js',
-        'example/javascripts/app/**/*.js',
+        'examples/calf/javascripts/*.js',
+        'examples/calf/javascripts/app/*.js',
+        'examples/calf/javascripts/app/**/*.js',
 
         'tests/**/*.js'
       ],
@@ -26,9 +26,9 @@ module.exports = function(grunt) {
         'src/bootstrap/js/*.js',
         'src/*.js',
 
-        'example/javascripts/*.js',
-        'example/javascripts/app/*.js',
-        'example/javascripts/app/**/*.js',
+        'examples/calf/javascripts/*.js',
+        'examples/calf/javascripts/app/*.js',
+        'examples/calf/javascripts/app/**/*.js',
 
         'test/**/*.js'
       ]
