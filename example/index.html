@@ -78,7 +78,7 @@
     <script type="text/x-handlebars" data-template-name="albums">
       {{#if controller.arrangedContent}}
         {{#each album in controller.arrangedContent}}
-          <li>{{view Calf.AlbumView contentBinding="album"}}</li>
+          {{view Calf.AlbumView contentBinding="album"}}
         {{/each}}
       {{else}}
         <li>No albums found.</li>
@@ -136,6 +136,8 @@
     <script src="javascripts/app/models/artist.js"></script>
     <script src="javascripts/app/models/album.js"></script>
     <script src="javascripts/app/models/song.js"></script>
+
+    <script src="javascripts/app/mixins/haspicture.js"></script>
 
     <script src="javascripts/app/views/application.js"></script>
     <script src="javascripts/app/views/page.js"></script>

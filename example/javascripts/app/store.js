@@ -32,7 +32,8 @@
             {"id": 0,
              "artist_id": 0,
              "name": "11:11",
-             "year": 2001
+             "year": 2001,
+             "picture": "regina-spektor/1111.jpg"
             },
             {"id": 1,
              "artist_id": 0,

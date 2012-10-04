@@ -1,9 +1,9 @@
 (function(app, Ember) {
     'use strict';
 
-    var AlbumView = Ember.View.extend({
+    var AlbumView = Ember.View.extend(app.HasPictureMixin, {
         templateName: 'album',
-        tagName: 'span',
+        tagName: 'li',
         classNames: ['album']
     });
 
