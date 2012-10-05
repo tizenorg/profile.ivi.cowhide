@@ -102,6 +102,13 @@ module.exports = function(grunt) {
         dest: 'dist/cowhide-cyborg.min.css'
       }
     },
+    copy: {
+      dist: {
+        files: {
+          'dist/img/': 'img/*'
+        }
+      }
+    },
     growl : {
       started : {
         message : "Grunt compilation started.",
@@ -118,6 +125,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-growl');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('default', 'growl:started lint less concat min cssmin growl:finished');
+  grunt.registerTask('default', 'growl:started lint less concat min cssmin copy growl:finished');
 };
