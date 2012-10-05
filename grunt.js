@@ -63,7 +63,12 @@ module.exports = function(grunt) {
     concat: {
       js: {
         src: [
-          'lib/*.js',
+          'lib/jquery-1.8.2.js',
+          'lib/jquery.ui.core.js',
+          'lib/jquery.ui.widget.js',
+          'lib/jquery.ui.mouse.js',
+          'lib/jquery.ui.slider.js',
+
           // Bootstrap files must preserve order.
           'src/bootstrap/js/bootstrap-transition.js',
           'src/bootstrap/js/bootstrap-alert.js',
@@ -81,9 +86,21 @@ module.exports = function(grunt) {
 
           'src/javascripts/cowhide-widget.js',
           'src/javascripts/cowhide-button.js',
-          'src/javascripts/cowhide-seat-selector.js'
-        ],
-        dest: 'dist/cowhide.js'
+          'src/javascripts/cowhide-seat-selector.js',
+          'src/javascripts/cowhide-slider.js'
+        ], dest: 'dist/cowhide.js'
+      },
+      css_default: {
+        src: [
+          'dist/cowhide-default.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-default.css'
+      },
+      css_cyborg: {
+        src: [
+          'dist/cowhide-cyborg.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-cyborg .css'
       }
     },
     min: {
@@ -105,7 +122,7 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: {
-          'dist/img/': 'img/*'
+          'dist/images/': 'images/*'
         }
       }
     },

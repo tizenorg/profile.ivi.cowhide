@@ -20,3 +20,13 @@
     width: 250px;
     background-color: rgba(255,255,255,0.8);
 }
+
+.volume-control .volume-sliders {
+    padding-top: 30px;
+}
+
+.volume-control .volume-sliders .ui-slider-vertical {
+    float: right;
+    margin-left: 15px;
+    margin-right: 15px;
+}

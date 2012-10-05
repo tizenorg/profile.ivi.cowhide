@@ -3,13 +3,19 @@
 
     var VolumeControlView = Ember.View.extend({
         templateName: 'volume-control',
-        classNames: ['modal', 'fade', 'hide'],
+        classNames: ['volume-control', 'modal', 'fade', 'hide'],
 
         didInsertElement: function() {
             this.$().modal({
                 keyboard: false,
                 backdrop: 'static',
                 show: false
+            });
+            this.$('.ch-slider-vertical').ch_slider({
+                orientation: "vertical",
+                min: "0",
+                max: "10",
+                value: "5"
             });
             this.$('.ch-seat-selector').ch_seat_selector();
         },
