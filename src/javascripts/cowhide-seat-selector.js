@@ -11,7 +11,33 @@
         {},
         $.fn.ch_widget.Constructor.prototype,
         {
-            constructor: ChSeatSelector
+            constructor: ChSeatSelector,
+            removeSelection: function() {
+                var $t = this.$element.find('table');
+                $t.removeClass('front-left');
+                $t.removeClass('front-right');
+                $t.removeClass('rear-left');
+                $t.removeClass('rear-right');
+            },
+            frontLeft: function() {
+                this.removeSelection();
+                this.$element.find('table').addClass('front-left');
+            },
+
+            frontRight: function() {
+                this.removeSelection();
+                this.$element.find('table').addClass('front-right');
+            },
+
+            rearLeft: function() {
+                this.removeSelection();
+                this.$element.find('table').addClass('rear-left');
+            },
+
+            rearRight: function() {
+                this.removeSelection();
+                this.$element.find('table').addClass('rear-right');
+            }
         }
     );
 
@@ -35,6 +61,17 @@
                     '    </tr>',
                     '</table>'].join('\n');
                 $this.html(template);
+            } else {
+                if (option == 'frontLeft')
+                    data.frontLeft();
+                else if (option == 'frontRight')
+                    data.frontRight();
+                else if (option == 'rearLeft')
+                    data.rearLeft();
+                else if (option == 'rearRight')
+                    data.rearRight();
+                else if (option == 'removeSelection')
+                    data.removeSelection();
             }
         });
     };
