@@ -54,9 +54,9 @@ module.exports = function(grunt) {
           'dist/cowhide-default.css': 'src/less/cowhide-default.less'
         }
       },
-      cyborg: {
+      default_night_theme: {
         files: {
-          'dist/cowhide-cyborg.css': 'src/less/cowhide-cyborg.less'
+          'dist/cowhide-default-night.css': 'src/less/cowhide-default-night.less'
         }
       }
     },
@@ -98,11 +98,11 @@ module.exports = function(grunt) {
           'lib/jquery.ui.slider.css'
         ], dest: 'dist/cowhide-default.css'
       },
-      css_cyborg: {
+      css_default_night: {
         src: [
-          'dist/cowhide-cyborg.css',
+          'dist/cowhide-default-night.css',
           'lib/jquery.ui.slider.css'
-        ], dest: 'dist/cowhide-cyborg .css'
+        ], dest: 'dist/cowhide-default-night.css'
       }
     },
     min: {
@@ -116,9 +116,9 @@ module.exports = function(grunt) {
         src: ['dist/cowhide-default.css'],
         dest: 'dist/cowhide-default.min.css'
       },
-      cyborg: {
-        src: ['dist/cowhide-cyborg.css'],
-        dest: 'dist/cowhide-cyborg.min.css'
+      default_night_theme: {
+        src: ['dist/cowhide-default-night.css'],
+        dest: 'dist/cowhide-default-night.min.css'
       }
     },
     copy: {

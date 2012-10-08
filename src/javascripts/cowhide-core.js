@@ -51,7 +51,7 @@
             var dir = dirname(path);
 
             if (base == 'cowhide-default.css')
-                base = 'cowhide-cyborg.css';
+                base = 'cowhide-default-night.css';
             else
                 base = 'cowhide-default.css';
 

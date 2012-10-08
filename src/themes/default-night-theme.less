@@ -6,12 +6,9 @@
 // TYPOGRAPHY
 // -----------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
-
 label, input, button, select, textarea,
 .navbar .search-query:-moz-placeholder,
 .navbar .search-query::-webkit-input-placeholder {
-	font-family: 'Droid Sans', sans-serif;
 	color: @gray;
 }
 
@@ -35,6 +32,7 @@ html {
 }
 
 body {
+	font-family: @sansFontFamily;
 	min-height: 100%;
 	#gradient > .vertical (@bodyBackground, #252A30);
 }
@@ -47,8 +45,6 @@ body {
 // -----------------------------------------------------
 
 .navbar {
-
-	font-size: 16px;
 
 	.navbar-inner {
 		.border-radius(0);
@@ -329,7 +325,6 @@ div.subnav {
 	background-image: none;
 	border-width: 0;
 	.box-shadow(none);
-	font-size: 14px;
 
 	li > a {
 		color: @blue;
@@ -348,7 +343,6 @@ div.subnav {
 
 	a {
 		border: 0;
-		font-size: 14px;
 	}
 
 	a:hover, .active a {
