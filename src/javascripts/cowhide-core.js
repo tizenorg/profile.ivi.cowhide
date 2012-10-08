@@ -36,6 +36,17 @@
             }
         },
 
+        // TODO: use `backdrop` from Bootstrap's modal
+        backdrop: function (callback) {
+            var $backdrop = $('<div class="modal-backdrop theme-change-backdrop fade" />');
+
+            $backdrop.appendTo(document.body);
+            $backdrop[0].offsetWidth; // force reflow
+            $backdrop.addClass('in');
+
+            return $backdrop;
+        },
+
         toggleNightMode: function() {
             function basename(path) {
                 return path.replace( /.*\//, "" );
@@ -55,7 +66,11 @@
             else
                 base = 'cowhide-default.css';
 
-            $link.attr('href', dir + base);
+            var $backdrop = this.backdrop();
+            setTimeout(function() {
+                $link.attr('href', dir + base);
+                $backdrop.remove();
+            }, 200);
         },
 
         forceFrameworkRestrictions: function() {
