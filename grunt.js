@@ -84,6 +84,7 @@ module.exports = function(grunt) {
           'src/bootstrap/js/bootstrap-typeahead.js',
           'src/bootstrap/js/bootstrap-affix.js',
 
+          'src/javascripts/cowhide-core.js',
           'src/javascripts/cowhide-widget.js',
           'src/javascripts/cowhide-button.js',
           'src/javascripts/cowhide-seat-selector.js',
