@@ -49,6 +49,7 @@
 
             if (!data) {
                 $this.data('ch_seat_selector', (data = new ChSeatSelector(this, options)));
+                data.register();
                 var template = [
                     '<table>',
                     '    <tr>',

@@ -26,6 +26,7 @@
             }
             if (!data) {
                 $this.data('ch_slider', (data = new ChSlider(this, options)));
+                data.register();
             }
 
             $this.slider(options);

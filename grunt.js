@@ -68,6 +68,7 @@ module.exports = function(grunt) {
           'lib/jquery.ui.widget.js',
           'lib/jquery.ui.mouse.js',
           'lib/jquery.ui.slider.js',
+          'lib/underscore-min.js',
 
           // Bootstrap files must preserve order.
           'src/bootstrap/js/bootstrap-transition.js',

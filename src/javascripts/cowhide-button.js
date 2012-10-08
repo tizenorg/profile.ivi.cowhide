@@ -4,7 +4,12 @@
     var ChButton = function(element, options) {
         $.fn.ch_widget.Constructor(element, options);
         this.$element = $(element);
-        this.options = $.extend({}, $.fn.ch_widget.defaults);
+        this.options = $.extend(
+            {},
+            $.fn.ch_widget.defaults,
+            {
+                maxFontSize: 12
+            });
     };
 
     ChButton.prototype = $.extend(
@@ -23,7 +28,9 @@
 
             if (!data) {
                 $this.data('ch_button', (data = new ChButton(this, options)));
+                data.register();
                 data.forceMaxWidth();
+                data.forceMaxFontSize();
             }
 
             $this.button(option);
