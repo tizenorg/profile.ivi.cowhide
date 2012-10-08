@@ -58,16 +58,10 @@
             $link.attr('href', dir + base);
         },
 
-        forceMaxFontSize: function() {
-            _.each(this.registeredWidgets, function(w) {
-                w.forceMaxFontSize();
-            });
-        },
-
         forceFrameworkRestrictions: function() {
             _.each(this.registeredWidgets, function(w) {
-                w.forceMaxFontSize();
-                w.forceMaxWidth();
+                w.forceMinFontSize();
+                w.forceMinWidth();
             });
         }
     });

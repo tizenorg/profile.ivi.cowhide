@@ -8,7 +8,7 @@
             {},
             $.fn.ch_widget.defaults,
             {
-                maxFontSize: 12
+                minFontSize: 12
             });
     };
 
@@ -29,8 +29,7 @@
             if (!data) {
                 $this.data('ch_button', (data = new ChButton(this, options)));
                 data.register();
-                data.forceMaxWidth();
-                data.forceMaxFontSize();
+                data.forceMinFontSize();
             }
 
             $this.button(option);

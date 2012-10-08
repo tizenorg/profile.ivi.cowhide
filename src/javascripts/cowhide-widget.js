@@ -12,16 +12,16 @@
             $.cowhide.register(this);
         },
 
-        forceMaxWidth: function() {
-            if (this.$element.width() > this.options.maxWidth && this.options.maxWidth > 0)
-                this.$element.width(this.options.maxWidth);
+        forceMinWidth: function() {
+            if (this.$element.width() < this.options.minWidth && this.options.minWidth > 0)
+                this.$element.width(this.options.minWidth);
         },
 
-        forceMaxFontSize: function() {
-            if (this.options.maxFontSize > 0) {
+        forceMinFontSize: function() {
+            if (this.options.minFontSize > 0) {
                 var current = this.$element.css('font-size');
-                if (parseFloat(current) > this.options.maxFontSize) {
-                    this.$element.css('font-size', this.options.maxFontSize + 'px');
+                if (parseFloat(current) < this.options.minFontSize) {
+                    this.$element.css('font-size', this.options.minFontSize + 'px');
                 }
             }
         }
@@ -29,8 +29,8 @@
 
     $.fn.ch_widget = function() {}
     $.fn.ch_widget.defaults = {
-        maxWidth: 0,
-        maxFontSize: 0
+        minWidth: 0,
+        minFontSize: 0
     };
     $.fn.ch_widget.Constructor = ChWidget;
 })(window.jQuery);
