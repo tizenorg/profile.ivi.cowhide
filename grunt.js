@@ -124,7 +124,8 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: {
-          'dist/images/': 'images/*'
+          'dist/images/': 'images/*',
+          'dist/README.md': 'README.md'
         }
       }
     },
