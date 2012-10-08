@@ -21,6 +21,18 @@
 
       <div class="well">
         <button id="night-mode-toggle" class="btn btn-primary" data-toggle="ch-button">Night mode</button>
+
+        <div class="pull-right">
+          <form class="form-inline" id="font-size-test">
+            <div class="control-group">
+              <div class="input-append">
+                <input type="text"
+                       id="button-font-size" placeholder="Button font size"/>
+                <span class="add-on">px</span>
+                <button class="btn" type="button">Apply</button>
+              </div>
+            </div>
+        </div>
       </div>
 
       <h2>Calf Music Player<small>A Cowhide example application.</small></h2>
@@ -31,7 +43,6 @@
     <script type="text/x-handlebars" data-template-name="application">
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
-          <a class="brand" href="#">Calf</a>
           <ul class="nav">
             <li><a {{action showArtists href=true}}>Artists</a></li>
             <li><a {{action showAlbums href=true}}>Albums</a></li>
