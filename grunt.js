@@ -20,6 +20,9 @@ module.exports = function(grunt) {
       ],
       tasks: 'default'
     },
+    clean: {
+      folder: 'dist'
+    },
     lint: {
       all: [
         'grunt.js',
@@ -130,6 +133,13 @@ module.exports = function(grunt) {
         }
       }
     },
+    compress: {
+      dist: {
+        files: {
+          'dist/cowhide.zip': 'dist/**'
+        }
+      }
+    },
     growl : {
       started : {
         message : "Grunt compilation started.",
@@ -147,6 +157,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-growl');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-clean')
 
-  grunt.registerTask('default', 'growl:started lint less concat min cssmin copy growl:finished');
+  grunt.registerTask('default', 'growl:started clean lint less concat min cssmin copy compress growl:finished');
 };
