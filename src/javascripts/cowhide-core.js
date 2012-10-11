@@ -73,6 +73,13 @@
             }, 200);
         },
 
+        toggleDrivingMode: function() {
+            _.each(this.registeredWidgets, function(w) {
+                if (w.toggleDrivingMode)
+                    w.toggleDrivingMode();
+            });
+        },
+
         forceFrameworkRestrictions: function() {
             _.each(this.registeredWidgets, function(w) {
                 w.forceMinFontSize();

@@ -16,7 +16,18 @@
         {},
         $.fn.ch_widget.Constructor.prototype,
         {
-            constructor: ChButton
+            constructor: ChButton,
+            toggleDrivingMode: function() {
+                if (!this.$element.data('ignore-driving-mode')) {
+                    if (this.$element.attr('disabled'))
+                        this.$element.removeAttr('disabled');
+                    else
+                        this.$element.attr('disabled', 'disabled');
+
+                    this.$element.disabled = !this.$element.disabled;
+                    this.$element.toggleClass('disabled');
+                }
+            }
         }
     );
 
