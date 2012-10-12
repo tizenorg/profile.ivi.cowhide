@@ -8,7 +8,8 @@
             {},
             $.fn.ch_widget.defaults,
             {
-                minFontSize: 12
+                minFontSize: 12,
+                disableWhenDriving: true
             });
     };
 
@@ -16,18 +17,7 @@
         {},
         $.fn.ch_widget.Constructor.prototype,
         {
-            constructor: ChButton,
-            toggleDrivingMode: function() {
-                if (!this.$element.data('ignore-driving-mode')) {
-                    if (this.$element.attr('disabled'))
-                        this.$element.removeAttr('disabled');
-                    else
-                        this.$element.attr('disabled', 'disabled');
-
-                    this.$element.disabled = !this.$element.disabled;
-                    this.$element.toggleClass('disabled');
-                }
-            }
+            constructor: ChButton
         }
     );
 

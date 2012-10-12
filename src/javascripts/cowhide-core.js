@@ -8,6 +8,8 @@
         // List of registered widgets
         registeredWidgets: [],
 
+        drivingMode: false,
+
         GUID: function() {
             var S4 = function () {
                 return Math.floor(
@@ -74,9 +76,11 @@
         },
 
         toggleDrivingMode: function() {
+            var self = this;
+            self.drivingMode = !self.drivingMode;
             _.each(this.registeredWidgets, function(w) {
-                if (w.toggleDrivingMode)
-                    w.toggleDrivingMode();
+                if (w.setDrivingMode)
+                    w.setDrivingMode(self.drivingMode);
             });
         },
 
