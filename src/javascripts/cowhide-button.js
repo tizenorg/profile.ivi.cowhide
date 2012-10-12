@@ -42,15 +42,6 @@
     /* CHBUTTON DATA-API
      * ================= */
     $(function() {
-        $('body').on('click.ch_button.data-api', '[data-toggle^=ch-button]', function(e) {
-            var $btn = $(e.target);
-            if (!$btn.hasClass('btn'))
-                $btn = $btn.closest('.btn');
-            if ($btn) {
-                $btn.ch_button('toggle');
-            }
-        });
-
         $('.btn, button, input[type=button]').ch_button();
     })
 })(window.jQuery);
