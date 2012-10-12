@@ -87,6 +87,7 @@
         forceFrameworkRestrictions: function() {
             _.each(this.registeredWidgets, function(w) {
                 w.forceMinFontSize();
+                w.forceMaxFontSize();
                 w.forceMinWidth();
             });
         }

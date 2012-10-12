@@ -27,6 +27,15 @@
             }
         },
 
+        forceMaxFontSize: function() {
+            if (this.options.maxFontSize > 0) {
+                var current = this.$element.css('font-size');
+                if (parseFloat(current) > this.options.maxFontSize) {
+                    this.$element.css('font-size', this.options.maxFontSize + 'px');
+                }
+            }
+        },
+
         setDrivingMode: function(drivingMode) {
             if (!this.$element.data('ignore-driving-mode') && this.options.disableWhenDriving) {
                 var wasDisabled = this.$element.attr('disabled') == 'disabled';
@@ -59,6 +68,7 @@
     $.fn.ch_widget.defaults = {
         minWidth: 0,
         minFontSize: 0,
+        maxFontSize: 0,
         disableWhenDriving: false
     };
     $.fn.ch_widget.Constructor = ChWidget;

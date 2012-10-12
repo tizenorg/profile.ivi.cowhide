@@ -9,6 +9,7 @@
             $.fn.ch_widget.defaults,
             {
                 minFontSize: 12,
+                maxFontSize: 24,
                 disableWhenDriving: true
             });
     };
