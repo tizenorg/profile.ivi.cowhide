@@ -54,7 +54,8 @@ module.exports = function(grunt) {
     less: {
       default_theme: {
         files: {
-          'dist/cowhide-default.css': 'src/less/cowhide-default.less'
+          'dist/cowhide-default.css': 'src/less/cowhide-default.less',
+          'dist/cowhide-responsive.css': 'src/bootstrap/less/responsive.less'
         }
       },
       default_night_theme: {
@@ -120,6 +121,10 @@ module.exports = function(grunt) {
         src: ['dist/cowhide-default.css'],
         dest: 'dist/cowhide-default.min.css'
       },
+      responsive: {
+        src: ['dist/cowhide-responsive.css'],
+        dest: 'dist/cowhide-responsive.min.css'
+      },
       default_night_theme: {
         src: ['dist/cowhide-default-night.css'],
         dest: 'dist/cowhide-default-night.min.css'
@@ -130,8 +135,14 @@ module.exports = function(grunt) {
         files: {
           'dist/images/': 'images/**',
           'dist/README.md': 'README.md',
-          'dist/examples/calf/': 'examples/calf/**'
+          'dist/examples/calf/': 'examples/calf/**',
+          'dist/docs/': 'docs/**'
         }
+      }
+    },
+    exec: {
+      build_docs: {
+        command: 'node dist/docs/build'
       }
     },
     compress: {
@@ -159,7 +170,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-growl');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-clean')
+  grunt.loadNpmTasks('grunt-clean');
+  grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', 'growl:started clean lint less concat min cssmin copy compress growl:finished');
+  grunt.registerTask('default', 'growl:started clean lint less concat min cssmin copy exec:build_docs compress growl:finished');
 };
