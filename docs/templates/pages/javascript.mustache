@@ -2,8 +2,8 @@
 ================================================== -->
 <header class="jumbotron subhead">
   <div class="container">
-    <h1>{{_i}}JavaScript for Bootstrap{{/i}}</h1>
-    <p class="lead">{{_i}}Bring Bootstrap's components to life&mdash;now with 13 custom jQuery plugins.{{/i}}
+    <h1>{{_i}}JavaScript for Cowhide{{/i}}</h1>
+    <p class="lead">{{_i}}Bring Cowhide's components to life&mdash;now with 13 custom jQuery plugins.{{/i}}
   </div>
 </header>
 
@@ -37,14 +37,14 @@
         ================================================== -->
         <section id="overview">
           <div class="page-header">
-            <h1>{{_i}}JavaScript in Bootstrap{{/i}}</h1>
+            <h1>{{_i}}JavaScript in Cowhide{{/i}}</h1>
           </div>
 
           <h3>{{_i}}Individual or compiled{{/i}}</h3>
-          <p>{{_i}}If you have downloaded the latest version of Bootstrap, both <strong>bootstrap.js</strong> and <strong>bootstrap.min.js</strong> contain all of the plugins listed on this page.{{/i}}</p>
+          <p>{{_i}}If you have downloaded the latest version of Cowhide, both <strong>cowhide.js</strong> and <strong>cowhide.min.js</strong> contain all of the plugins listed on this page.{{/i}}</p>
 
           <h3>{{_i}}Data attributes{{/i}}</h3>
-          <p>{{_i}}You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first class API and should be your first consideration when using a plugin.{{/i}}</p>
+          <p>{{_i}}You can use all Cowhide plugins purely through the markup API without writing a single line of JavaScript. This is Cowhide's first class API and should be your first consideration when using a plugin.{{/i}}</p>
 
           <p>{{_i}}That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the body namespaced with `'data-api'`. This looks like this:{{/i}}
           <pre class="prettyprint linenums">$('body').off('.data-api')</pre>
@@ -53,7 +53,7 @@
           <pre class="prettyprint linenums">$('body').off('.alert.data-api')</pre>
 
           <h3>{{_i}}Programmatic API{{/i}}</h3>
-          <p>{{_i}}We also believe you should be able to use all Bootstrap plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.{{/i}}</p>
+          <p>{{_i}}We also believe you should be able to use all Cowhide plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.{{/i}}</p>
           <pre class="prettyprint linenums">$(".btn.danger").button("toggle").addClass("fat")</pre>
           <p>{{_i}}All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):{{/i}}</p>
 <pre class="prettyprint linenums">
@@ -64,7 +64,7 @@ $("#myModal").modal('show')                // initializes and invokes show immed
           <p>{{_i}}Each plugin also exposes it's raw constructor on a `Constructor` property: <code>$.fn.popover.Constructor</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('[rel=popover]').data('popover')</code>.{{/i}}</p>
 
           <h3>{{_i}}Events{{/i}}</h3>
-          <p>{{_i}}Bootstrap provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and it's past participle form (ex. <code>shown</code>) is trigger on the completion of an action.{{/i}}</p>
+          <p>{{_i}}Cowhide provides custom events for most plugin's unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and it's past participle form (ex. <code>shown</code>) is trigger on the completion of an action.{{/i}}</p>
           <p>{{_i}}All infinitive events provide preventDefault functionality. This provides the abililty to stop the execution of an action before it starts.{{/i}}</p>
 <pre class="prettyprint linenums">
 $('#myModal').on('show', function (e) {
@@ -82,7 +82,7 @@ $('#myModal').on('show', function (e) {
             <h1>{{_i}}Transitions{{/i}} <small>bootstrap-transition.js</small></h1>
           </div>
           <h3>{{_i}}About transitions{{/i}}</h3>
-          <p>{{_i}}For simple transition effects, include bootstrap-transition.js once alongside the other JS files. If you're using the compiled (or minified) bootstrap.js, there is no need to include this&mdash;it's already there.{{/i}}</p>
+          <p>{{_i}}For simple transition effects, include bootstrap-transition.js once alongside the other JS files. If you're using the compiled (or minified) Cowhide.js, there is no need to include this&mdash;it's already there.{{/i}}</p>
           <h3>{{_i}}Use cases{{/i}}</h3>
           <p>{{_i}}A few examples of the transition plugin:{{/i}}</p>
           <ul>
@@ -270,7 +270,7 @@ $('#myModal').modal({
           <p>{{_i}}Manually hides a modal.{{/i}}</p>
           <pre class="prettyprint linenums">$('#myModal').modal('hide')</pre>
           <h3>{{_i}}Events{{/i}}</h3>
-          <p>{{_i}}Bootstrap's modal class exposes a few events for hooking into modal functionality.{{/i}}</p>
+          <p>{{_i}}Cowhide's modal class exposes a few events for hooking into modal functionality.{{/i}}</p>
           <table class="table table-bordered table-striped">
             <thead>
              <tr>
@@ -615,7 +615,7 @@ $('#myTab li:eq(2) a').tab('show'); // Select third tab (0-indexed)
 </pre>
 
           <h3>{{_i}}Markup{{/i}}</h3>
-          <p>{{_i}}You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Bootstrap tab styling.{{/i}}</p>
+          <p>{{_i}}You can activate a tab or pill navigation without writing any JavaScript by simply specifying <code>data-toggle="tab"</code> or <code>data-toggle="pill"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the Cowhide tab styling.{{/i}}</p>
 <pre class="prettyprint linenums">
 &lt;ul class="nav nav-tabs"&gt;
   &lt;li&gt;&lt;a href="#home" data-toggle="tab"&gt;{{_i}}Home{{/i}}&lt;/a&gt;&lt;/li&gt;
@@ -1005,7 +1005,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 
 
         <h3>{{_i}}Events{{/i}}</h3>
-        <p>{{_i}}Bootstrap's alert class exposes a few events for hooking into alert functionality.{{/i}}</p>
+        <p>{{_i}}Cowhide's alert class exposes a few events for hooking into alert functionality.{{/i}}</p>
         <table class="table table-bordered table-striped">
           <thead>
            <tr>
@@ -1286,7 +1286,7 @@ $('#myCollapsible').collapse({
             <p>{{_i}}Hides a collapsible element.{{/i}}</p>
 
             <h3>{{_i}}Events{{/i}}</h3>
-            <p>{{_i}}Bootstrap's collapse class exposes a few events for hooking into collapse functionality.{{/i}}</p>
+            <p>{{_i}}Cowhide's collapse class exposes a few events for hooking into collapse functionality.{{/i}}</p>
             <table class="table table-bordered table-striped">
               <thead>
                <tr>
@@ -1440,7 +1440,7 @@ $('.carousel').carousel({
             <p>{{_i}}Cycles to the next item.{{/i}}</p>
 
             <h3>{{_i}}Events{{/i}}</h3>
-            <p>{{_i}}Bootstrap's carousel class exposes two events for hooking into carousel functionality.{{/i}}</p>
+            <p>{{_i}}Cowhide's carousel class exposes two events for hooking into carousel functionality.{{/i}}</p>
             <table class="table table-bordered table-striped">
               <thead>
                <tr>
