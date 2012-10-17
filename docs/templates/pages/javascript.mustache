@@ -15,6 +15,7 @@
       <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#overview"><i class="icon-chevron-right"></i> {{_i}}Overview{{/i}}</a></li>
+          <li><a href="#core"><i class="icon-chevron-right"></i> {{_i}}Core{{/i}}</a></li>
           <li><a href="#transitions"><i class="icon-chevron-right"></i> {{_i}}Transitions{{/i}}</a></li>
           <li><a href="#modals"><i class="icon-chevron-right"></i> {{_i}}Modal{{/i}}</a></li>
           <li><a href="#dropdowns"><i class="icon-chevron-right"></i> {{_i}}Dropdown{{/i}}</a></li>
@@ -72,6 +73,33 @@ $('#myModal').on('show', function (e) {
     if (!data) return e.preventDefault() // stops modal from being shown
 })
 </pre>
+        </section>
+
+
+
+        <!-- Core
+        ================================================== -->
+        <section id="core">
+          <div class="page-header">
+            <h1>{{_i}}Core{{/i}}</h1>
+            <p>{{_i}}Cowhide's core provides some functionality related to the internal managing of the widgets:{{/i}}</p>
+            <ul>
+              <li>{{_i}}A base widget class{{/i}}</li>
+              <li>{{_i}}Widget registration{{/i}}</li>
+              <li>{{_i}}Forcing sizing restrictions to widgets that implement them{{/i}}</li>
+              <li>{{_i}}Setting day/night modes to widgets that implement them{{/i}}</li>
+            </ul>
+          </div>
+
+          <h3>{{_i}}Extending the base widget{{/i}}</h3>
+          <p>{{_i}}Cowhide's base widget defines some default properties, that tend to result to no particular action taken by the core of the framework. They are:{{/i}}</p>
+          <ul>
+            <li><code>minWidth</code> ({{_i}}default{{/i}}: <code>0</code>): {{_i}}the minimum <code>width</code> a widget is allowed to have.{{/i}}</li>
+            <li><code>minFontSize</code> ({{_i}}default{{/i}}: <code>0</code>): {{_i}}the minimum <code>font-size</code> a widget is allowed to have.{{/i}}</li>
+            <li><code>maxWidth</code> ({{_i}}default{{/i}}: <code>0</code>): {{_i}}the maximum <code>font-size</code> a widget is allowed to have.{{/i}}</li>
+            <li><code>disableWhenDriving</code> ({{_i}}default{{/i}}: <code>false</code>): {{_i}}whether the widget should be disabled when the framework switches to <strong>Driving Mode</strong>.{{/i}}</li>
+          </ul>
+          <p>{{_i}}Values of <code>0</code>, above, mean that the property should not be enforced.{{/i}}</p>
         </section>
 
 
