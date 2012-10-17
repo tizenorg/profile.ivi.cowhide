@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Cowhide Widget Gallery</title>
+    <meta name="description" content="A widget gallery showcasing Cowhide's capabilities.">
+    <meta name="viewport" content="width=device-width">
+
+    <link id="cowhide-theme" rel="stylesheet" href="../../cowhide-default.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>
+        Cowhide
+        <small>An HTML5 framework built on top of Twitter Bootstrap.</small>
+      </h1>
+
+      <div class="well">
+        <button id="night-mode-toggle" class="btn btn-primary" data-toggle="button">Night mode</button>
+        <button id="driving-mode-toggle" class="btn btn-primary" data-toggle="button" data-ignore-driving-mode="true">Driving mode</button>
+
+        <div class="pull-right">
+          <form class="form-inline" id="font-size-test">
+            <div class="control-group">
+              <div class="input-append">
+                <input type="text"
+                       id="button-font-size" placeholder="Button font size"/>
+                <span class="add-on">px</span>
+                <button class="btn" type="button">Apply</button>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <h2>Cowhide Widget Gallery <small>A partial list.</small></h2>
+      <div id="application">
+        <h3>Radio buttons</h3>
+        <form>
+          <label class="radio">
+            <input type="radio" name="a" value="1">Radio option 1
+          </label>
+          <label class="radio">
+            <input type="radio" name="a" value="2">Radio option 2
+          </label>
+            <label class="radio">
+            <input type="radio" name="a" value="3">Radio option 3
+          </label>
+        </form>
+      </div>
+    </div> <!-- container -->
+
+    <!-- The glorious cowhide framework. -->
+    <script src="../../cowhide.js"></script>
+    <script src="javascripts/widget-gallery.js"></script>
+  </body>
+</html>

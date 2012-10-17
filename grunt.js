@@ -12,9 +12,7 @@ module.exports = function(grunt) {
         'src/themes/*.less',
         'src/cowhide-less/*.less',
 
-        'examples/calf/javascripts/*.js',
-        'examples/calf/javascripts/app/*.js',
-        'examples/calf/javascripts/app/**/*.js',
+        'examples/**/*.*',
 
         'tests/**/*.js'
       ],
@@ -33,6 +31,8 @@ module.exports = function(grunt) {
         'examples/calf/javascripts/*.js',
         'examples/calf/javascripts/app/*.js',
         'examples/calf/javascripts/app/**/*.js',
+
+        'examples/widget-gallery/javascripts/*.js',
 
         'test/**/*.js'
       ]
@@ -94,7 +94,8 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-button.js',
           'src/javascripts/cowhide-seat-selector.js',
           'src/javascripts/cowhide-slider.js',
-          'src/javascripts/cowhide-text-input.js'
+          'src/javascripts/cowhide-text-input.js',
+          'src/javascripts/cowhide-radio-input.js'
         ], dest: 'dist/cowhide.js'
       },
       css_default: {
@@ -136,6 +137,7 @@ module.exports = function(grunt) {
           'dist/images/': 'images/**',
           'dist/README.md': 'README.md',
           'dist/examples/calf/': 'examples/calf/**',
+          'dist/examples/widget-gallery/': 'examples/widget-gallery/**',
           'dist/docs/': 'docs/**'
         }
       }
