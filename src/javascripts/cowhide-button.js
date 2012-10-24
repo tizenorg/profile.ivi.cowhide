@@ -28,6 +28,15 @@
         {
             constructor: ChButton,
 
+            disableMarquee: function() {
+                var $marquee = this.$element.find('marquee');
+                if($marquee.length > 0) {
+                    var text = $marquee.text();
+                    $marquee.remove();
+                    this.$element.text(text);
+                }
+            },
+
             enableMarquee: function() {
                 if (this.options.marquee && (
                     this.$element[0].tagName == 'A' ||
@@ -43,6 +52,14 @@
 
                     this.$element.html($marquee);
                 }
+            },
+
+            onDrivingModeEnter: function() {
+                this.disableMarquee();
+            },
+
+            onDrivingModeExit: function() {
+                this.enableMarquee();
             }
         }
     );

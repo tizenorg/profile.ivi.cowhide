@@ -53,15 +53,26 @@
                     this.$element.attr(d, d);
                     this.$element.disabled = true;
                     this.$element.addClass(d);
+
+                    if (this.onDrivingModeEnter)
+                        this.onDrivingModeEnter();
+
                     this.drivingMode = true;
                 } else if (this.drivingMode) {
                     this.$element.removeAttr(d);
                     this.$element.disabled = false;
                     this.$element.removeClass(d);
+
+                    if (this.onDrivingModeExit)
+                        this.onDrivingModeExit();
+
                     this.drivingMode = false;
                 }
             }
-        }
+        },
+
+        onDrivingModeEnter: undefined,
+        onDrivingModeExit: undefined
      });
 
     $.fn.ch_widget = function() {}
