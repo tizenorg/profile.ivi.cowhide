@@ -6,9 +6,13 @@
         this.options = $.extend({}, $.fn.ch_widget.defaults);
         this.drivingMode = false;
 
-        var $page = this.$element.closest('div.page');
-        if ($page.length === 0) {
-            $.cowhide.fatal("Fatal error: every widget must be within a div with class='page'.");
+        if(!(this.$element[0].tagName == 'DIV' && this.$element.hasClass('page'))) {
+            var $page = this.$element.parent().closest('div.page');
+            if ($page.length === 0) {
+                $.cowhide.fatal("Every widget must be within a div with class='page'.");
+            } else {
+                $page.ch_page('register', this);
+            }
         }
     };
 

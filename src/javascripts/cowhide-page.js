@@ -13,7 +13,7 @@
 
         var $parent_page = this.$element.parent().closest('div.page');
         if ($parent_page.length !== 0) {
-            $.cowhide.fatal('Fatal error: you cannot nest pages.');
+            $.cowhide.fatal('Pages cannot be nested.');
         }
     };
 
@@ -21,7 +21,19 @@
         {},
         $.fn.ch_widget.Constructor.prototype,
         {
-            constructor: ChPage
+            constructor: ChPage,
+
+            registeredWidgets: 0,
+            registerWidget: function(widget) {
+                this.registeredWidgets++;
+                if (this.options.maxWidgets > 0 &&
+                    this.registeredWidgets > this.options.maxWidgets)
+                {
+                    $.cowhide.fatal("A page cannot have more than " +
+                                    this.options.maxWidgets +
+                                    " widgets.");
+                }
+            }
         }
     );
 
@@ -35,6 +47,10 @@
                 $this.data('ch_page', (data = new ChPage(this, options)));
                 data.register();
             }
+
+            if(option == 'register') {
+                data.registerWidget();
+            }
         });
     };
 
@@ -43,6 +59,6 @@
     /* CHPAGE DATA-API
      * ================= */
     $(function() {
-        $('.page').ch_page();
+        $('div.page').ch_page();
     })
 })(window.jQuery);

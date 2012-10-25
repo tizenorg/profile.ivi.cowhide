@@ -93,7 +93,7 @@
         },
 
         fatal: function(msg) {
-            throw new Error(msg);
+            throw new Error("Fatal error: " + msg);
         }
     });
 
