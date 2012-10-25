@@ -5,6 +5,11 @@
         this.$element = $(element);
         this.options = $.extend({}, $.fn.ch_widget.defaults);
         this.drivingMode = false;
+
+        var $page = this.$element.closest('div.page');
+        if ($page.length === 0) {
+            $.cowhide.fatal("Fatal error: every widget must be within a div with class='page'.");
+        }
     };
 
     ChWidget.prototype = $.extend({}, {

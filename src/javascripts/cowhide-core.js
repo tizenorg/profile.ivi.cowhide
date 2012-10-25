@@ -90,6 +90,10 @@
                 w.forceMaxFontSize();
                 w.forceMinWidth();
             });
+        },
+
+        fatal: function(msg) {
+            throw new Error(msg);
         }
     });
 
