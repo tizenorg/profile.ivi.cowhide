@@ -93,7 +93,7 @@
         },
 
         fatal: function(msg) {
-            throw new Error("Fatal error: " + msg);
+            throw new Error("[Cowhide] Fatal error: " + msg);
         }
     });
 
