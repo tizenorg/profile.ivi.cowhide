@@ -159,4 +159,10 @@ $('button#night-mode-toggle').click(function() {
   $.cowhide.toggleNightMode();
 });
 
+$('select#theme-selector').change(function() {
+    var value = $(this).find('option:selected').val();
+    if (value !== '0')
+        $.cowhide.setTheme(value);
+});
+
 }(window.jQuery)
