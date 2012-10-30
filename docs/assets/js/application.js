@@ -151,4 +151,12 @@ $.ajaxTransport('jsonpi', function(opts, originalOptions, jqXHR) {
   }
 })
 
+$.cowhide.initThemeEngine({
+  path: '..'
+});
+
+$('button#night-mode-toggle').click(function() {
+  $.cowhide.toggleNightMode();
+});
+
 }(window.jQuery)
