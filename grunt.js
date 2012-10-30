@@ -6,11 +6,9 @@ module.exports = function(grunt) {
       files: [
         'grunt.js',
 
-        'src/bootstrap/**/*.{js,less}',
         'src/javascripts/*.js',
-        'src/less/*.less',
-        'src/themes/*.less',
-        'src/cowhide-less/*.less',
+        'src/bootstrap/**/*.{js,less}',
+        'src/themes/**/*.less',
 
         'examples/**/*.*',
 
@@ -52,20 +50,26 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      default_theme: {
+      default_: {
         files: {
-          'dist/cowhide-default.css': 'src/less/cowhide-default.less',
+          'dist/cowhide-default.css': 'src/themes/default/default.less',
           'dist/cowhide-responsive.css': 'src/bootstrap/less/responsive.less'
         }
       },
-      default_night_theme: {
+      default_night: {
         files: {
-          'dist/cowhide-default-night.css': 'src/less/cowhide-default-night.less'
+          'dist/cowhide-default-night.css': 'src/themes/default/default-night.less'
         }
       },
-      amelia_theme: {
+      amelia: {
         files: {
-          'dist/cowhide-amelia.css': 'src/less/cowhide-amelia.less'
+          'dist/cowhide-amelia.css': 'src/themes/amelia/amelia.less'
+        }
+      },
+      amelia_night: {
+        files: {
+          // TODO: add theme implementation for amelia-night.
+          'dist/cowhide-amelia-night.css': 'src/themes/amelia/amelia.less'
         }
       }
     },
@@ -121,6 +125,12 @@ module.exports = function(grunt) {
           'dist/cowhide-amelia.css',
           'lib/jquery.ui.slider.css'
         ], dest: 'dist/cowhide-amelia.css'
+      },
+      css_amelia_night: {
+        src: [
+          'dist/cowhide-amelia-night.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-amelia-night.css'
       }
     },
     min: {
@@ -130,7 +140,7 @@ module.exports = function(grunt) {
       }
     },
     cssmin: {
-      default_theme: {
+      default_: {
         src: ['dist/cowhide-default.css'],
         dest: 'dist/cowhide-default.min.css'
       },
@@ -138,13 +148,17 @@ module.exports = function(grunt) {
         src: ['dist/cowhide-responsive.css'],
         dest: 'dist/cowhide-responsive.min.css'
       },
-      default_night_theme: {
+      default_night: {
         src: ['dist/cowhide-default-night.css'],
         dest: 'dist/cowhide-default-night.min.css'
       },
-      amelia_theme: {
+      amelia: {
         src: ['dist/cowhide-amelia.css'],
         dest: 'dist/cowhide-amelia.min.css'
+      },
+      amelia_night: {
+        src: ['dist/cowhide-amelia-night.css'],
+        dest: 'dist/cowhide-amelia-night.min.css'
       }
     },
     copy: {

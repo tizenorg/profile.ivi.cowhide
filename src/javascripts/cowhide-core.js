@@ -66,7 +66,7 @@
         },
 
         setTheme: function(name, nightMode) {
-            if (name === this.currentTheme && nightMode != this.nightMode) {
+            if (name === this.currentTheme && nightMode == this.nightMode) {
                 return;
             }
 
