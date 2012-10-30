@@ -71,6 +71,17 @@ module.exports = function(grunt) {
           // TODO: add theme implementation for amelia-night.
           'dist/cowhide-amelia-night.css': 'src/themes/amelia/amelia.less'
         }
+      },
+      spruce: {
+        files: {
+          'dist/cowhide-spruce.css': 'src/themes/spruce/spruce.less'
+        }
+      },
+      spruce_night: {
+        files: {
+          // TODO: add theme implementation for spruce-night.
+          'dist/cowhide-spruce-night.css': 'src/themes/spruce/spruce.less'
+        }
       }
     },
     concat: {
@@ -131,6 +142,18 @@ module.exports = function(grunt) {
           'dist/cowhide-amelia-night.css',
           'lib/jquery.ui.slider.css'
         ], dest: 'dist/cowhide-amelia-night.css'
+      },
+      css_spruce: {
+        src: [
+          'dist/cowhide-spruce.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-spruce.css'
+      },
+      css_spruce_night: {
+        src: [
+          'dist/cowhide-spruce-night.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-spruce-night.css'
       }
     },
     min: {
@@ -159,6 +182,14 @@ module.exports = function(grunt) {
       amelia_night: {
         src: ['dist/cowhide-amelia-night.css'],
         dest: 'dist/cowhide-amelia-night.min.css'
+      },
+      spruce: {
+        src: ['dist/cowhide-spruce.css'],
+        dest: 'dist/cowhide-spruce.min.css'
+      },
+      spruce_night: {
+        src: ['dist/cowhide-spruce-night.css'],
+        dest: 'dist/cowhide-spruce-night.min.css'
       }
     },
     copy: {
