@@ -4,11 +4,17 @@
     $.cowhide = $.cowhide || {}
     $.extend($.cowhide, {
         version: '0.0.1',
+        themeEngineOptions: {
+            path: 'css',
+            initial: 'default'
+        },
 
         // List of registered widgets
         registeredWidgets: [],
 
         drivingMode: false,
+        nightMode: false,
+        currentTheme: 'default',
 
         GUID: function() {
             var S4 = function () {
@@ -49,30 +55,39 @@
             return $backdrop;
         },
 
-        toggleNightMode: function() {
-            function basename(path) {
-                return path.replace( /.*\//, "" );
+        initThemeEngine: function(options) {
+            $.extend(this.themeEngineOptions, options);
+            this.currentTheme = this.themeEngineOptions.initial;
+
+            var $link = $('link#cowhide-theme');
+            if ($link.length === 0) {
+                this.fatal("could not find <link> with id 'cowhide-theme'.");
+            }
+        },
+
+        setTheme: function(name, nightMode) {
+            var $link = $('link#cowhide-theme');
+            var theme =
+                this.themeEngineOptions.path +
+                '/cowhide-' +
+                name || 'default';
+
+            if (nightMode || false) {
+                theme += '-night';
             }
 
-            function dirname(path) {
-                return path.match( /.*\// );
-            }
-
-            var $link = $('link#cowhide-theme');
-            var path = $link.attr('href');
-            var base = basename(path);
-            var dir = dirname(path);
-
-            if (base == 'cowhide-default.css')
-                base = 'cowhide-default-night.css';
-            else
-                base = 'cowhide-default.css';
+            theme += '.css';
 
             var $backdrop = this.backdrop();
             setTimeout(function() {
-                $link.attr('href', dir + base);
+                $link.attr('href', theme);
                 $backdrop.remove();
             }, 200);
+        },
+
+        toggleNightMode: function() {
+            this.nightMode = !this.nightMode;
+            this.setTheme(this.currentTheme, this.nightMode);
         },
 
         toggleDrivingMode: function() {
