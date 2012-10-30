@@ -6,7 +6,8 @@
         version: '0.0.1',
         themeEngineOptions: {
             path: 'css',
-            initial: 'default'
+            initial: 'default',
+            minified: false
         },
 
         // List of registered widgets
@@ -78,6 +79,10 @@
 
             if (nightMode === true || (nightMode === undefined && this.nightMode === true)) {
                 theme += '-night';
+            }
+
+            if (this.themeEngineOptions.minified) {
+                theme += '.min';
             }
 
             theme += '.css';
