@@ -76,7 +76,7 @@
                 '/cowhide-' +
                 name || 'default';
 
-            if (nightMode || false) {
+            if (nightMode === true || (nightMode === undefined && this.nightMode === true)) {
                 theme += '-night';
             }
 
