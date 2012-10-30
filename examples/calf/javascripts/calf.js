@@ -11,11 +11,17 @@ $(function() {
         $.cowhide.toggleDrivingMode();
     });
 
-    $('form#font-size-test button').click(function() {
+    $('form#controls button').click(function() {
         var $form = $(this).closest('form');
         var $input = $form.find('input');
         var val = $input.val();
 
         $('.btn').css('font-size', val + 'px');
-    })
+    });
+
+    $('form#controls select#theme-selector').change(function() {
+        var value = $(this).find('option:selected').val();
+        if (value !== '0')
+            $.cowhide.setTheme(value);
+    });
 });

@@ -66,6 +66,10 @@
         },
 
         setTheme: function(name, nightMode) {
+            if (name === this.currentTheme && nightMode != this.nightMode) {
+                return;
+            }
+
             var $link = $('link#cowhide-theme');
             var theme =
                 this.themeEngineOptions.path +
@@ -83,11 +87,15 @@
                 $link.attr('href', theme);
                 $backdrop.remove();
             }, 200);
+
+            this.currentTheme = name;
+            if (nightMode !== undefined) {
+                this.nightMode = nightMode;
+            }
         },
 
         toggleNightMode: function() {
-            this.nightMode = !this.nightMode;
-            this.setTheme(this.currentTheme, this.nightMode);
+            this.setTheme(this.currentTheme, !this.nightMode);
         },
 
         toggleDrivingMode: function() {

@@ -19,12 +19,12 @@
         <small>An HTML5 framework built on top of Twitter Bootstrap.</small>
       </h1>
 
-      <div class="well">
+      <div class="well" style="overflow: hidden">
         <button id="night-mode-toggle" class="btn btn-primary" data-toggle="button">Night mode</button>
         <button id="driving-mode-toggle" class="btn btn-primary" data-toggle="button" data-ignore-driving-mode="true">Driving mode</button>
 
         <div class="pull-right">
-          <form class="form-inline" id="font-size-test">
+          <form class="form-inline" id="controls">
             <div class="control-group">
               <div class="input-append">
                 <input type="text"
@@ -32,6 +32,14 @@
                 <span class="add-on">px</span>
                 <button class="btn" type="button">Apply</button>
               </div>
+            </div>
+
+            <div class="control-group">
+              <select type="text" id="theme-selector">
+                <option value="0">Select theme:</option>
+                <option value="default">Default</option>
+                <option value="amelia">Amelia</option>
+              </select>
             </div>
         </div>
       </div>

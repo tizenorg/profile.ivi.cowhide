@@ -62,6 +62,11 @@ module.exports = function(grunt) {
         files: {
           'dist/cowhide-default-night.css': 'src/less/cowhide-default-night.less'
         }
+      },
+      amelia_theme: {
+        files: {
+          'dist/cowhide-amelia.css': 'src/less/cowhide-amelia.less'
+        }
       }
     },
     concat: {
@@ -110,6 +115,12 @@ module.exports = function(grunt) {
           'dist/cowhide-default-night.css',
           'lib/jquery.ui.slider.css'
         ], dest: 'dist/cowhide-default-night.css'
+      },
+      css_amelia: {
+        src: [
+          'dist/cowhide-amelia.css',
+          'lib/jquery.ui.slider.css'
+        ], dest: 'dist/cowhide-amelia.css'
       }
     },
     min: {
@@ -130,6 +141,10 @@ module.exports = function(grunt) {
       default_night_theme: {
         src: ['dist/cowhide-default-night.css'],
         dest: 'dist/cowhide-default-night.min.css'
+      },
+      amelia_theme: {
+        src: ['dist/cowhide-amelia.css'],
+        dest: 'dist/cowhide-amelia.min.css'
       }
     },
     copy: {
