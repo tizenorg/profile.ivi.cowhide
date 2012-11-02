@@ -81,13 +81,15 @@ $('#myModal').on('show', function (e) {
         ================================================== -->
         <section id="core">
           <div class="page-header">
-            <h1>{{_i}}Core{{/i}}</h1>
+            <h1>{{_i}}Core{{/i}} <small>cowhide-core.js</small></h1>
             <p>{{_i}}Cowhide's core provides some functionality related to the internal managing of the widgets:{{/i}}</p>
             <ul>
               <li>{{_i}}A base widget class{{/i}}</li>
+              <li>{{_i}}A "page" widget{{/i}}
               <li>{{_i}}Widget registration{{/i}}</li>
               <li>{{_i}}Forcing sizing restrictions to widgets that implement them{{/i}}</li>
               <li>{{_i}}Setting day/night modes to widgets that implement them{{/i}}</li>
+              <li>{{_i}}Setting themes{{/i}}</li>
             </ul>
           </div>
 
@@ -100,6 +102,21 @@ $('#myModal').on('show', function (e) {
             <li><code>disableWhenDriving</code> ({{_i}}default{{/i}}: <code>false</code>): {{_i}}whether the widget should be disabled when the framework switches to <strong>Driving Mode</strong>.{{/i}}</li>
           </ul>
           <p>{{_i}}Values of <code>0</code>, above, mean that the property should not be enforced.{{/i}}</p>
+
+          <h3>{{_i}}Setting themes{{/i}}</h3>
+          <p>{{_i}}Cowhide requires your page to have a <code>link</code> element with <code>id="cowhide-theme"</code>. You will then be able to do the following:{{/i}}</p>
+
+<pre class="prettyprint linenums">
+$.cowhide.setTheme('theme-name');</pre>
+
+          <p>{{_i}}This assumes that your themes are in a folder called <code>css</code>. If they are not, you need to inizialize Cowhide's theme engine like this:{{/i}}</p>
+
+<pre class="prettyprint linenums">
+$.cowhide.initThemeEngine({
+  path: '../css' /** Example path, change it! **/
+});</pre>
+
+          <p>{{_i}}The theme names must follow the following convention: <code>cowhide-themename{-night}{.min}.css</code>. The <code>{-night}</code> and <code>{.min}</code> parts are optional. However, every theme should provide a "night" version of itself.{{/i}}</p>
         </section>
 
 
