@@ -120,8 +120,25 @@
             });
         },
 
-        fatal: function(msg) {
-            throw new Error("[Cowhide] Fatal error: " + msg);
+        fatal: function(msg, $element) {
+            var output = "";
+
+            output += "[Cowhide] Fatal error";
+            if ($element !== undefined) {
+                output += " (offending widget: ";
+                var id = $element.attr('id');
+                var classes = $element.attr('class');
+
+                if (id)
+                    output += "#(" + id + ")";
+                if (classes)
+                    output += ".(" + classes + ")";
+
+                output += ")";
+            }
+
+            output += ": " + msg;
+            throw new Error(output);
         }
     });
 
