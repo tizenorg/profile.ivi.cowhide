@@ -1,4 +1,7 @@
 $(function() {
+    $.cowhide.initThemeEngine({
+        path: '../..'
+    });
     $('#night-mode-toggle').click(function() {
         $.cowhide.toggleNightMode();
     });
