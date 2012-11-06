@@ -116,6 +116,7 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-slider.js',
           'src/javascripts/cowhide-text-input.js',
           'src/javascripts/cowhide-radio-input.js',
+          'src/javascripts/cowhide-checkbox-input.js',
           'src/javascripts/cowhide-select.js',
           'src/javascripts/cowhide-page.js'
         ], dest: 'dist/cowhide.js'
