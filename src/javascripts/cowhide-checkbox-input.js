@@ -33,7 +33,7 @@
         });
     };
 
-    $.fn.ch_checkbox.Constructor = ChCheckboxInput;
+    $.fn.ch_checkbox_input.Constructor = ChCheckboxInput;
 
     /* CHCHECKBOXINPUT DATA-API
      * ================= */
