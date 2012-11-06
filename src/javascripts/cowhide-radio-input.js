@@ -33,7 +33,7 @@
         });
     };
 
-    $.fn.ch_text_input.Constructor = ChRadioInput;
+    $.fn.ch_radio_input.Constructor = ChRadioInput;
 
     /* CHRADIOINPUT DATA-API
      * ================= */
