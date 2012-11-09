@@ -22,25 +22,28 @@
             $.cowhide.register(this);
         },
 
-        forceMinWidth: function() {
+        verifyMinWidth: function() {
             if (this.$element.width() < this.options.minWidth && this.options.minWidth > 0)
-                this.$element.width(this.options.minWidth);
+              $.cowhide.fatal("#10: this widget has a minimum allowed width of " +
+                              this.options.minWidth + "px", this.$element);
         },
 
-        forceMinFontSize: function() {
+        verifyMinFontSize: function() {
             if (this.options.minFontSize > 0) {
                 var current = this.$element.css('font-size');
                 if (parseFloat(current) < this.options.minFontSize) {
-                    this.$element.css('font-size', this.options.minFontSize + 'px');
+                    $.cowhide.fatal("#20: this widget has a minimum allowed font-size of " +
+                                    this.options.minFontSize + "px", this.$element);
                 }
             }
         },
 
-        forceMaxFontSize: function() {
+        verifyMaxFontSize: function() {
             if (this.options.maxFontSize > 0) {
                 var current = this.$element.css('font-size');
                 if (parseFloat(current) > this.options.maxFontSize) {
-                    this.$element.css('font-size', this.options.maxFontSize + 'px');
+                    $.cowhide.fatal("#21: this widget has a maximum allowed font-size of " +
+                                    this.options.maxFontSize + "px", this.$element);
                 }
             }
         },

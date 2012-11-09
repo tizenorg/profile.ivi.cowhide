@@ -79,7 +79,6 @@
             if (!data) {
                 $this.data('ch_button', (data = new ChButton(this, options)));
                 data.register();
-                data.forceMinFontSize();
             }
 
             $this.button(option);

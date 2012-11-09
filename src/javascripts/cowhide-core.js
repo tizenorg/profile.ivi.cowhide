@@ -112,11 +112,11 @@
             });
         },
 
-        forceFrameworkRestrictions: function() {
+        verifyFrameworkRestrictions: function() {
             _.each(this.registeredWidgets, function(w) {
-                w.forceMinFontSize();
-                w.forceMaxFontSize();
-                w.forceMinWidth();
+                w.verifyMinFontSize();
+                w.verifyMaxFontSize();
+                w.verifyMinWidth();
             });
         },
 
@@ -144,7 +144,7 @@
 
     $(function() {
         setInterval(function() {
-            $.cowhide.forceFrameworkRestrictions();
+            $.cowhide.verifyFrameworkRestrictions();
         }, 1000);
     });
 })(window.jQuery, window._);
