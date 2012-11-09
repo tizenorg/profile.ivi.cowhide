@@ -87,8 +87,9 @@ $('#myModal').on('show', function (e) {
               <li>{{_i}}A base widget class{{/i}}</li>
               <li>{{_i}}A "page" widget{{/i}}
               <li>{{_i}}Widget registration{{/i}}</li>
-              <li>{{_i}}Forcing sizing restrictions to widgets that implement them{{/i}}</li>
+              <li>{{_i}}Verifying sizing restrictions to widgets that implement them{{/i}}</li>
               <li>{{_i}}Setting day/night modes to widgets that implement them{{/i}}</li>
+              <li>{{_i}}Setting driving mode to widgets that support it{{/i}}</li>
               <li>{{_i}}Setting themes{{/i}}</li>
             </ul>
           </div>
@@ -101,7 +102,19 @@ $('#myModal').on('show', function (e) {
             <li><code>maxWidth</code> ({{_i}}default{{/i}}: <code>0</code>): {{_i}}the maximum <code>font-size</code> a widget is allowed to have.{{/i}}</li>
             <li><code>disableWhenDriving</code> ({{_i}}default{{/i}}: <code>false</code>): {{_i}}whether the widget should be disabled when the framework switches to <strong>Driving Mode</strong>.{{/i}}</li>
           </ul>
-          <p>{{_i}}Values of <code>0</code>, above, mean that the property should not be enforced.{{/i}}</p>
+          <p>{{_i}}Values of <code>0</code>, above, mean that the property should not be verified.{{/i}}</p>
+
+          <h3>{{_i}}Error messages{{/i}}</h3>
+          <p>{{_i}}Cowhide will perform certain runtime checks on your app, and print out error messages on your browser's console, if necessary. Here thy are:{{/i}}</p>
+          <ul>
+            <li><code>#10</code>: {{_i}}The widget's width is smaller than the minimumum allowed value.{{/i}}</li>
+            <li><code>#20</code>: {{_i}}The widget's font-size is smaller than the minimumum allowed value.{{/i}}</li>
+            <li><code>#21</code>: {{_i}}The widget's font-size is larger than the maximumum allowed value.{{/i}}</li>
+            <li><code>#30</code>: {{_i}}The widget is not contained within a page (<code>&lt;div class="page"&gt;</code>).{{/i}}</li>
+            <li><code>#31</code>: {{_i}}The page is contained within another page. Pages cannot be nested.{{/i}}</li>
+            <li><code>#32</code>: {{_i}}The page contains more than the maximum allowed number of widgets.{{/i}}</li>
+            <li><code>#40</code>: {{_i}}The link to the Cowhide theme's CSS file (<code>id="cowhide-theme"</code> was not found.{{/i}}</li>
+          </ul>
 
           <h3>{{_i}}Setting themes{{/i}}</h3>
           <p>{{_i}}Cowhide requires your page to have a <code>link</code> element with <code>id="cowhide-theme"</code>. You will then be able to do the following:{{/i}}</p>
