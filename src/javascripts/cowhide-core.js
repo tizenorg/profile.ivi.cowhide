@@ -62,7 +62,7 @@
 
             var $link = $('link#cowhide-theme');
             if ($link.length === 0) {
-                this.fatal("could not find <link> with id 'cowhide-theme'.");
+                this.fatal("#40: could not find <link> with id 'cowhide-theme'.");
             }
         },
 

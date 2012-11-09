@@ -9,7 +9,7 @@
         if(!(this.$element[0].tagName == 'DIV' && this.$element.hasClass('page'))) {
             var $page = this.$element.parent().closest('div.page');
             if ($page.length === 0) {
-                $.cowhide.fatal("Every widget must be within a div with class='page'.", this.$element);
+                $.cowhide.fatal("#30: every widget must be within a div with class='page'.", this.$element);
             } else {
                 $page.ch_page('register', this);
             }

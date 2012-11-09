@@ -13,7 +13,7 @@
 
         var $parent_page = this.$element.parent().closest('div.page');
         if ($parent_page.length !== 0) {
-            $.cowhide.fatal('Pages cannot be nested.');
+            $.cowhide.fatal('#31: pages cannot be nested.');
         }
     };
 
@@ -29,7 +29,7 @@
                 if (this.options.maxWidgets > 0 &&
                     this.registeredWidgets > this.options.maxWidgets)
                 {
-                    $.cowhide.fatal("A page cannot have more than " +
+                    $.cowhide.fatal("#32: a page cannot have more than " +
                                     this.options.maxWidgets +
                                     " widgets.");
                 }
