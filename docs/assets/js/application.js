@@ -166,4 +166,8 @@ $('select#theme-selector').change(function() {
         $.cowhide.setTheme(value);
 });
 
+$('.ch-header').on('back', function() {
+    console.log("Back button clicked.");
+});
+
 }(window.jQuery)

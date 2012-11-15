@@ -30,6 +30,7 @@
           <li><a href="#typeahead"><i class="icon-chevron-right"></i> {{_i}}Typeahead{{/i}}</a></li>
           <li><a href="#affix"><i class="icon-chevron-right"></i> {{_i}}Affix{{/i}}</a></li>
           <li><a href="#slider"><i class="icon-chevron-right"></i> {{_i}}Slider{{/i}}</a></li>
+          <li><a href="#header"><i class="icon-chevron-right"></i> {{_i}}Header{{/i}}</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -1681,7 +1682,46 @@ $('[data-spy="affix"]').each(function () {
             <hr class="bs-docs-separator">
 
             <h2>{{_i}}Documentation{{/i}}</h2>
-            <p>The jQuery UI Slider has been ported to Cowhide. Consult its documentation at <a href="http://api.jqueryui.com/slider/" target="_blank">http://api.jqueryui.com/slider/</a>.
+            <p>{{_i}}The jQuery UI Slider has been ported to Cowhide. Consult its documentation at <a href="http://api.jqueryui.com/slider/" target="_blank">http://api.jqueryui.com/slider/</a>.{{/i}}</p>
+        </section>
+
+        <!-- Header
+          ================================================== -->
+          <section id="header">
+            <div class="page-header">
+              <h1>{{_i}}Header{{/i}}</h1>
+            </div>
+
+            <h2>{{_i}}Example{{/i}}</h2>
+            <div class="ch-header" data-show-back-button="true">This is a header</div>
+
+            <hr class="bs-docs-separator">
+
+            <h2>{{_i}}Documentation{{/i}}</h2>
+            <p>{{_i}}The Header widget consists in a bar with a bold text and an optional back button. It's perfect for page headers in mobile applications.{{/i}}</p>
+
+            <h3>{{_i}}Events{{/i}}</h3>
+            <p>{{_i}}Cowhide's header class exposes an even for when the user clicks on the (optional) back button:{{/i}}</p>
+            <table class="table table-bordered table-striped">
+              <thead>
+               <tr>
+                 <th style="width: 150px;">{{_i}}Event{{/i}}</th>
+                 <th>{{_i}}Description{{/i}}</th>
+               </tr>
+              </thead>
+              <tbody>
+               <tr>
+                 <td>{{_i}}back{{/i}}</td>
+                 <td>{{_i}}This event fires immediately when the back button is clicked.{{/i}}</td>
+               </tr>
+              </tbody>
+            </table>
+<pre class="prettyprint linenums">
+$('#myHeader').on('back', function () {
+  // {{_i}}do something…{{/i}}
+})
+</pre>
+
         </section>
 
       </div>{{! /span9 }}

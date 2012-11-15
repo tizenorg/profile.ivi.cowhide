@@ -118,7 +118,8 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-radio-input.js',
           'src/javascripts/cowhide-checkbox-input.js',
           'src/javascripts/cowhide-select.js',
-          'src/javascripts/cowhide-page.js'
+          'src/javascripts/cowhide-page.js',
+          'src/javascripts/cowhide-header.js'
         ], dest: 'dist/cowhide.js'
       },
       css_default: {
