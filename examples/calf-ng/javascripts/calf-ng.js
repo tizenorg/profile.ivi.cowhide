@@ -1,0 +1,5 @@
+$(function() {
+    $.cowhide.initThemeEngine({
+        path: '../..'
+    });
+});

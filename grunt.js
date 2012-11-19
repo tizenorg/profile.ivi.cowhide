@@ -30,6 +30,10 @@ module.exports = function(grunt) {
         'examples/calf/javascripts/app/*.js',
         'examples/calf/javascripts/app/**/*.js',
 
+        'examples/calf-ng/javascripts/*.js',
+        'examples/calf-ng/javascripts/app/*.js',
+        'examples/calf-ng/javascripts/app/**/*.js',
+
         'examples/widget-gallery/javascripts/*.js',
 
         'test/**/*.js'
@@ -85,7 +89,7 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-      js: {
+      cowhide_js: {
         src: [
           'lib/jquery-1.8.2.js',
           'lib/jquery.ui.core.js',
@@ -121,6 +125,15 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-page.js',
           'src/javascripts/cowhide-header.js'
         ], dest: 'dist/cowhide.js'
+      },
+      cowhide_ng_js: {
+        src: [
+          'lib/angular.js',
+
+          'src/javascripts/cowhide-ng-core.js',
+          'src/javascripts/cowhide-ng-page.js',
+          'src/javascripts/cowhide-ng-header.js'
+        ], dest: 'dist/cowhide-ng.js'
       },
       css_default: {
         src: [
@@ -160,9 +173,13 @@ module.exports = function(grunt) {
       }
     },
     min: {
-      all: {
+      cowhide: {
         src: ['dist/cowhide.js'],
         dest: 'dist/cowhide.min.js'
+      },
+      cowhide_ng: {
+        src: ['fist/cowhide-ng.js'],
+        dest: 'dist/cowhide-ng.min.js'
       }
     },
     cssmin: {
@@ -201,6 +218,7 @@ module.exports = function(grunt) {
           'dist/images/': 'images/**',
           'dist/README.md': 'README.md',
           'dist/examples/calf/': 'examples/calf/**',
+          'dist/examples/calf-ng/': 'examples/calf-ng/**',
           'dist/examples/widget-gallery/': 'examples/widget-gallery/**',
           'dist/docs/': 'docs/**'
         }
