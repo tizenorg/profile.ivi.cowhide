@@ -1,15 +1,19 @@
 (function(ng, module) {
   'use strict';
 
-  module.directive('chPage', function() {
+  module.directive('chButton', function() {
     return {
       restrict: 'E',
-      template: '<div class="page" ng-transclude></div>',
+      scope: {
+        marquee: '@',
+        fixedWidth: '@'
+      },
+      template: '<button class="btn" data-marquee data-fixed-width ng-transclude></div>',
       replace: true,
       transclude: true,
 
       link: function postLink(scope, iElement, iAttrs) {
-        iElement.ch_page();
+        iElement.ch_button();
       }
     };
   });

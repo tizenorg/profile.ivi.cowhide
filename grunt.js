@@ -132,7 +132,9 @@ module.exports = function(grunt) {
 
           'src/javascripts/cowhide-ng-core.js',
           'src/javascripts/cowhide-ng-page.js',
-          'src/javascripts/cowhide-ng-header.js'
+          'src/javascripts/cowhide-ng-header.js',
+          'src/javascripts/cowhide-ng-button.js',
+          'src/javascripts/cowhide-ng-slider.js'
         ], dest: 'dist/cowhide-ng.js'
       },
       css_default: {
