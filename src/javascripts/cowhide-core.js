@@ -17,6 +17,8 @@
         nightMode: false,
         currentTheme: 'default',
 
+        vehicle: null,
+
         GUID: function() {
             var S4 = function () {
                 return Math.floor(
@@ -104,12 +106,36 @@
         },
 
         toggleDrivingMode: function() {
+            this.setDrivingMode(!this.drivingMode);
+        },
+
+        setDrivingMode: function(value) {
             var self = this;
-            self.drivingMode = !self.drivingMode;
+
+            if (self.drivingMode == value)
+                return;
+
+            self.drivingMode = value;
             _.each(this.registeredWidgets, function(w) {
                 if (w.setDrivingMode)
                     w.setDrivingMode(self.drivingMode);
             });
+        },
+
+
+        listenToVehicle: function() {
+            var self = this;
+
+            self.vehicle = new window.Vehicle(
+                function() {
+                    $(document).on("VehicleSpeed", function(data) {
+                        self.setDrivingMode(data.originalEvent.value > 0);
+                    });
+                },
+                function() {
+                    self.fatal("There was a problem connecting to AMB's web socket.");
+                }
+            );
         },
 
         verifyFrameworkRestrictions: function() {
