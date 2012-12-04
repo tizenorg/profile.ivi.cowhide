@@ -140,7 +140,7 @@
         }
 
         function init() {
-            if ("WebSocket" in window)
+            if ("WebSocket" in win)
             {
                 if(self.socketProtocol.length > 0)
                 {
@@ -349,5 +349,5 @@
         }
     }
 
-    window.Vehicle = Vehicle;
+    win.Vehicle = Vehicle;
 })(window);
