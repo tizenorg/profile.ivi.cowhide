@@ -169,6 +169,7 @@
     });
 
     $(function() {
+        $.cowhide.listenToVehicle();
         setInterval(function() {
             $.cowhide.verifyFrameworkRestrictions();
         }, 1000);
