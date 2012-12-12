@@ -94,6 +94,7 @@ module.exports = function(grunt) {
           'lib/jquery-1.8.3.js',
           'lib/jquery-ui-1.9.2.custom.js',
           'lib/jquery.ui.slider.js',
+          'lib/jquery.mCustomScrollbar.js',
           'lib/underscore-min.js',
 
           // Bootstrap files must preserve order.
@@ -123,7 +124,8 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-checkbox-input.js',
           'src/javascripts/cowhide-select.js',
           'src/javascripts/cowhide-page.js',
-          'src/javascripts/cowhide-header.js'
+          'src/javascripts/cowhide-header.js',
+          'src/javascripts/cowhide-scrollable.js'
         ], dest: 'dist/cowhide.js'
       },
       cowhide_ng_js: {
@@ -134,43 +136,50 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-ng-page.js',
           'src/javascripts/cowhide-ng-header.js',
           'src/javascripts/cowhide-ng-button.js',
-          'src/javascripts/cowhide-ng-slider.js'
+          'src/javascripts/cowhide-ng-slider.js',
+          'src/javascripts/cowhide-ng-scrollable.js'
         ], dest: 'dist/cowhide-ng.js'
       },
       css_default: {
         src: [
           'dist/cowhide-default.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-default.css'
       },
       css_default_night: {
         src: [
           'dist/cowhide-default-night.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-default-night.css'
       },
       css_amelia: {
         src: [
           'dist/cowhide-amelia.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-amelia.css'
       },
       css_amelia_night: {
         src: [
           'dist/cowhide-amelia-night.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-amelia-night.css'
       },
       css_spruce: {
         src: [
           'dist/cowhide-spruce.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-spruce.css'
       },
       css_spruce_night: {
         src: [
           'dist/cowhide-spruce-night.css',
-          'lib/jquery.ui.slider.css'
+          'lib/jquery.ui.slider.css',
+          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-spruce-night.css'
       }
     },

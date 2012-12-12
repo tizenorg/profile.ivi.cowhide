@@ -31,6 +31,7 @@
           <li><a href="#affix"><i class="icon-chevron-right"></i> {{_i}}Affix{{/i}}</a></li>
           <li><a href="#slider"><i class="icon-chevron-right"></i> {{_i}}Slider{{/i}}</a></li>
           <li><a href="#header"><i class="icon-chevron-right"></i> {{_i}}Header{{/i}}</a></li>
+          <li><a href="#scrollable"><i class="icon-chevron-right"></i> {{_i}}Scrollable{{/i}}</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -1722,6 +1723,45 @@ $('#myHeader').on('back', function () {
 })
 </pre>
 
+        </section>
+
+
+        <!-- Scrollable
+          ================================================== -->
+          <section id="scrollable">
+            <div class="page-header">
+              <h1>{{_i}}Scrollable{{/i}}</h1>
+            </div>
+
+            <h2>{{_i}}Example{{/i}}</h2>
+            <div class="ch-scrollable" style="width: 435px; height: 250px;">
+              <h2>{{_i}}This box is a CowHide scrollable.{{/i}}</h2>
+              <p>
+                Lorem ipsum dolor sit amet, class libero aliquam non, wisi viverra. Dictum sed lobortis laoreet blandit eros, nascetur vulputate, ac amet a vivamus sed wisi dui, ad magna ipsum ut sed. Mauris wisi dapibus, vitae rutrum nulla, wisi massa lobortis in non, erat vel sapien ornare pretium nunc faucibus. Gravida ducimus tenetur praesent donec rutrum at, eleifend pede pede magnis, iaculis et. Vestibulum natoque leo enim ut sapien, a auctor quis consectetuer nunc sit lorem, ipsum quidem vehicula in dapibus. Vitae sapien amet a sed. Sapien amet. Vel aenean et blandit, leo sed sed nisl, vel est nec eget suspendisse diam, qui a nunc feugiat massa ipsum rutrum, nam libero augue vivamus. Sit egestas pharetra orci neque ut, tincidunt mollis mauris et interdum amet habitasse, mauris amet erat quis, massa quis. Augue vel, rutrum etiam diam possimus egestas nam duis, morbi mattis mollis hac et vivamus, massa vehicula nunc wisi semper tortor vestibulum, tortor eget quam.
+              </p>
+
+              <p>
+                Nec arcu, nulla fermentum maecenas eget, sapien neque vestibulum wisi quis imperdiet. Urna ultricies ornare ut viverra, nisl dictumst interdum sed dolor ut lorem. Suscipit nulla iaculis vivamus, porttitor est sit aenean maecenas quam vero, semper consequat vestibulum dui pulvinar sed suspendisse. Pellentesque quam, porttitor imperdiet nec orci, porta egestas elementum at odio mi nibh. Ac quis, aenean id viverra bibendum, nunc in lacinia mi velit enim lectus, sapien lorem nibh. Laoreet faucibus tortor vel eveniet nisl donec. Incididunt phasellus ac quam vitae lorem dui, sagittis iaculis est. Vel blandit. Sit vivamus adipiscing minima commodo parturient a, pede elit curabitur vestibulum ut quam, mauris aliquam dictum condimentum magna arcu. Nisl nam litora turpis integer, libero nec hendrerit vestibulum, laoreet ipsum erat justo, phasellus augue suspendisse ut. Ac lacus fringilla vehicula nunc tempus malesuada. Non vehicula, sodales est arcu ut leo risus laboris, sem euismod nulla.
+              </p>
+
+              <p>
+                Etiam in etiam sagittis morbi, id ut eget volutpat augue eget eu, nec lectus. Quis nulla conubia placerat aliquam commodo nullam, ante in sit ac quam, odio nunc quis. Eu leo aenean lorem, suspendisse morbi, ut egestas pede ultrices tellus. Magnis vestibulum pellentesque vestibulum lacinia commodo. Donec at dignissim, dolor aliquam cum vel nostra morbi, accumsan et id. Phasellus ut maecenas arcu amet massa, dolor vestibulum pellentesque est platea risus feugiat, nam neque lectus sed, nulla erat a ac tortor aliquam vitae, et dui urna diam et. Non sed facilisis mauris sapien sit id, libero aenean eros aliquam natoque vitae, magna scelerisque sollicitudin sed pellentesque enim aliquam, dictum tempor.
+              </p>
+
+              <p>
+                Pellentesque at orci scelerisque unde nulla libero, lacus quam luctus eros enim quis, magna venenatis nulla. Urna adipiscing, quis molestie leo proin, nulla cursus amet velit tortor iaculis nullam. Et natus malesuada semper nonummy fusce, ipsum in in mauris egestas cras eget, lobortis volutpat libero. A eu. Tempor pellentesque, ornare mattis nunc platea. Assumenda ut amet quis, eu pretium hac et, a turpis mauris ut odio quo mi, sodales cum lectus taciti donec at velit, non eros mattis lectus. Quaerat in aliquam mattis vestibulum wisi, minim porta nibh nam volutpat est, metus dapibus aliquam nibh sed suspendisse. Bibendum tincidunt libero sed quibusdam, parturient wisi justo, mauris pulvinar quis lectus in sem sodales.
+              </p>
+            </div>
+
+            <h2>{{_i}}Usage{{/i}}</h2>
+
+            <h3>{{_i}}Via CSS class{{/i}}</h3>
+            <p>{{_i}}Activate a scrollable without any JavaScript code. Set <code>class="ch-scrollable"</code> on a container element, like a <code>div</code>.{{/i}}</p>
+            <pre class="prettyprint linenums">&lt;div class="ch-scollable"&gt;Your content here...&lt;/div&gt;</pre>
+
+            <h3>{{_i}}Via JavaScript{{/i}}</h3>
+            <p>{{_i}}Make a scrollable out of any container element with a single line of JavaScript:{{/i}}</p>
+            <pre class="prettyprint linenums">$('#myContainer').ch_scrollable('enable')</pre>
         </section>
 
       </div>{{! /span9 }}
