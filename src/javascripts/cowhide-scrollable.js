@@ -18,7 +18,11 @@
             constructor: ChScrollable,
 
             enable: function() {
-              this.$element.mCustomScrollbar();
+              this.$element.mCustomScrollbar({
+                scrollButtons: {
+                  enable: true
+                }
+              });
             }
         }
     );
