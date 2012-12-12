@@ -91,10 +91,8 @@ module.exports = function(grunt) {
     concat: {
       cowhide_js: {
         src: [
-          'lib/jquery-1.8.2.js',
-          'lib/jquery.ui.core.js',
-          'lib/jquery.ui.widget.js',
-          'lib/jquery.ui.mouse.js',
+          'lib/jquery-1.8.3.js',
+          'lib/jquery-ui-1.9.2.custom.js',
           'lib/jquery.ui.slider.js',
           'lib/underscore-min.js',
 
