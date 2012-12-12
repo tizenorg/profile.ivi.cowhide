@@ -15,7 +15,7 @@
 
             show: function() {
                 var $this = this.$element, 
-                    $h = $('<h1/>').text(this.options.title);
+                    $h = $('<h1/>').text(this.$element.text());
 
                $this.html($h);
 
