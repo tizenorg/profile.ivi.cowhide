@@ -75,13 +75,15 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="artists">
-      {{#if controller.arrangedContent}}
-        {{#each artist in controller.arrangedContent}}
-          {{view Calf.ArtistView contentBinding="artist"}}
-        {{/each}}
-      {{else}}
-        <li>No artists in your library</li>
-      {{/if}}
+      <ul class="item-list striped">
+        {{#if controller.arrangedContent}}
+          {{#each artist in controller.arrangedContent}}
+            {{view Calf.ArtistView contentBinding="artist"}}
+          {{/each}}
+        {{else}}
+          <li>No artists in your library</li>
+        {{/if}}
+      </ul>
     </script>
 
     <script type="text/x-handlebars" data-template-name="artist">
@@ -98,13 +100,15 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="albums">
-      {{#if controller.arrangedContent}}
-        {{#each album in controller.arrangedContent}}
-          {{view Calf.AlbumView contentBinding="album"}}
-        {{/each}}
-      {{else}}
-        <li>No albums found.</li>
-      {{/if}}
+      <ul class="item-list striped">
+        {{#if controller.arrangedContent}}
+          {{#each album in controller.arrangedContent}}
+            {{view Calf.AlbumView contentBinding="album"}}
+          {{/each}}
+        {{else}}
+          <li>No albums found.</li>
+        {{/if}}
+      </ul>
     </script>
 
     <script type="text/x-handlebars" data-template-name="album">
@@ -114,13 +118,15 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="songs">
-      {{#if controller.arrangedContent}}
-        {{#each song in controller.arrangedContent}}
-          <li>{{view Calf.SongView contentBinding="song"}}</li>
-        {{/each}}
-      {{else}}
-        <li>No songs found.</li>
-      {{/if}}
+      <ul class="item-list striped">
+        {{#if controller.arrangedContent}}
+          {{#each song in controller.arrangedContent}}
+            <li>{{view Calf.SongView contentBinding="song"}}</li>
+          {{/each}}
+        {{else}}
+          <li>No songs found.</li>
+        {{/if}}
+      </ul>
     </script>
 
     <script type="text/x-handlebars" data-template-name="song">

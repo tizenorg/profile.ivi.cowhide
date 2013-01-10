@@ -3,8 +3,12 @@
 
     var AlbumsView = app.Page.extend({
         templateName: 'albums',
-        tagName: 'ul',
-        classNames: ['item-list', 'striped']
+        tagName: 'div',
+        classNames: ['library', 'scrollable'],
+
+        didInsertElement: function() {
+          this.$().ch_scrollable('enable');
+        }
     });
 
     app.AlbumsView = AlbumsView;

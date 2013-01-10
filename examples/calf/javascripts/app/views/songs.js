@@ -3,8 +3,12 @@
 
     var SongsView = app.Page.extend({
         templateName: 'songs',
-        tagName: 'ul',
-        classNames: ['item-list', 'striped']
+        tagName: 'div',
+        classNames: ['library', 'scrollable'],
+
+        didInsertElement: function() {
+          this.$().ch_scrollable('enable');
+        }
     });
 
     app.SongsView = SongsView;
