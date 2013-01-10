@@ -57,3 +57,14 @@ hovering with your mouse, that defaults to a cute calf.
 
 The volume button (last one on the right), will show you the pop-up window
 that feature sliders and a `Seat Selector`.
+
+## Testing
+
+To run the unit tests, you will need `phantomjs`. You can install it on Ubuntu
+with:
+
+    apt-get install phantomjs
+
+Then run:
+
+    ./tests/run.sh
