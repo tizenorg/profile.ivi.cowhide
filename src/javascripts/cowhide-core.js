@@ -4,6 +4,9 @@
     $.cowhide = $.cowhide || {}
     $.extend($.cowhide, {
         version: '0.0.1',
+        options: {
+          monitorFrameworkRestrictions: false
+        },
         themeEngineOptions: {
             path: 'css',
             initial: 'default',
@@ -170,8 +173,10 @@
 
     $(function() {
         $.cowhide.listenToVehicle();
-        setInterval(function() {
-            $.cowhide.verifyFrameworkRestrictions();
-        }, 1000);
+        if ($.cowhide.options.monitorFrameworkRestrictions) {
+          setInterval(function() {
+              $.cowhide.verifyFrameworkRestrictions();
+          }, 1000);
+        }
     });
 })(window.jQuery, window._);
