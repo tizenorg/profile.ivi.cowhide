@@ -3,7 +3,6 @@ $(function () {
     module("cowhide-buttons", {
       setup: function() {
         // Resets the driving state
-        console.log("SET UP")
         $.cowhide.setDrivingMode(false)
       }
     })
