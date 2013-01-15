@@ -1,6 +1,12 @@
 $(function () {
 
-    module("cowhide-buttons")
+    module("cowhide-buttons", {
+      setup: function() {
+        // Resets the driving state
+        console.log("SET UP")
+        $.cowhide.setDrivingMode(false)
+      }
+    })
 
       test("should be defined on jquery object", function () {
         ok($(document.body).button, 'button method is defined')
