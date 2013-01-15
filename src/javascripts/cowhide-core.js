@@ -104,8 +104,16 @@
             }
         },
 
+        setNightMode: function(value) {
+          if (this.nightMode == value)
+            return;
+
+          this.nightMode = value;
+          this.setTheme(this.currentTheme, this.nightMode);
+        },
+
         toggleNightMode: function() {
-            this.setTheme(this.currentTheme, !this.nightMode);
+            this.setNightMode(!this.nightMode);
         },
 
         toggleDrivingMode: function() {
