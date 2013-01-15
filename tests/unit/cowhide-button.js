@@ -7,14 +7,6 @@ $(function () {
       }
     })
 
-      test("should be defined on jquery object", function () {
-        ok($(document.body).button, 'button method is defined')
-      })
-
-      test("should return element", function () {
-        ok($(document.body).button()[0] == document.body, 'document.body returned')
-      })
-
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var btn = $('<button class="btn">test</button>')
