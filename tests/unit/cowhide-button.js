@@ -1,6 +1,6 @@
 $(function () {
 
-    module("cowhide-buttons", {
+    module("cowhide-button", {
       setup: function() {
         // Resets the driving state
         $.cowhide.setDrivingMode(false)
