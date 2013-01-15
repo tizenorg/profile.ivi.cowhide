@@ -42,10 +42,6 @@
                 data = $this.data('ch_header'),
                 options = typeof option == 'object' && option;
 
-            if ($this.data('title')) {
-                options = $.extend(options, {title: $this.data('title')});
-            }
-
             if ($this.data('show-back-button')) {
                 options = $.extend(options, {show_back_button: true});
             }
