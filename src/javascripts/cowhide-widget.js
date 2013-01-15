@@ -49,7 +49,9 @@
         },
 
         setDrivingMode: function(drivingMode) {
-            if (!this.$element.data('ignore-driving-mode') && this.options.disableWhenDriving) {
+            if (this.$element.data('ignore-driving-mode') === undefined &&
+                this.options.disableWhenDriving)
+            {
                 var wasDisabled = this.$element.attr('disabled') == 'disabled';
                 var d = 'disabled';
 
