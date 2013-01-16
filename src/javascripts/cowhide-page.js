@@ -33,11 +33,15 @@
                                     this.options.maxWidgets +
                                     " widgets.");
                 }
+            },
+
+            setMaxWidgets: function(value) {
+              this.options.maxWidgets = value;
             }
         }
     );
 
-    $.fn.ch_page = function(option) {
+    $.fn.ch_page = function(option, value) {
         return this.each(function() {
             var $this = $(this),
                 data = $this.data('ch_page'),
@@ -49,7 +53,11 @@
             }
 
             if(option == 'register') {
-                data.registerWidget();
+                data.registerWidget(value);
+            }
+
+            if(option == 'setMaxWidgets') {
+              data.setMaxWidgets(value);
             }
         });
     };
