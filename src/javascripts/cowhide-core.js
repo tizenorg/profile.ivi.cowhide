@@ -5,7 +5,8 @@
     $.extend($.cowhide, {
         version: '0.0.1',
         options: {
-          monitorFrameworkRestrictions: false
+          monitorFrameworkRestrictions: false,
+          connectToAMB: false
         },
         themeEngineOptions: {
             path: 'css',
@@ -180,7 +181,10 @@
     });
 
     $(function() {
-        $.cowhide.listenToVehicle();
+        if ($.cowhide.options.connectToAMB) {
+          $.cowhide.listenToVehicle();
+        }
+
         if ($.cowhide.options.monitorFrameworkRestrictions) {
           setInterval(function() {
               $.cowhide.verifyFrameworkRestrictions();
