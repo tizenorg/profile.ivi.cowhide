@@ -21,6 +21,21 @@ $(function () {
         }, 0)
       })
 
+      test("should support ignore-driving-mode", function () {
+        var page = $('<div class="page"></div>')
+        var btn = $('<button class="btn" data-ignore-driving-mode="true">test</button>')
+        btn.appendTo(page)
+        btn.ch_button()
+        $.cowhide.setDrivingMode(true)
+        stop()
+        setTimeout(function () {
+          ok(!btn.attr('disabled'), 'btn is disabled')
+          ok(!btn.hasClass('disabled'), 'btn has disabled class')
+          start()
+        }, 0)
+      })
+
+
       test("should have marquee element if marquee is enabled", function() {
         var page = $('<div class="page"></div>')
         var btn = $('<button class="btn" data-marquee="true">this is some really long text, for a button, is it not?</button>')
