@@ -13,7 +13,7 @@ $(function() {
                 window.webkitRequestFileSystem;
 
             if (window.requestFileSystem === undefined) {
-                throw Error("your browser doesn't support file system " +
+                throw Error("Your browser doesn't support file system " +
                             "operations");
             }
         };
@@ -21,7 +21,7 @@ $(function() {
         this.load = function() {
             this.initialize()
             if (this.root === undefined) {
-                throw Error("root directory is not defined");
+                throw Error("Root directory is not defined");
             }
         };
     };
