@@ -18,7 +18,7 @@ $(function() {
             }
         };
 
-        this.load = function() {
+        this.scan = function() {
             this.initialize()
             if (this.root === undefined) {
                 throw Error("Root directory is not defined");

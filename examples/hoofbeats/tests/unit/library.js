@@ -17,21 +17,21 @@ $(function() {
         equal(lib.root, s, "root is correctly set");
     });
 
-    test("load when root is not defined", function() {
+    test("scan when root is not defined", function() {
         lib = new HoofbeatsLibrary();
         raises(function() {
-            lib.load();
-        }, Error, "load throws Error");
+            lib.scan();
+        }, Error, "scan throws Error");
     });
 
-    test("load when browser doesn't support file system operations",
+    test("scan when browser doesn't support file system operations",
     function() {
         lib = new HoofbeatsLibrary();
         lib.root = "/";
         window.requestFileSystem = undefined;
         window.webkitRequestFileSystem = undefined;
         raises(function() {
-            lib.load();
-        }, Error, "load throws Error");
+            lib.scan();
+        }, Error, "scan throws Error");
     })
 });
