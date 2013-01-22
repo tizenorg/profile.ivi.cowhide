@@ -1,37 +1,25 @@
 $(function() {
     module("hoofbeats-library", {
         setup: function() {
-            window._requestFileSystem = window.requestFileSystem;
-            window._webkitRequestFileSystem = window.webkitRequestFileSystem;
+            window._tizen = window.tizen;
         },
         teardown: function() {
-            window.requestFileSystem = window._requestFileSystem;
-            window.webkitRequestFileSystem = window.webkitRequestFileSystem;
+            window.tizen = window._tizen;
         }
     });
 
-    test("set root", function() {
-        s = "/path/to/media/";
-        lib = new HoofbeatsLibrary();
-        lib.root = s;
-        equal(lib.root, s, "root is correctly set");
-    });
-
-    test("scan when root is not defined", function() {
-        lib = new HoofbeatsLibrary();
-        raises(function() {
-            lib.scan();
-        }, Error, "scan throws Error");
-    });
-
-    test("scan when browser doesn't support file system operations",
+    test("scan when browser doesn't support Tizen web api",
     function() {
         lib = new HoofbeatsLibrary();
-        lib.root = "/";
-        window.requestFileSystem = undefined;
-        window.webkitRequestFileSystem = undefined;
+        window.tizen = undefined;
         raises(function() {
             lib.scan();
         }, Error, "scan throws Error");
-    })
+    });
+
+    test("successful scan", function() {
+        lib = new HoofbeatsLibrary();
+        lib.scan();
+        ok(lib.mediaItems.length > 0, "there are items in the library");
+    });
 });
