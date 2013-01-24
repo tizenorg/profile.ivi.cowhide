@@ -1,7 +1,9 @@
+/* vi: set et sw=4 ts=4 si: */
 $(function() {
     var library = function() {
         // For readability:
         this.initialized = false;
+
         this.fetchCount = 100;
         this.fetchOffset = 0;
         this.mediaItems = [];
@@ -51,7 +53,9 @@ $(function() {
 
             items.forEach(function(item, index, items) {
                 self.mediaItems.push(item);
-                console.log("Item added to the library: " + item.title);
+                window.MusicBrainz.getArtist(item.name).done(function(data) {
+                    console.log(data);
+                });
             });
 
             if (items.length == this.fetchCount) {
