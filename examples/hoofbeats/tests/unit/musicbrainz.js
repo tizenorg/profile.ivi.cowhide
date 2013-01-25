@@ -17,4 +17,15 @@ $(function() {
             start();
         });
     });
+
+    test("get artist data, artist not found",
+    function() {
+        var name = "This artist does not exist";
+        var promise = MusicBrainz.getArtist(name);
+        stop();
+        promise.fail(function() {
+            equals(1, 1, "the method failed");
+            start();
+        });
+    });
 });
