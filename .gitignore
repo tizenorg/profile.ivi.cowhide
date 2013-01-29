@@ -2,3 +2,5 @@ node_modules
 /dist/
 *.swp
 pid.txt
+*.wgt
+*.wgt.gz

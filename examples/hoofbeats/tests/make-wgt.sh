@@ -11,7 +11,7 @@
 
 USE_OLD_CONFIG=$1
 CONFIG_FILE=config.xml
-PROJECT_NAME=hoofbeats
+PROJECT_NAME=hoofbeats-unittests
 
 if [ "x$USE_OLD_CONFIG" != "x" ] ; then
   echo "******* USING OLD APIS"
@@ -24,7 +24,7 @@ if [ "x$USE_OLD_CONFIG" != "x" ] ; then
   mkdir /tmp/$PROJECT_NAME
 
   # replace /api/ with /privilege/
-  sed -e 's%http://tizen\.org/privilege/%http://tizen\.org/api/%g' ./$CONFIG_FILE > /tmp/hoofbeats/$CONFIG_FILE
+  sed -e 's%http://tizen\.org/privilege/%http://tizen\.org/api/%g' ./$CONFIG_FILE > /tmp/$PROJECT_NAME/$CONFIG_FILE
 
   # the tmp file is the new config file
   CONFIG_FILE=/tmp/$PROJECT_NAME/config.xml
@@ -45,5 +45,7 @@ if [[ -f $PROJECT_NAME.wgt ]] ; then
   rm $PROJECT_NAME.wgt
 fi
 
-zip --exclude stats/utils/\* stats/.git -r $PROJECT_NAME.wgt index.html icon.png javascripts
+cp -r ../javascripts .
+zip --exclude stats/utils/\* stats/.git -r $PROJECT_NAME.wgt index.html icon.png unit vendor javascripts
 zip -j $PROJECT_NAME.wgt $CONFIG_FILE
+rm -rf javascripts
