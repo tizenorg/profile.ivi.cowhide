@@ -109,8 +109,7 @@
           if (this.nightMode == value)
             return;
 
-          this.nightMode = value;
-          this.setTheme(this.currentTheme, this.nightMode);
+          this.setTheme(this.currentTheme, !this.nightMode);
         },
 
         toggleNightMode: function() {
