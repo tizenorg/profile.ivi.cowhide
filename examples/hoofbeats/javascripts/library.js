@@ -24,7 +24,6 @@ $(function() {
                 "UNION", [this.audioTypeFilter, this.videoTypeFilter]);
 
             this.sortMode = new tizen.SortMode("trackNumber", "ASC");
-            this.mediaSource = tizen.mediacontent.getLocalMediaSource();
         };
 
         this.scan = function() {
@@ -33,8 +32,8 @@ $(function() {
             this.mediaItems = [];
             this.fetchOffset = 0;
 
-            this.mediaSource.findItems(
-                this.findItemsCB.bind(this),
+            tizen.content.find(
+                this.findCB.bind(this),
                 this.errorCB.bind(this),
                 null,
                 this.typeFilter,
@@ -48,7 +47,7 @@ $(function() {
             throw new Error(error.name);
         };
 
-        this.findItemsCB = function(items) {
+        this.findCB = function(items) {
             var self = this;
 
             items.forEach(function(item, index, items) {
@@ -61,8 +60,8 @@ $(function() {
             if (items.length == this.fetchCount) {
                 // There *might* be more items.
                 this.fetchOffset += this.fetchCount;
-                this.mediaSource.findItems(
-                    this.findItemsCB.bind(this),
+                tizen.content.find(
+                    this.findCB.bind(this),
                     this.errorCB.bind(this),
                     null,
                     this.typeFilter,
