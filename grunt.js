@@ -233,6 +233,7 @@ module.exports = function(grunt) {
           'dist/README.md': 'README.md',
           'dist/examples/calf/': 'examples/calf/**',
           'dist/examples/calf-ng/': 'examples/calf-ng/**',
+          'dist/examples/hoofbeats/': 'examples/hoofbeats/**',
           'dist/examples/widget-gallery/': 'examples/widget-gallery/**',
           'dist/docs/': 'docs/**'
         }
