@@ -12,10 +12,39 @@
   </head>
 
   <body>
-  	<div class="container">
+    <div class="container">
       <div id="application"></div>
     </div> <!-- container -->
 
+    <!-- initial template of our application; it just installs the outlet. -->
+    <script type="text/x-handlebars" data-template-name="application">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <ul class="nav">
+            <li><a {{action showArtists href=true}}>Artists</a></li>
+          </ul>
+        </div>
+      </div>
+
+      {{outlet library}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="artists">
+    </script>
+
     <script src="lib/cowhide.js"></script>
+    <script src="lib/handlebars-1.0.rc.1.js"></script>
+    <script src="lib/ember-latest.js"></script>
+
+    <script src="javascripts/app/app.js"></script>
+    <script src="javascripts/app/router.js"></script>
+    <script src="javascripts/app/store.js"></script>
+
+    <script src="javascripts/app/models/artistModel.js"></script>
+
+    <script src="javascripts/app/controllers/applicationController.js"></script>
+    <script src="javascripts/app/controllers/artistsController.js"></script>
+
+    <script src="javascripts/app/views/artistsView.js"></script>
   </body>
 </html>

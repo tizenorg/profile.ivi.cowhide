@@ -251,7 +251,9 @@ module.exports = function(grunt) {
           ],
           'dist/examples/hoofbeats/lib/': [
             'dist/cowhide-default.css',
-            'dist/cowhide.js'
+            'dist/cowhide.js',
+            'lib/handlebars-1.0.rc.1.js',
+            'lib/ember-latest.js'
           ]
         }
       }
