@@ -236,6 +236,23 @@ module.exports = function(grunt) {
           'dist/examples/widget-gallery/': 'examples/widget-gallery/**',
           'dist/docs/': 'docs/**'
         }
+      },
+      examples_lib: {
+        options: {
+          flatten: true
+        },
+        files: {
+          'dist/examples/calf/lib/': [
+            'dist/cowhide-default.css',
+            'dist/cowhide.js',
+            'lib/handlebars-1.0.rc.1.js',
+            'lib/ember-latest.js'
+          ],
+          'dist/examples/hoofbeats/lib/': [
+            'dist/cowhide-default.css',
+            'dist/cowhide.js'
+          ]
+        }
       }
     },
     exec: {
