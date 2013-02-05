@@ -6,13 +6,15 @@ $(function() {
 
         this.getArtist = function(q) {
             var self = this,
-                lookup_url = self.baseUrl + 'artist/?query="' + q + '"&' + self.fmtArg;
+                lookup_url = self.baseUrl + 'artist/?query="' + q +
+                             '"&' + self.fmtArg;
                 deferred = new $.Deferred();
 
             if (q !== undefined) {
                 $.getJSON(lookup_url).done(function(data) {
                     if (data.count > 0) {
-                        artist_url = self.baseUrl + 'artist/' + data.artist[0].id + '?' + self.fmtArg;
+                        artist_url = self.baseUrl + 'artist/' +
+                                     data.artist[0].id + '?' + self.fmtArg;
                         $.getJSON(artist_url).done(function(data) {
                             deferred.resolve(data);
                         });
