@@ -22,8 +22,6 @@ $(function() {
                 "type", "EXACTLY", "VIDEO");
             this.typeFilter = new tizen.CompositeFilter(
                 "UNION", [this.audioTypeFilter, this.videoTypeFilter]);
-
-            this.sortMode = new tizen.SortMode("trackNumber", "ASC");
         };
 
         this.scan = function() {
@@ -38,7 +36,7 @@ $(function() {
                 this.errorCB.bind(this),
                 null,
                 this.typeFilter,
-                this.sortMode,
+                null,
                 this.fetchCount,
                 this.fetchOffset);
 
@@ -69,7 +67,7 @@ $(function() {
                     this.errorCB.bind(this),
                     null,
                     this.typeFilter,
-                    this.sortMode,
+                    null,
                     this.fetchCount,
                     this.fetchOffset);
             } else {
