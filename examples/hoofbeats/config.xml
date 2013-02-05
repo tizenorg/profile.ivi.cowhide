@@ -7,8 +7,6 @@
     <access origin="*" subdomains="true"/>
 
     <feature name="http://tizen.org/privilege/application" required="false"/>
-    <feature name="http://tizen.org/privilege/content" required="false"/>
-    <feature name="http://tizen.org/privilege/filesystem" required="false"/>
-    <feature name="http://tizen.org/privilege/time" required="true"/>
+    <feature name="http://tizen.org/privilege/content.read" required="true"/>
     <feature name="http://tizen.org/privilege/tizen" required="true"/>
 </widget>

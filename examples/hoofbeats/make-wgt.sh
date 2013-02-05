@@ -45,5 +45,5 @@ if [[ -f $PROJECT_NAME.wgt ]] ; then
   rm $PROJECT_NAME.wgt
 fi
 
-zip --exclude stats/utils/\* stats/.git -r $PROJECT_NAME.wgt index.html icon.png javascripts
+zip --exclude stats/utils/\* stats/.git -r $PROJECT_NAME.wgt index.html icon.png javascripts lib
 zip -j $PROJECT_NAME.wgt $CONFIG_FILE

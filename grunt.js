@@ -243,6 +243,25 @@ module.exports = function(grunt) {
           flatten: true
         },
         files: {
+          'examples/calf/lib/': [
+            'dist/cowhide-default.css',
+            'dist/cowhide.js',
+            'lib/handlebars-1.0.rc.1.js',
+            'lib/ember-latest.js'
+          ],
+          'examples/hoofbeats/lib/': [
+            'dist/cowhide-default.css',
+            'dist/cowhide.js',
+            'lib/handlebars-1.0.rc.1.js',
+            'lib/ember-latest.js'
+          ]
+        }
+      },
+      examples_lib_dist: {
+        options: {
+          flatten: true
+        },
+        files: {
           'dist/examples/calf/lib/': [
             'dist/cowhide-default.css',
             'dist/cowhide.js',
