@@ -1,5 +1,5 @@
 /* vi: set et sw=4 ts=4 si: */
-$(function() {
+(function(win, $) {
     var musicbrainz = function() {
         this.baseUrl = 'http://musicbrainz.org/ws/2/';
         this.fmtArg = 'fmt=json';
@@ -30,5 +30,5 @@ $(function() {
         };
     }
 
-    window.MusicBrainz = new musicbrainz();
-});
+    win.MusicBrainz = new musicbrainz();
+}(window, jQuery));

@@ -1,5 +1,5 @@
 /* vi: set et sw=4 ts=4 si: */
-$(function() {
+(function(win, $) {
     var library = function() {
         // For readability:
         this.initialized = false;
@@ -12,7 +12,7 @@ $(function() {
             if (this.initialized)
                 return;
 
-            if (window.tizen === undefined) {
+            if (win.tizen === undefined) {
                 throw Error("You need the Tizen web API  to run Hoofbeats.");
             }
 
@@ -54,7 +54,7 @@ $(function() {
 
             items.forEach(function(item, index, items) {
                 self.mediaItems.push(item);
-                window.MusicBrainz.getArtist(item.name).done(function(data) {
+                win.MusicBrainz.getArtist(item.artists[0]).done(function(data) {
                     console.log(data);
                 });
             });
@@ -81,5 +81,5 @@ $(function() {
         get initialized() { return this._initialized; }
     };
 
-    window.HoofbeatsLibrary = library;
-});
+    win.HoofbeatsLibrary = library;
+}(window, jQuery));

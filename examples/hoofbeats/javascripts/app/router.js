@@ -25,4 +25,4 @@
     });
 
     app.Router = Router;
-})(window.Hoofbeats, window.Ember);
+}(window.Hoofbeats, window.Ember));
