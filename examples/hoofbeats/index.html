@@ -6,13 +6,13 @@
 
     <title>Hoofbeats</title>
     <meta name="description" content="A media player">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link id="cowhide-theme" rel="stylesheet" href="lib/cowhide-default.css">
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div id="application"></div>
     </div> <!-- container -->
 
@@ -32,19 +32,34 @@
     <script type="text/x-handlebars" data-template-name="artists">
     </script>
 
+	<!-- the UI framework -->
     <script src="lib/cowhide.js"></script>
+
+	<!-- the application framework -->
     <script src="lib/handlebars-1.0.rc.1.js"></script>
     <script src="lib/ember-latest.js"></script>
 
+	<!-- our own js files -->
+	<script src="javascripts/musicbrainz.js"></script>
+	<script src="javascripts/library.js"></script>
+
+	<!-- the Ember app -->
+
+	<!-- main files -->
     <script src="javascripts/app/app.js"></script>
     <script src="javascripts/app/router.js"></script>
     <script src="javascripts/app/store.js"></script>
 
+	<!-- models -->
     <script src="javascripts/app/models/artistModel.js"></script>
 
-    <script src="javascripts/app/controllers/applicationController.js"></script>
+	<!-- controllers -->
+    <script src="javascripts/app/controllers/applicationController.js">
+	</script>
     <script src="javascripts/app/controllers/artistsController.js"></script>
 
+	<!-- views -->
     <script src="javascripts/app/views/artistsView.js"></script>
+
   </body>
 </html>
