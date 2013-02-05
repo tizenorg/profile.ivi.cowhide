@@ -1,6 +1,4 @@
 (function(app, Ember, _) {
-    'use strict';
-
     var ArtistsController = Ember.ArrayController.extend({
         content: [],
     });

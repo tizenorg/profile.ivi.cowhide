@@ -1,6 +1,4 @@
 (function(app, Ember) {
-    'use strict';
-
     var Artist = Ember.Object.extend({
         id: null,
         firstName: null,
