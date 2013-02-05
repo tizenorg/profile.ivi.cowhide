@@ -2,6 +2,9 @@
 LOCAL_PORT=11223
 SOCKET='unix:/tmp/qemu.sock'
 
+echo "Deleting the old widget file..."
+sdb shell 'rm /home/developer/hoofbeats-unittests.wgt'
+
 echo "Building..."
 ./make-wgt.sh >/dev/null
 
