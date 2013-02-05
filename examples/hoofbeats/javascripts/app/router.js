@@ -18,7 +18,7 @@
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
                     controller.connectOutlet(
-						'library', 'artists', app.Artist.find());
+                        'library', 'artists', app.Artist.find());
                 }
             })
         })

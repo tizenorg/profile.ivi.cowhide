@@ -20,10 +20,10 @@ $(function() {
 
     test("successful scan", function() {
         var lib = new HoofbeatsLibrary();
-		stop();
+        stop();
         lib.scan().then(function() {
-			ok(lib.mediaItems.length > 0, "there are items in the library");
-			start();
-		});
+            ok(lib.mediaItems.length > 0, "there are items in the library");
+            start();
+        });
     });
 });
