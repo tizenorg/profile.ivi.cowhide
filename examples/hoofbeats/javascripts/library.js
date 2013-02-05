@@ -27,6 +27,7 @@ $(function() {
         };
 
         this.scan = function() {
+            this.deferred = new $.Deferred();
             this.initialize()
 
             this.mediaItems = [];
@@ -40,10 +41,13 @@ $(function() {
                 this.sortMode,
                 this.fetchCount,
                 this.fetchOffset);
+
+            return this.deferred.promise();
         };
 
         this.errorCB = function(error) {
             console.log("Error: " + error.name);
+            this.deferred.reject();
             throw new Error(error.name);
         };
 
@@ -68,6 +72,8 @@ $(function() {
                     this.sortMode,
                     this.fetchCount,
                     this.fetchOffset);
+            } else {
+                self.deferred.resolve();
             }
         };
     };

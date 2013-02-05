@@ -22,4 +22,13 @@ $(function() {
         lib.scan();
         ok(lib.mediaItems.length > 0, "there are items in the library");
     });
+
+    test("successful scan with promise", function() {
+        lib = new HoofbeatsLibrary();
+		stop();
+        lib.scan().then(function() {
+			ok(lib.mediaItems.length > 0, "there are items in the library");
+			start();
+		});
+    });
 });
