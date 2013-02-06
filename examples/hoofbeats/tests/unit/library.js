@@ -22,7 +22,16 @@ $(function() {
         var lib = new HoofbeatsLibrary();
         stop();
         lib.scan().then(function() {
-            ok(lib.mediaItems.length > 0, "there are items in the library");
+            ok(lib.size > 0, "there are items in the library");
+            start();
+        });
+    });
+
+    test("scan with count", function() {
+        var lib = new HoofbeatsLibrary();
+        stop();
+        lib.scan(1).then(function() {
+            ok(lib.size == 1, "there is one item in the library");
             start();
         });
     });

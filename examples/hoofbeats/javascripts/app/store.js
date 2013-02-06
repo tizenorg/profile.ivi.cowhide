@@ -1,5 +1,5 @@
 /* vi: set et sw=4 ts=4 si: */
-(function(app) {
+(function(app, $) {
     var Store = function() {
         this.reset();
         this.scan();
@@ -17,9 +17,14 @@
                 return;
             }
 
+            console.log("Store.scan: entered.");
             if (app.library) {
                 app.library.scan().then(function() {
                     self.scanCompleted = true;
+                    console.log(
+                        "Store.scan: completed. " +
+                        app.library.size +
+                        " items in the library.");
                 });
             } else {
                 setTimeout(function() {
@@ -28,11 +33,25 @@
             }
         },
 
-        getArtists: function() {
-            var artists = [];
-            return artists;
+        getMediaItems: function(deferred) {
+            var self = this,
+                d = deferred || new $.Deferred();
+
+            console.log("Store.getMediaItems: entered.");
+            if (self.scanCompleted) {
+                console.log("Store.getMediaItems: scan is completed, resolving promise.");
+                deferred.resolve(app.library.items);
+            } else {
+                // If the scan is not completed, we must be still scanning.
+                console.log("Store.getMediaItems: scan still pending. Trying again later.");
+                setTimeout(function() {
+                    return self.getMediaItems(d);
+                }, 100);
+            }
+
+            return d.promise();
         }
     };
 
     app.Store = new Store();
-})(window.Hoofbeats);
+})(window.Hoofbeats, window.jQuery);

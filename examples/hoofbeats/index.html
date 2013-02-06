@@ -22,7 +22,7 @@
       <div class="navbar navbar-inverse">
         <div class="navbar-inner">
           <ul class="nav">
-            <li><a {{action showArtists href=true}}>Artists</a></li>
+            <li><a {{action showMediaItems href=true}}>Items</a></li>
           </ul>
         </div>
       </div>
@@ -30,7 +30,12 @@
       {{outlet library}}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="artists">
+    <script type="text/x-handlebars" data-template-name="mediaItems">
+        <ul class="item-list striped">
+            {{#each item in controller}}
+                <li>{{item.title}}</li>
+            {{/each}}
+        </ul>
     </script>
 
     <!-- the UI framework -->
@@ -52,15 +57,15 @@
     <script src="javascripts/app/store.js"></script>
 
     <!-- models -->
-    <script src="javascripts/app/models/artistModel.js"></script>
+    <script src="javascripts/app/models/mediaItemModel.js"></script>
 
     <!-- controllers -->
     <script src="javascripts/app/controllers/applicationController.js">
     </script>
-    <script src="javascripts/app/controllers/artistsController.js"></script>
+    <script src="javascripts/app/controllers/mediaItemsController.js"></script>
 
     <!-- views -->
-    <script src="javascripts/app/views/artistsView.js"></script>
+    <script src="javascripts/app/views/mediaItemsView.js"></script>
 
   </body>
 </html>

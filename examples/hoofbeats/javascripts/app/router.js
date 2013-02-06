@@ -1,26 +1,44 @@
 /* vi: set et sw=4 ts=4 si: */
-(function(app, Ember) {
+(function(win, app, Ember) {
     var Router = Ember.Router.extend({
         location: 'none',
 
-        showArtists: Ember.Route.transitionTo('artists'),
+        showMediaItems: Ember.Route.transitionTo('mediaItems'),
+
+        initLibrary: function() {
+            var self = this;
+
+            if (app.library !== null) {
+                return;
+            }
+
+            if (win.HoofbeatsLibrary) {
+                app.library = new win.HoofbeatsLibrary();
+            } else {
+                setTimeout(function() {
+                    self.initLibrary();
+                }, 100);
+            }
+
+        },
 
         root: Ember.Route.extend({
             index: Ember.Route.extend({
                 route: '/',
-                redirectsTo: 'artists'
+                redirectsTo: 'mediaItems'
             }),
 
-            artists: Ember.Route.extend({
-                route: '/artists',
+            mediaItems: Ember.Route.extend({
+                route: '/mediaItems',
                 connectOutlets: function(router) {
                     var controller = router.get('applicationController');
+                    router.initLibrary();
                     controller.connectOutlet(
-                        'library', 'artists', app.Artist.find());
+                        'library', 'mediaItems', app.MediaItem.findAll());
                 }
             })
         })
     });
 
     app.Router = Router;
-}(window.Hoofbeats, window.Ember));
+}(window, window.Hoofbeats, window.Ember));

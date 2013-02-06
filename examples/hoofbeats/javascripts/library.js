@@ -6,6 +6,7 @@
 
         this.fetchCount = 100;
         this.fetchOffset = 0;
+        this.oneTime = false;
         this.mediaItems = [];
 
         this.initialize = function() {
@@ -24,12 +25,17 @@
                 "UNION", [this.audioTypeFilter, this.videoTypeFilter]);
         };
 
-        this.scan = function() {
+        this.scan = function(count) {
             this.deferred = new $.Deferred();
             this.initialize()
 
             this.mediaItems = [];
             this.fetchOffset = 0;
+
+            if (count !== undefined) {
+                this.fetchCount = count;
+                this.oneTime = true;
+            }
 
             tizen.content.find(
                 this.findCB.bind(this),
@@ -44,7 +50,7 @@
         };
 
         this.errorCB = function(error) {
-            console.log("Error: " + error.name);
+            console.log("HoofbeatsLibrary.errorCB: " + error.name);
             this.deferred.reject();
             throw new Error(error.name);
         };
@@ -55,11 +61,14 @@
             items.forEach(function(item, index, items) {
                 self.mediaItems.push(item);
                 win.MusicBrainz.getArtist(item.artists[0]).done(function(data) {
-                    console.log(data);
+                    console.log(
+                        "HoofbeatsLibrary.findCB: " + 
+                        "item resolved on MusicBrainz: " +
+                        data.name);
                 });
             });
 
-            if (items.length == this.fetchCount) {
+            if (items.length == this.fetchCount && !this.oneTime) {
                 // There *might* be more items.
                 this.fetchOffset += this.fetchCount;
                 tizen.content.find(
@@ -78,7 +87,9 @@
 
     library.prototype = {
         set initialized(value) {this._initialized = value; },
-        get initialized() { return this._initialized; }
+        get initialized() { return this._initialized; },
+        get items() { return this.mediaItems; },
+        get size() { return this.mediaItems.length; }
     };
 
     win.HoofbeatsLibrary = library;
