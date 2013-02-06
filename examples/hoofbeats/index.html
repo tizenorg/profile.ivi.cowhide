@@ -39,11 +39,9 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="mediaItems">
-        <ul class="item-list striped">
-            {{#each item in controller}}
-                <li>{{item.title}}</li>
-            {{/each}}
-        </ul>
+        {{#each item in controller}}
+            <li>{{item.title}}</li>
+        {{/each}}
     </script>
 
     <!-- the UI framework -->

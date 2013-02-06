@@ -3,7 +3,7 @@
     var MediaItemsView = Ember.View.extend({
         templateName: 'mediaItems',
         tagName: 'ul',
-        classNames: ['mediaItems']
+        classNames: ['mediaItems item-list striped']
     });
 
     app.MediaItemsView = MediaItemsView;
