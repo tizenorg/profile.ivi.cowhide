@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link id="cowhide-theme" rel="stylesheet" href="lib/cowhide-default.css">
+    <link rel="stylesheet" href="stylesheets/hoofbeats.css">
   </head>
 
   <body>
@@ -32,7 +33,9 @@
         </div>
       </div>
 
-      {{outlet library}}
+      <div class="content">
+          {{outlet library}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="mediaItems">
