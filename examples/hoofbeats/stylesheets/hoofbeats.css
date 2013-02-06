@@ -1,7 +1,11 @@
 .content {
   padding-top: 40px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
 }
 
-.content ul, .content ol {
-  margin-left: 0;
+ul.item-list {
+  margin: 0;
 }

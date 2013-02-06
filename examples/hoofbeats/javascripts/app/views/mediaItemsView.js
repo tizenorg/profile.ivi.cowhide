@@ -2,8 +2,11 @@
 (function(app, Ember) {
     var MediaItemsView = Ember.View.extend({
         templateName: 'mediaItems',
-        tagName: 'ul',
-        classNames: ['mediaItems item-list striped']
+        classNames: ['mediaItems ch-simple-scrollable'],
+
+        didInsertElement: function() {
+            this.$().ch_simple_scrollable('enable');
+        }
     });
 
     app.MediaItemsView = MediaItemsView;

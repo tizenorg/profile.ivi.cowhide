@@ -33,15 +33,17 @@
         </div>
       </div>
 
-      <div class="content">
+      <div class="page content">
           {{outlet library}}
       </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="mediaItems">
-        {{#each item in controller}}
-            <li>{{item.title}}</li>
-        {{/each}}
+        <ul class="item-list striped">
+            {{#each item in controller}}
+                <li>{{item.title}}</li>
+            {{/each}}
+        </ul>
     </script>
 
     <!-- the UI framework -->
