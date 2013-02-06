@@ -249,12 +249,15 @@ module.exports = function(grunt) {
             'lib/handlebars-1.0.rc.1.js',
             'lib/ember-latest.js'
           ],
+          'examples/calf/lib/images/': ['dist/images/**'],
+
           'examples/hoofbeats/lib/': [
             'dist/cowhide-default.css',
             'dist/cowhide.js',
             'lib/handlebars-1.0.rc.1.js',
             'lib/ember-latest.js'
-          ]
+          ],
+          'examples/hoofbeats/lib/images/': ['dist/images/**']
         }
       },
       examples_lib_dist: {
@@ -263,17 +266,22 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/examples/calf/lib/': [
+            'dist/images/',
             'dist/cowhide-default.css',
             'dist/cowhide.js',
             'lib/handlebars-1.0.rc.1.js',
             'lib/ember-latest.js'
           ],
+          'dist/examples/calf/lib/images/': ['dist/images/**'],
+
           'dist/examples/hoofbeats/lib/': [
+            'dist/images/',
             'dist/cowhide-default.css',
             'dist/cowhide.js',
             'lib/handlebars-1.0.rc.1.js',
             'lib/ember-latest.js'
-          ]
+          ],
+          'dist/examples/hoofbeats/lib/images/': ['dist/images/**']
         }
       }
     },
