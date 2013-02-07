@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 
         'src/javascripts/*.js',
         'src/bootstrap/**/*.{js,less}',
+        'src/stylesheets/**/*.less',
         'src/themes/**/*.less',
 
         'examples/**/*.*',
