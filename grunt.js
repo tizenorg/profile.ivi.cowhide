@@ -248,8 +248,6 @@ module.exports = function(grunt) {
           'examples/calf/lib/': [
             'dist/cowhide-default.css',
             'dist/cowhide.js',
-            'lib/handlebars-1.0.rc.2.js',
-            'lib/ember-1.0.0-pre.4.js'
           ],
           'examples/calf/lib/images/': ['dist/images/**'],
 
@@ -271,8 +269,6 @@ module.exports = function(grunt) {
             'dist/images/',
             'dist/cowhide-default.css',
             'dist/cowhide.js',
-            'lib/handlebars-1.0.rc.2.js',
-            'lib/ember-1.0.0-pre.4.js'
           ],
           'dist/examples/calf/lib/images/': ['dist/images/**'],
 

@@ -4,5 +4,6 @@ node_modules
 pid.txt
 *.wgt
 *.wgt.gz
-examples/calf/lib
-examples/hoofbeats/lib
+examples/calf/lib/images/
+examples/calf/lib/cowhide*
+examples/hoofbeats/lib/
