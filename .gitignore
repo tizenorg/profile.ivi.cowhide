@@ -6,4 +6,7 @@ pid.txt
 *.wgt.gz
 examples/calf/lib/images/
 examples/calf/lib/cowhide*
-examples/hoofbeats/lib/
+examples/hoofbeats/lib/images/
+examples/hoofbeats/lib/cowhide*
+examples/hoofbeats/lib/ember*
+examples/hoofbeats/lib/handlebars*

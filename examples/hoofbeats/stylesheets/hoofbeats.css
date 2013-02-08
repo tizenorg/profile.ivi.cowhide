@@ -9,3 +9,26 @@
 ul.item-list {
   margin: 0;
 }
+
+.mediaItem {
+    position: relative;
+}
+
+.mediaItem .info .title {
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.mediaItem .info .authors {
+    color: #555;
+    font-style: italic;
+}
+
+.mediaItem .duration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #999;
+    font-size: x-small;
+}

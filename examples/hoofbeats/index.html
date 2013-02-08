@@ -40,10 +40,22 @@
 
     <script type="text/x-handlebars" data-template-name="all">
         <ul class="item-list striped">
-            {{#each item in controller}}
-                <li>{{item.title}}</li>
+            {{#each mediaItem in controller}}
+                <li>
+                    {{view Hoofbeats.MediaItemView contentBinding="mediaItem"}}
+                </li>
             {{/each}}
         </ul>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="mediaItem">
+        <div class="info">
+            <div class="title">{{mediaItem.title}}</div>
+            <div class="authors">{{mediaItem.artists}}</div>
+        </div>
+        <div class="duration">
+            {{mediaItem.durationString}}
+        </div>
     </script>
 
     <!-- the UI framework -->
@@ -56,6 +68,9 @@
     <!-- the application framework -->
     <script src="lib/handlebars-1.0.rc.2.js"></script>
     <script src="lib/ember-1.0.0-pre.4.js"></script>
+
+    <!-- other useful js files -->
+    <script src="lib/moment.js"></script>
 
     <!-- the Ember app -->
 
@@ -72,6 +87,7 @@
 
     <!-- views -->
     <script src="javascripts/app/views/allView.js"></script>
+    <script src="javascripts/app/views/mediaItemView.js"></script>
 
   </body>
 </html>

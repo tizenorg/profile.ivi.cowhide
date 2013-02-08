@@ -1,7 +1,13 @@
 (function(app, Ember) {
     var MediaItem = Ember.Object.extend({
         id: null,
-        title: null
+        title: null,
+        artists: null,
+        duration: null,
+
+        durationString: function() {
+            return moment("0", "ss").add('milliseconds', this.duration).format("mm:ss");
+        }.property('duration')
     });
 
 
