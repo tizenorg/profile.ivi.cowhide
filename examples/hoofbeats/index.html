@@ -24,7 +24,7 @@
         <div class="navbar-inner">
           <ul class="nav">
             <li>
-                <a {{action showMediaItems href=true}}>
+                <a href="/">
                     <i class="icon-white icon-th-list"></i>
                     All
                 </a>
@@ -34,11 +34,11 @@
       </div>
 
       <div class="page content">
-          {{outlet library}}
+          {{outlet}}
       </div>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="mediaItems">
+    <script type="text/x-handlebars" data-template-name="all">
         <ul class="item-list striped">
             {{#each item in controller}}
                 <li>{{item.title}}</li>
@@ -54,8 +54,8 @@
     <script src="javascripts/library.js"></script>
 
     <!-- the application framework -->
-    <script src="lib/handlebars-1.0.rc.1.js"></script>
-    <script src="lib/ember-latest.js"></script>
+    <script src="lib/handlebars-1.0.rc.2.js"></script>
+    <script src="lib/ember-1.0.0-pre.4.js"></script>
 
     <!-- the Ember app -->
 
@@ -68,12 +68,10 @@
     <script src="javascripts/app/models/mediaItemModel.js"></script>
 
     <!-- controllers -->
-    <script src="javascripts/app/controllers/applicationController.js">
-    </script>
-    <script src="javascripts/app/controllers/mediaItemsController.js"></script>
+    <script src="javascripts/app/controllers/allController.js"></script>
 
     <!-- views -->
-    <script src="javascripts/app/views/mediaItemsView.js"></script>
+    <script src="javascripts/app/views/allView.js"></script>
 
   </body>
 </html>
