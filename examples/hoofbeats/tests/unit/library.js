@@ -27,11 +27,33 @@ $(function() {
         });
     });
 
+    test("successful scan without resolving", function() {
+        var lib = new HoofbeatsLibrary();
+        stop();
+        lib.scan({resolve: false}).then(function() {
+            ok(lib.resolve == false, "lib.resolve is false");
+            start();
+        });
+    });
+
     test("scan with count", function() {
         var lib = new HoofbeatsLibrary();
         stop();
-        lib.scan(1).then(function() {
+        lib.scan({count: 1}).then(function() {
             ok(lib.size == 1, "there is one item in the library");
+            start();
+        });
+    });
+
+    test("get one item", function() {
+        var lib = new HoofbeatsLibrary(),
+            item_id = 'e7e7023b-54b3-41d5-b4a1-aa24498e0572';
+
+        stop();
+        lib.scan({count: 1}).then(function() {
+            var item = lib.item(item_id);
+            ok(item !== undefined, "item was found");
+            ok(item.id == item_id, "correct item was found");
             start();
         });
     });

@@ -33,6 +33,7 @@
             }
         },
 
+        // TODO: make the next two functions into one, to be DRY.
         getMediaItems: function(deferred) {
             var self = this,
                 d = deferred || new $.Deferred();
@@ -50,6 +51,23 @@
             }
 
             return d.promise();
+        },
+
+        getMediaItem: function(item_id, deferred) {
+            var self = this,
+                d = deferred || new $.DeferreD();
+
+            console.log("Store.getMediaItem: entered.");
+            if (self.scanCompleted) {
+                console.log("Store.getMediaITem: scan is completed, resolving promise.");
+                d.resolve(app.library.item(item_id);
+            } else {
+                // If the scan is not completed, we must be still scanning.
+                console.log("Store.getMediaItem: scan still pending. Trying again later.");
+                setTimeout(function() {
+                    return self.getMediaItem(item_id, deferred);
+                }, 100);
+            }
         }
     };
 

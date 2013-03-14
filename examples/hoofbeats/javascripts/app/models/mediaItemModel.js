@@ -24,6 +24,17 @@
             });
 
             return items;
+        },
+
+        find: function(item_id) {
+            var item;
+
+            console.log("MediaItem.find: entered.");
+            app.Store.getMediaItem(item_id).done(function(data) {
+                item = app.MediaItem.create(data);
+            });
+
+            return item;
         }
     });
 

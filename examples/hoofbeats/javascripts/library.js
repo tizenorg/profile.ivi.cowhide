@@ -4,6 +4,9 @@
         // For readability:
         this.initialized = false;
 
+        // Whether items should be resolved on MusicBrainz
+        this.resolve = false;
+
         this.fetchCount = 100;
         this.fetchOffset = 0;
         this.oneTime = false;
@@ -25,15 +28,20 @@
                 "UNION", [this.audioTypeFilter, this.videoTypeFilter]);
         };
 
-        this.scan = function(count) {
+        this.scan = function(options) {
+            var opts = options || {};
+            if (opts.resolve !== undefined) {
+                this.resolve = opts.resolve;
+            }
+
             this.deferred = new $.Deferred();
             this.initialize()
 
             this.mediaItems = [];
             this.fetchOffset = 0;
 
-            if (count !== undefined) {
-                this.fetchCount = count;
+            if (opts.count !== undefined) {
+                this.fetchCount = opts.count;
                 this.oneTime = true;
             }
 
@@ -60,12 +68,14 @@
 
             items.forEach(function(item, index, items) {
                 self.mediaItems.push(item);
-                win.MusicBrainz.getArtist(item.artists[0]).done(function(data) {
-                    console.log(
-                        "HoofbeatsLibrary.findCB: " + 
-                        "item resolved on MusicBrainz: " +
-                        data.name);
-                });
+                if (self.resolve) {
+                    win.MusicBrainz.getArtist(item.artists[0]).done(function(data) {
+                        console.log(
+                            "HoofbeatsLibrary.findCB: " +
+                            "item resolved on MusicBrainz: " +
+                            data.name);
+                    });
+                }
             });
 
             if (items.length == this.fetchCount && !this.oneTime) {
@@ -82,6 +92,17 @@
             } else {
                 self.deferred.resolve();
             }
+        };
+
+        this.item = function(id) {
+            var ret;
+
+            this.mediaItems.forEach(function(item, index, items) {
+                if (item.id == id)
+                    ret = item;
+            });
+
+            return ret;
         };
     };
 
