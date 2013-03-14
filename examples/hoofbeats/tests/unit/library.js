@@ -22,7 +22,7 @@ $(function() {
         var lib = new HoofbeatsLibrary();
         stop();
         lib.scan().then(function() {
-            ok(lib.size > 0, "there are items in the library");
+            ok(lib.getSize() > 0, "there are items in the library");
             start();
         });
     });
@@ -31,7 +31,7 @@ $(function() {
         var lib = new HoofbeatsLibrary();
         stop();
         lib.scan({resolve: false}).then(function() {
-            ok(lib.resolve == false, "lib.resolve is false");
+            ok(lib.getResolve() == false, "lib.resolve is false");
             start();
         });
     });
@@ -40,7 +40,7 @@ $(function() {
         var lib = new HoofbeatsLibrary();
         stop();
         lib.scan({count: 1}).then(function() {
-            ok(lib.size == 1, "there is one item in the library");
+            ok(lib.getSize() == 1, "there is one item in the library");
             start();
         });
     });
