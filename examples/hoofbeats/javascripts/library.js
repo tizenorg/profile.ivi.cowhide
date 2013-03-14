@@ -3,7 +3,7 @@
     var library = function() {
         // Private stuff
 
-        var p = {
+        var _priv = {
             initialized: false,
             deferred: undefined,
             // Whether items should be resolved on MusicBrainz
@@ -21,8 +21,8 @@
 
             findCB: function(items) {
                 items.forEach(function(item, index, items) {
-                    p.mediaItems.push(item);
-                    if (p.resolve) {
+                    _priv.mediaItems.push(item);
+                    if (_priv.resolve) {
                         win.MusicBrainz.getArtist(item.artists[0]).done(
                             function(data) {
                                 console.log(
@@ -34,76 +34,76 @@
                     }
                 });
 
-                if (items.length == p.fetchCount && !p.oneTime) {
+                if (items.length == _priv.fetchCount && !_priv.oneTime) {
                     // There *might* be more items.
-                    p.fetchOffset += p.fetchCount;
+                    _priv.fetchOffset += _priv.fetchCount;
                     tizen.content.find(
-                        p.findCB.bind(this),
-                        p.errorCB.bind(this),
+                        _priv.findCB.bind(this),
+                        _priv.errorCB.bind(this),
                         null,
-                        p.typeFilter,
+                        _priv.typeFilter,
                         null,
-                        p.fetchCount,
-                        p.fetchOffset);
+                        _priv.fetchCount,
+                        _priv.fetchOffset);
                 } else {
-                    p.deferred.resolve();
+                    _priv.deferred.resolve();
                 }
             }
-        }; // p
+        }; // _priv
 
 
         // Public stuff
 
         return {
             initialize: function() {
-                if (p.initialized)
+                if (_priv.initialized)
                     return;
 
                 if (win.tizen === undefined) {
                     throw Error("You need the Tizen web API  to run Hoofbeats.");
                 }
 
-                p.audioTypeFilter = new tizen.AttributeFilter(
+                _priv.audioTypeFilter = new tizen.AttributeFilter(
                     "type", "EXACTLY", "AUDIO");
-                p.videoTypeFilter = new tizen.AttributeFilter(
+                _priv.videoTypeFilter = new tizen.AttributeFilter(
                     "type", "EXACTLY", "VIDEO");
-                p.typeFilter = new tizen.CompositeFilter(
-                    "UNION", [p.audioTypeFilter, p.videoTypeFilter]);
+                _priv.typeFilter = new tizen.CompositeFilter(
+                    "UNION", [_priv.audioTypeFilter, _priv.videoTypeFilter]);
             },
 
             scan: function(options) {
                 var opts = options || {};
                 if (opts.resolve !== undefined) {
-                    p.resolve = opts.resolve;
+                    _priv.resolve = opts.resolve;
                 }
 
-                p.deferred = new $.Deferred();
+                _priv.deferred = new $.Deferred();
                 this.initialize();
 
-                p.mediaItems = [];
-                p.fetchOffset = 0;
+                _priv.mediaItems = [];
+                _priv.fetchOffset = 0;
 
                 if (opts.count !== undefined) {
-                    p.fetchCount = opts.count;
-                    p.oneTime = true;
+                    _priv.fetchCount = opts.count;
+                    _priv.oneTime = true;
                 }
 
                 tizen.content.find(
-                    p.findCB.bind(this),
-                    p.errorCB.bind(this),
+                    _priv.findCB.bind(this),
+                    _priv.errorCB.bind(this),
                     null,
-                    p.typeFilter,
+                    _priv.typeFilter,
                     null,
-                    p.fetchCount,
-                    p.fetchOffset);
+                    _priv.fetchCount,
+                    _priv.fetchOffset);
 
-                return p.deferred.promise();
+                return _priv.deferred.promise();
             },
 
             item: function(id) {
                 var ret;
 
-                p.mediaItems.forEach(function(item, index, items) {
+                _priv.mediaItems.forEach(function(item, index, items) {
                     if (item.id == id)
                         ret = item;
                 });
@@ -112,10 +112,10 @@
             },
 
             // Some simple getters
-            getInitialized: function() { return p.initialized; },
-            getItems: function() { return p.mediaItems; },
-            getSize: function() { return p.mediaItems.length; },
-            getResolve: function() {return p.resolve; }
+            getInitialized: function() { return _priv.initialized; },
+            getItems: function() { return _priv.mediaItems; },
+            getSize: function() { return _priv.mediaItems.length; },
+            getResolve: function() {return _priv.resolve; }
         };
     };
 
