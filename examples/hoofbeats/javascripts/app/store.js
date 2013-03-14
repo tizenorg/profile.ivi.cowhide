@@ -41,7 +41,7 @@
             console.log("Store.getMediaItems: entered.");
             if (self.scanCompleted) {
                 console.log("Store.getMediaItems: scan is completed, resolving promise.");
-                deferred.resolve(app.library.items);
+                d.resolve(app.library.items);
             } else {
                 // If the scan is not completed, we must be still scanning.
                 console.log("Store.getMediaItems: scan still pending. Trying again later.");
