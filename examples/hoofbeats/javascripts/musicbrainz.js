@@ -50,7 +50,9 @@
         };
 
         this._enqueue = function(request) {
-            this._queue.push(request);
+            if ($.inArray(request.url, this._queue) < 0) {
+                this._queue.push(request);
+            }
         };
 
         this._dequeue = function() {
