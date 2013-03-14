@@ -25,7 +25,7 @@
                     if (xhr.status === 503) {
                         self._enqueue(request); // put it back in the queue
                     }
-                }); 
+                });
             }
 
             return request.deferred.promise();
