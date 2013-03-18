@@ -63,6 +63,8 @@
 
         /* Public methods */
         return {
+            name: function() { return "MusicBrainz"; },
+
             getArtist: function(q) {
                 var lookup_url = _priv._baseUrl + 'artist/?query="' + q +
                                  '"&' + _priv._fmtArg,

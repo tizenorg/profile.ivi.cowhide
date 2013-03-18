@@ -14,14 +14,14 @@ $(function() {
         var lib = new HoofbeatsLibrary();
         window.tizen = undefined;
         raises(function() {
-            lib.scan();
+            lib.scan({resolveBackend: DummyResolver});
         }, Error, "scan throws Error");
     });
 
     test("successful scan", function() {
         var lib = new HoofbeatsLibrary();
         stop();
-        lib.scan().then(function() {
+        lib.scan({resolveBackend: DummyResolver}).then(function() {
             ok(lib.getSize() > 0, "there are items in the library");
             start();
         });
@@ -30,8 +30,8 @@ $(function() {
     test("successful scan without resolving", function() {
         var lib = new HoofbeatsLibrary();
         stop();
-        lib.scan({resolve: false}).then(function() {
-            ok(lib.getResolve() == false, "lib.resolve is false");
+        lib.scan({resolveBackend: undefined}).then(function() {
+            ok(lib.getResolve() == false, "lib.getResolve() is false");
             start();
         });
     });
@@ -39,7 +39,7 @@ $(function() {
     test("scan with count", function() {
         var lib = new HoofbeatsLibrary();
         stop();
-        lib.scan({count: 1}).then(function() {
+        lib.scan({count: 1, resolveBackend: DummyResolver}).then(function() {
             ok(lib.getSize() == 1, "there is one item in the library");
             start();
         });
@@ -50,7 +50,7 @@ $(function() {
             item_id = 'e7e7023b-54b3-41d5-b4a1-aa24498e0572';
 
         stop();
-        lib.scan({count: 1}).then(function() {
+        lib.scan({count: 1, resolveBackend: DummyResolver}).then(function() {
             var item = lib.item(item_id);
             ok(item !== undefined, "item was found");
             ok(item.id == item_id, "correct item was found");

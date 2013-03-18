@@ -6,12 +6,11 @@
         var _priv = {
             initialized: false,
             deferred: undefined,
-            // Whether items should be resolved on MusicBrainz
-            resolve: false,
             fetchCount: 100,
             fetchOffset: 0,
             oneTime: false,
             mediaItems: [],
+            resolveBackend: MusicBrainz,
 
             errorCB: function(error) {
                 console.log("HoofbeatsLibrary.errorCB: " + error.name);
@@ -22,13 +21,13 @@
             findCB: function(items) {
                 items.forEach(function(item, index, items) {
                     _priv.mediaItems.push(item);
-                    if (_priv.resolve) {
-                        win.MusicBrainz.getArtist(item.artists[0]).done(
+                    if (_priv.resolveBackend !== undefined) {
+                        _priv.resolveBackend.getArtist(item.artists[0]).done(
                             function(data) {
                                 console.log(
                                     "HoofbeatsLibrary.findCB: " +
-                                    "item resolved on MusicBrainz: " +
-                                    data.name);
+                                    "item resolved on " + _priv.resolveBackend.name() +
+                                    ": " + data.name);
                             }
                         );
                     }
@@ -53,7 +52,6 @@
 
 
         // Public stuff
-
         return {
             initialize: function() {
                 if (_priv.initialized)
@@ -73,8 +71,8 @@
 
             scan: function(options) {
                 var opts = options || {};
-                if (opts.resolve !== undefined) {
-                    _priv.resolve = opts.resolve;
+                if (opts.resolveBackend !== MusicBrainz) {
+                    _priv.resolveBackend = opts.resolveBackend;
                 }
 
                 _priv.deferred = new $.Deferred();
@@ -115,7 +113,7 @@
             getInitialized: function() { return _priv.initialized; },
             getItems: function() { return _priv.mediaItems; },
             getSize: function() { return _priv.mediaItems.length; },
-            getResolve: function() {return _priv.resolve; }
+            getResolve: function() {return _priv.resolveBackend !== undefined; }
         };
     };
 

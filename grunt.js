@@ -38,6 +38,7 @@ module.exports = function(grunt) {
         'examples/widget-gallery/javascripts/*.js',
 
         'examples/hoofbeats/javascripts/*.js',
+        'examples/hoofbeats/javascripts/resolvers/*.js',
 
         'test/**/*.js'
       ]
