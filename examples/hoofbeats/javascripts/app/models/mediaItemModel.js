@@ -17,10 +17,12 @@
 
             console.log("MediaItem.findAll: entered.");
             app.Store.getMediaItems().done(function(data) {
-                data.forEach(function(item) {
-                    console.log("MediaItem.findAll: pushing object.");
-                    items.pushObject(app.MediaItem.create(item));
-                });
+                if (data !== undefined) {
+                    data.forEach(function(item) {
+                        console.log("MediaItem.findAll: pushing object.");
+                        items.pushObject(app.MediaItem.create(item));
+                    });
+                }
             });
 
             return items;

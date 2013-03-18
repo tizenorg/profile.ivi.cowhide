@@ -18,12 +18,12 @@
             }
 
             console.log("Store.scan: entered.");
-            if (app.library) {
+            if (app.library !== null) {
                 app.library.scan().then(function() {
                     self.scanCompleted = true;
                     console.log(
                         "Store.scan: completed. " +
-                        app.library.size +
+                        app.library.getSize() +
                         " items in the library.");
                 });
             } else {
@@ -41,7 +41,7 @@
             console.log("Store.getMediaItems: entered.");
             if (self.scanCompleted) {
                 console.log("Store.getMediaItems: scan is completed, resolving promise.");
-                d.resolve(app.library.items);
+                d.resolve(app.library.getItems());
             } else {
                 // If the scan is not completed, we must be still scanning.
                 console.log("Store.getMediaItems: scan still pending. Trying again later.");
@@ -60,7 +60,7 @@
             console.log("Store.getMediaItem: entered.");
             if (self.scanCompleted) {
                 console.log("Store.getMediaITem: scan is completed, resolving promise.");
-                d.resolve(app.library.item(item_id);
+                d.resolve(app.library.item(item_id));
             } else {
                 // If the scan is not completed, we must be still scanning.
                 console.log("Store.getMediaItem: scan still pending. Trying again later.");
