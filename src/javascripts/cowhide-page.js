@@ -7,7 +7,7 @@
  *
  */
 
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChPage = function(element, options) {

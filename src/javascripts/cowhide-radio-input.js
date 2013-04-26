@@ -7,7 +7,7 @@
  *
  */
 
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChRadioInput = function(element, options) {

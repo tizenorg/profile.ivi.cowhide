@@ -43,7 +43,7 @@ $(function () {
         btn.ch_button()
         stop()
         setTimeout(function () {
-          equals(btn.find('marquee').length, 1, 'marquee tag is present')
+          equal(btn.find('marquee').length, 1, 'marquee tag is present')
           start()
         }, 0)
       })
@@ -56,7 +56,7 @@ $(function () {
         $.cowhide.setDrivingMode(true)
         stop()
         setTimeout(function () {
-          equals(btn.find('marquee').length, 0, 'marquee tag is missing')
+          equal(btn.find('marquee').length, 0, 'marquee tag is missing')
           start()
         }, 0)
       })
@@ -70,7 +70,7 @@ $(function () {
         $.cowhide.setDrivingMode(false)
         stop()
         setTimeout(function () {
-          equals(btn.find('marquee').length, 1, 'marquee tag is present')
+          equal(btn.find('marquee').length, 1, 'marquee tag is present')
           start()
         }, 0)
       })
@@ -82,7 +82,7 @@ $(function () {
         btn.ch_button()
         stop()
         setTimeout(function () {
-          equals(btn.css('width'), '200px', 'width is 200px')
+          equal(btn.css('width'), '200px', 'width is 200px')
           start()
         }, 0)
       })

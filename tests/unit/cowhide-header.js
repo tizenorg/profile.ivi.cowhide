@@ -9,8 +9,8 @@ $(function () {
         header.appendTo(page)
         header.ch_header('show')
 
-        equals(header.find('h1').length, 1, "header contains h1 element")
-        equals(header.find('h1').text(), "Test title", "header content matches")
+        equal(header.find('h1').length, 1, "header contains h1 element")
+        equal(header.find('h1').text(), "Test title", "header content matches")
       })
 
       test("show-back-button works", function () {
@@ -20,6 +20,6 @@ $(function () {
         header.appendTo(page)
         header.ch_header('show')
 
-        equals(header.find('button i.icon-backward').length, 1, "header contains back button")
+        equal(header.find('button i.icon-backward').length, 1, "header contains back button")
       })
 })

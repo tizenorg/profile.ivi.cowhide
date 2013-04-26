@@ -7,7 +7,7 @@
  *
  */
 
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChCheckboxInput = function(element, options) {

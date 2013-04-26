@@ -7,7 +7,7 @@
  *
  */
 
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChSelect = function(element, options) {

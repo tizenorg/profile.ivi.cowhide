@@ -7,10 +7,10 @@
  *
  */
 
-(function($, _, undefined) {
+(function($, _, undefined) {
 	'use strict';
 
-    $.cowhide = $.cowhide || {}
+    $.cowhide = $.cowhide || {}
     $.extend($.cowhide, {
         version: '0.0.1',
         options: {
@@ -75,7 +75,7 @@
             $.extend(this.themeEngineOptions, options);
             this.currentTheme = this.themeEngineOptions.initial;
 
-            var $link = $('link#cowhide-theme');
+            var $link = $('link#cowhide-theme');
             if ($link.length === 0) {
                 this.fatal("#40: could not find <link> with id 'cowhide-theme'.");
             }
@@ -86,11 +86,11 @@
                 return;
             }
 
-            var $link = $('link#cowhide-theme');
+            var $link = $('link#cowhide-theme');
             var theme =
                 this.themeEngineOptions.path +
                 '/cowhide-' +
-                name || 'default';
+                name || 'default';
 
             if (nightMode === true || (nightMode === undefined && this.nightMode === true)) {
                 theme += '-night';

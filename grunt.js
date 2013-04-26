@@ -20,8 +20,6 @@ module.exports = function(grunt) {
         'src/stylesheets/**/*.less',
         'src/themes/**/*.less',
 
-        'examples/**/*.*',
-
         'tests/**/*.js'
       ],
       tasks: 'default'
@@ -35,19 +33,6 @@ module.exports = function(grunt) {
 
         'src/bootstrap/js/*.js',
         'src/javascripts/*.js',
-
-        'examples/calf/javascripts/*.js',
-        'examples/calf/javascripts/app/*.js',
-        'examples/calf/javascripts/app/**/*.js',
-
-        'examples/calf-ng/javascripts/*.js',
-        'examples/calf-ng/javascripts/app/*.js',
-        'examples/calf-ng/javascripts/app/**/*.js',
-
-        'examples/widget-gallery/javascripts/*.js',
-
-        'examples/hoofbeats/javascripts/*.js',
-        'examples/hoofbeats/javascripts/resolvers/*.js',
 
         'test/**/*.js'
       ]
@@ -105,11 +90,9 @@ module.exports = function(grunt) {
     concat: {
       cowhide_js: {
         src: [
-          'lib/jquery-1.8.3.js',
-          'lib/jquery-ui-1.9.2.custom.js',
-          'lib/jquery.ui.slider.js',
-          'lib/jquery.mCustomScrollbar.js',
-          'lib/underscore-min.js',
+          'lib/jquery/dist/jquery.js',
+          'lib/jquery-ui/dist/jquery-ui.js',
+          'lib/underscore/underscore.js',
 
           // Bootstrap files must preserve order.
           'src/bootstrap/js/bootstrap-transition.js',
@@ -143,58 +126,34 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-simple-scrollable.js'
         ], dest: 'dist/cowhide.js'
       },
-      cowhide_ng_js: {
-        src: [
-          'lib/angular.js',
-
-          'src/javascripts/cowhide-ng-core.js',
-          'src/javascripts/cowhide-ng-page.js',
-          'src/javascripts/cowhide-ng-header.js',
-          'src/javascripts/cowhide-ng-button.js',
-          'src/javascripts/cowhide-ng-slider.js',
-          'src/javascripts/cowhide-ng-scrollable.js'
-        ], dest: 'dist/cowhide-ng.js'
-      },
       css_default: {
         src: [
           'dist/cowhide-default.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-default.css'
       },
       css_default_night: {
         src: [
           'dist/cowhide-default-night.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-default-night.css'
       },
       css_amelia: {
         src: [
           'dist/cowhide-amelia.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-amelia.css'
       },
       css_amelia_night: {
         src: [
           'dist/cowhide-amelia-night.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-amelia-night.css'
       },
       css_spruce: {
         src: [
           'dist/cowhide-spruce.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-spruce.css'
       },
       css_spruce_night: {
         src: [
           'dist/cowhide-spruce-night.css',
-          'lib/jquery.ui.slider.css',
-          'lib/jquery.mCustomScrollbar.css'
         ], dest: 'dist/cowhide-spruce-night.css'
       }
     },
@@ -202,10 +161,6 @@ module.exports = function(grunt) {
       cowhide: {
         src: ['dist/cowhide.js'],
         dest: 'dist/cowhide.min.js'
-      },
-      cowhide_ng: {
-        src: ['fist/cowhide-ng.js'],
-        dest: 'dist/cowhide-ng.min.js'
       }
     },
     cssmin: {
@@ -243,55 +198,9 @@ module.exports = function(grunt) {
         files: {
           'dist/images/': 'images/**',
           'dist/README.md': 'README.md',
-          'dist/examples/calf/': 'examples/calf/**',
-          'dist/examples/calf-ng/': 'examples/calf-ng/**',
-          'dist/examples/hoofbeats/': 'examples/hoofbeats/**',
-          'dist/examples/widget-gallery/': 'examples/widget-gallery/**',
           'dist/docs/': 'docs/**'
         }
       },
-      examples_lib: {
-        options: {
-          flatten: true
-        },
-        files: {
-          'examples/calf/lib/': [
-            'dist/cowhide-default.css',
-            'dist/cowhide.js',
-          ],
-          'examples/calf/lib/images/': ['dist/images/**'],
-
-          'examples/hoofbeats/lib/': [
-            'dist/cowhide-default.css',
-            'dist/cowhide.js',
-            'lib/handlebars-1.0.rc.2.js',
-            'lib/ember-1.0.0-pre.4.js'
-          ],
-          'examples/hoofbeats/lib/images/': ['dist/images/**']
-        }
-      },
-      examples_lib_dist: {
-        options: {
-          flatten: true
-        },
-        files: {
-          'dist/examples/calf/lib/': [
-            'dist/images/',
-            'dist/cowhide-default.css',
-            'dist/cowhide.js',
-          ],
-          'dist/examples/calf/lib/images/': ['dist/images/**'],
-
-          'dist/examples/hoofbeats/lib/': [
-            'dist/images/',
-            'dist/cowhide-default.css',
-            'dist/cowhide.js',
-            'lib/handlebars-1.0.rc.2.js',
-            'lib/ember-1.0.0-pre.4.js'
-          ],
-          'dist/examples/hoofbeats/lib/images/': ['dist/images/**']
-        }
-      }
     },
     exec: {
       build_docs: {

@@ -7,7 +7,7 @@
  *
  */
 
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChButton = function(element, options) {
