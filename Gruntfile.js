@@ -221,6 +221,7 @@ module.exports = function(grunt) {
   });
 
   // Default task.
+  grunt.loadNpmTasks('grunt-update-submodules');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -231,5 +232,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
 
-  grunt.registerTask('default', ['clean', 'jshint', 'less', 'concat', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
+  grunt.registerTask('default', ['update_submodules', 'clean', 'jshint', 'less', 'concat', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
 };
