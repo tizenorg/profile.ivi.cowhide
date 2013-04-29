@@ -1,5 +1,5 @@
 /* vi: set et sw=4 ts=4 si: */
-(function($, undefined) {
+(function($, undefined) {
     'use strict';
 
     var ChSimpleScrollable = function(element, options) {
