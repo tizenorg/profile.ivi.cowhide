@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     watch: {
       files: [
-        'grunt.js',
+        'Gruntfile.js',
 
         'src/javascripts/*.js',
         'src/bootstrap/**/*.{js,less}',
@@ -27,17 +27,12 @@ module.exports = function(grunt) {
     clean: {
       folder: 'dist'
     },
-    lint: {
-      all: [
-        'grunt.js',
-
-        'src/bootstrap/js/*.js',
-        'src/javascripts/*.js',
-
-        'test/**/*.js'
-      ]
-    },
     jshint: {
+      all: [
+        'GruntFile.js',
+        'src/javascripts/*.js',
+        'test/**/*.js'
+      ],
       options: {
         "validthis": true,
         "laxcomma" : true,
@@ -162,7 +157,7 @@ module.exports = function(grunt) {
         ], dest: 'dist/cowhide-spruce-night.css'
       }
     },
-    min: {
+    uglify: {
       cowhide: {
         src: ['dist/cowhide.js'],
         dest: 'dist/cowhide.min.js'
@@ -200,11 +195,12 @@ module.exports = function(grunt) {
     },
     copy: {
       dist: {
-        files: {
-          'dist/images/': ['lib/jquery-ui/dist/images/**', 'images/**'],
-          'dist/README.md': 'README.md',
-          'dist/docs/': 'docs/**'
-        }
+        files: [
+          {dest: 'dist/', src: ['images/**'], cwd: 'lib/jquery-ui/dist/', expand: true},
+          {dest: 'dist/', src: ['images/**']},
+          {dest: 'dist/', src: ['README.md']},
+          {dest: 'dist/', src: ['docs/**']}
+        ]
       },
     },
     exec: {
@@ -214,31 +210,26 @@ module.exports = function(grunt) {
     },
     compress: {
       dist: {
-        files: {
-          'dist/cowhide.zip': 'dist/**'
-        }
-      }
-    },
-    growl : {
-      started : {
-        message : "Grunt compilation started.",
-        title : "Cowhide"
-      },
-      finished : {
-          message : "Grunt compilation finished.",
-          title : "Cowhide"
+        options: {
+          archive: 'dist/cowhide.zip'
+        },
+        files: [
+          {dest: 'cowhide', src: ['**'], cwd: 'dist', expand: true}
+        ]
       }
     }
   });
 
   // Default task.
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-css');
-  grunt.loadNpmTasks('grunt-growl');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-compress');
-  grunt.loadNpmTasks('grunt-clean');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
-  grunt.registerTask('default', 'growl:started clean lint less concat min cssmin copy exec:build_docs compress growl:finished');
+  grunt.registerTask('default', ['clean', 'jshint', 'less', 'concat', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
 };
