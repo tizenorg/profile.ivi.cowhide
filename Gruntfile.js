@@ -240,5 +240,16 @@ module.exports = function(grunt) {
 
   grunt.registerTask('submodules', ['update_submodules'])
   grunt.registerTask('test', ['qunit']);
-  grunt.registerTask('default', ['update_submodules', 'clean', 'jshint', 'less', 'concat', 'qunit', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
+  grunt.registerTask('default', [
+    'update_submodules',
+    'clean',
+    'jshint',
+    'less',
+    'concat',
+    'qunit',
+    'uglify',
+    'cssmin',
+    'copy',
+    'exec:build_docs',
+    'compress']);
 };
