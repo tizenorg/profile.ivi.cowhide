@@ -157,6 +157,11 @@ module.exports = function(grunt) {
         ], dest: 'dist/cowhide-spruce-night.css'
       }
     },
+    qunit: {
+        files: [
+            'tests/index.html'
+        ]
+    },
     uglify: {
       cowhide: {
         src: ['dist/cowhide.js'],
@@ -224,6 +229,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-update-submodules');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -232,5 +238,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
 
-  grunt.registerTask('default', ['update_submodules', 'clean', 'jshint', 'less', 'concat', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
+  grunt.registerTask('test', ['qunit']);
+  grunt.registerTask('default', ['update_submodules', 'clean', 'jshint', 'less', 'concat', 'qunit', 'uglify', 'cssmin', 'copy', 'exec:build_docs', 'compress']);
 };
