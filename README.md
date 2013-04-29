@@ -24,10 +24,9 @@ jQuery, jQuery UI, Twitter Boostrap, Underscore
 Building requires `npm`. There are only three simple steps to installing
 Cowhide:
 
-    source env.sh
+    npm install -g grunt-cli
     npm install
-    git submodule init
-    git submodule update
+    grunt submodules
     (cd lib/jquery; npm install; grunt)
     (cd lib/jquery-ui; npm install; grunt build)
     grunt
@@ -35,11 +34,6 @@ Cowhide:
 
 ## Testing
 
-To run the unit tests, you will need `phantomjs`. You can install it on Ubuntu
-with:
+Just run:
 
-    apt-get install phantomjs
-
-Then run:
-
-    ./tests/run.sh
+    grunt test
