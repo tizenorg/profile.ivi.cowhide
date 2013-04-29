@@ -122,7 +122,6 @@ module.exports = function(grunt) {
           'src/javascripts/cowhide-select.js',
           'src/javascripts/cowhide-page.js',
           'src/javascripts/cowhide-header.js',
-          'src/javascripts/cowhide-scrollable.js',
           'src/javascripts/cowhide-simple-scrollable.js'
         ], dest: 'dist/cowhide.js'
       },
