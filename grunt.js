@@ -128,31 +128,37 @@ module.exports = function(grunt) {
       },
       css_default: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-default.css',
         ], dest: 'dist/cowhide-default.css'
       },
       css_default_night: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-default-night.css',
         ], dest: 'dist/cowhide-default-night.css'
       },
       css_amelia: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-amelia.css',
         ], dest: 'dist/cowhide-amelia.css'
       },
       css_amelia_night: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-amelia-night.css',
         ], dest: 'dist/cowhide-amelia-night.css'
       },
       css_spruce: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-spruce.css',
         ], dest: 'dist/cowhide-spruce.css'
       },
       css_spruce_night: {
         src: [
+          'lib/jquery-ui/dist/jquery-ui.css',
           'dist/cowhide-spruce-night.css',
         ], dest: 'dist/cowhide-spruce-night.css'
       }
@@ -196,7 +202,7 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: {
-          'dist/images/': 'images/**',
+          'dist/images/': ['lib/jquery-ui/dist/images/**', 'images/**'],
           'dist/README.md': 'README.md',
           'dist/docs/': 'docs/**'
         }

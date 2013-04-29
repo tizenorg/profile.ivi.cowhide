@@ -29,7 +29,7 @@ Cowhide:
     git submodule init
     git submodule update
     (cd lib/jquery; npm install; grunt)
-    (cd lib/jquery-ui; npm install; grunt)
+    (cd lib/jquery-ui; npm install; grunt build)
     grunt
 
 
