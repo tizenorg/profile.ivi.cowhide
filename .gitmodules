@@ -13,3 +13,6 @@
 [submodule "lib/lodash"]
 	path = lib/lodash
 	url = git://github.com/bestiejs/lodash.git
+[submodule "lib/bootstrap"]
+	path = lib/bootstrap
+	url = git://github.com/twitter/bootstrap.git

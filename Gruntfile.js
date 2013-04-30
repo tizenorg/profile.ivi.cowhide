@@ -16,8 +16,7 @@ module.exports = function(grunt) {
         'Gruntfile.js',
 
         'src/javascripts/*.js',
-        'src/bootstrap/**/*.{js,less}',
-        'src/stylesheets/**/*.less',
+        'src/less/**/*.less',
         'src/themes/**/*.less',
 
         'tests/**/*.js'
@@ -51,7 +50,7 @@ module.exports = function(grunt) {
       default_: {
         files: {
           'dist/cowhide-default.css': 'src/themes/default/default.less',
-          'dist/cowhide-responsive.css': 'src/bootstrap/less/responsive.less'
+          'dist/cowhide-responsive.css': 'lib/bootstrap/less/responsive.less'
         }
       },
       default_night: {
@@ -90,19 +89,19 @@ module.exports = function(grunt) {
           'lib/lodash/lodash.js',
 
           // Bootstrap files must preserve order.
-          'src/bootstrap/js/bootstrap-transition.js',
-          'src/bootstrap/js/bootstrap-alert.js',
-          'src/bootstrap/js/bootstrap-button.js',
-          'src/bootstrap/js/bootstrap-carousel.js',
-          'src/bootstrap/js/bootstrap-collapse.js',
-          'src/bootstrap/js/bootstrap-dropdown.js',
-          'src/bootstrap/js/bootstrap-modal.js',
-          'src/bootstrap/js/bootstrap-tooltip.js',
-          'src/bootstrap/js/bootstrap-popover.js',
-          'src/bootstrap/js/bootstrap-scrollspy.js',
-          'src/bootstrap/js/bootstrap-tab.js',
-          'src/bootstrap/js/bootstrap-typeahead.js',
-          'src/bootstrap/js/bootstrap-affix.js',
+          'lib/bootstrap/js/bootstrap-transition.js',
+          'lib/bootstrap/js/bootstrap-alert.js',
+          'lib/bootstrap/js/bootstrap-button.js',
+          'lib/bootstrap/js/bootstrap-carousel.js',
+          'lib/bootstrap/js/bootstrap-collapse.js',
+          'lib/bootstrap/js/bootstrap-dropdown.js',
+          'lib/bootstrap/js/bootstrap-modal.js',
+          'lib/bootstrap/js/bootstrap-tooltip.js',
+          'lib/bootstrap/js/bootstrap-popover.js',
+          'lib/bootstrap/js/bootstrap-scrollspy.js',
+          'lib/bootstrap/js/bootstrap-tab.js',
+          'lib/bootstrap/js/bootstrap-typeahead.js',
+          'lib/bootstrap/js/bootstrap-affix.js',
 
           'src/javascripts/api.js',
 
