@@ -7,9 +7,9 @@
 [submodule "lib/jquery-ui"]
 	path = lib/jquery-ui
 	url = git://github.com/jquery/jquery-ui.git
-[submodule "lib/underscore"]
-	path = lib/underscore
-	url = git://github.com/documentcloud/underscore.git
 [submodule "lib/qunit"]
 	path = lib/qunit
 	url = git://github.com/jquery/qunit.git
+[submodule "lib/lodash"]
+	path = lib/lodash
+	url = git://github.com/bestiejs/lodash.git

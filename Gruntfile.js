@@ -87,7 +87,7 @@ module.exports = function(grunt) {
         src: [
           'lib/jquery/dist/jquery.js',
           'lib/jquery-ui/dist/jquery-ui.js',
-          'lib/underscore/underscore.js',
+          'lib/lodash/lodash.js',
 
           // Bootstrap files must preserve order.
           'src/bootstrap/js/bootstrap-transition.js',
