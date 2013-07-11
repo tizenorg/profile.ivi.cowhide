@@ -31,14 +31,6 @@ make PREFIX=%{buildroot} install
 %files
 /usr/share/cowhide/*
 
-###############################
-%package -n cowhide
-BuildArch:  noarch
-Summary:   Cowhide
-%Description -n Cowhide
-    UI Framework Library based on Twitter Bootstrap
-###############################
-
 %changelog
 
 * Tue Apr 30 2013 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.4
