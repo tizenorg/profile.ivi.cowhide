@@ -5,7 +5,6 @@ Summary:    UI Framework Library based on Twitter Bootstrap
 Group:      Development/Other
 License:    Apache 2.0
 BuildArch:  noarch
-BuildRequires:  grunt-cli
 %ifarch %{arm}
 BuildRequires:  nodejs-x86-arm
 %else
@@ -18,13 +17,14 @@ Source0:    %{name}-%{version}.tar.gz
 UI Framework Library based on Twitter Bootstrap
 
 %prep
-%setup -q
+grunt install -g grunt-cli
 
 %build
 grunt
 
 %install
-make PREFIX=%{buildroot} install
+mkdir -p /usr/share/cowhide
+cp dist/*.css dist/*.js dist/docs dist/images/ dist/README.md /usr/share/cowhide/
 
 %post
 
