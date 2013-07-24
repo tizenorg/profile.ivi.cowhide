@@ -31999,7 +31999,7 @@ $.widget( "ui.tooltip", {
 *    A javascript implementation of the IVI vehicle API that communicates
 *    to the automotive message broker through a websocket
 * Optional constructor arguments:
-*    sCB: success callback, called when socket is connected, argument is 
+*    sCB: success callback, called when socket is connected, argument is
 *         success message string
 *    eCB: error callback, called on socket close or error, argument is error
 *         message string
@@ -32014,8 +32014,8 @@ $.widget( "ui.tooltip", {
 *        type: target event or group to query (use empty string for all events)
 *        writeable: if true, return only writeable events, otherwise get all
 *        successCB: success callback, gets called with a string list of names
-*              for all the events and event groups that are children of the 
-*              target. e.g. "vehicle_info" returns all events/groups with the 
+*              for all the events and event groups that are children of the
+*              target. e.g. "vehicle_info" returns all events/groups with the
 *              vehicle_info prefix. If the target is an event group, it's
 *              omitted from the returned list
 *        errorCB: error callback, called with error message string
@@ -32026,7 +32026,7 @@ $.widget( "ui.tooltip", {
 *    Required arguments:
 *        eventlist[]: list of events to read (use empty string for all events)
 *        successCB: success callback, gets called with the event/value pair list
-*                   for all requested events. The list is the in the 
+*                   for all requested events. The list is the in the
 *                   form of data[n].name/data[n].value
 *        errorCB: error callback, called with error message string
 *
@@ -32044,7 +32044,7 @@ $.widget( "ui.tooltip", {
 *    Description:
 *        Subscribe to a list of events so you can listen to value changes, they
 *        can be monitored with document.addEventListener(eventname, callback, false);
-*        The Event object passed to the callback has two parameters, e.name and 
+*        The Event object passed to the callback has two parameters, e.name and
 *        e.value. Events are sent to the handler individually.
 *    Required arguments:
 *        eventlist: target events to listen to
@@ -32054,7 +32054,7 @@ $.widget( "ui.tooltip", {
 *
 *  Function name: unsubscribe(eventlist, successCB, errorCB)
 *    Description:
-*        Unsubscribe to a list of events to let the server know you're not listening, 
+*        Unsubscribe to a list of events to let the server know you're not listening,
 *        they should stop being sent from the server if no other clients are using them,
 *        but will at least stop being triggered in your app.
 *    Required arguments:
@@ -32065,7 +32065,7 @@ $.widget( "ui.tooltip", {
 *
 ******************************************************************************/
 
-(function(win) {
+(function (win) {
     function Vehicle(sCB, eCB, url, protocol)
     {
         /* store a copy of Vehicle this for reference in callbacks */
@@ -32158,7 +32158,7 @@ $.widget( "ui.tooltip", {
                 {
                     self.iErrorCB(e.data);
                 };
-                self.socket.onmessage = function (e) 
+                self.socket.onmessage = function (e)
                 {
                     self.receive(e.data);
                 };
@@ -32197,7 +32197,7 @@ $.widget( "ui.tooltip", {
         }
         var i = this.methodIdx;
         this.methodIdx = (this.methodIdx + 1)%100;
-        this.methodCalls[i] = new this.VehicleMethodCall(obj.transactionid, 
+        this.methodCalls[i] = new this.VehicleMethodCall(obj.transactionid,
             obj.name, successCB, errorCB);
         this.socket.send(JSON.stringify(obj));
         this.methodCalls[i].start();
@@ -32228,6 +32228,30 @@ $.widget( "ui.tooltip", {
             "name": "get",
             "transactionid" : this.generateTransactionId(),
             "data" : namelist
+        };
+        this.send(obj, successCB, errorCB);
+    }
+
+    Vehicle.prototype.getHistory = function(namelist, beginDate, endDate, successCB, errorCB)
+    {
+        if(namelist.length <= 0)
+        {
+            return;
+        }
+
+        var dataobj = {
+            "property" : namelist,
+            "timeBegin" : (beginDate.getTime() / 1000).toString(),
+            "timeEnd" : (endDate.getTime() / 1000).toString(),
+            "sequenceBegin" : "-1",
+            "sequenceEnd" : "-1"
+        }
+
+        var obj = {
+            "type" : "method",
+            "name": "getRanged",
+            "transactionid" : this.generateTransactionId(),
+            "data" : dataobj
         };
         this.send(obj, successCB, errorCB);
     }
