@@ -55,6 +55,12 @@
         }
     );
 
+
+    /* CHSIMPLESCROLLABLE PLUGIN DEFINITION
+     * ==================================== */
+
+    var old = $.fn.ch_simple_scrollable;
+
     $.fn.ch_simple_scrollable = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -73,8 +79,19 @@
 
     $.fn.ch_simple_scrollable.Constructor = ChSimpleScrollable;
 
+
+    /* CHSIMPLESCROLLABLE NO CONFLICT
+     * ============================== */
+
+    $.fn.ch_simple_scrollable.noConflict = function() {
+        $.fn.ch_simple_scrollable = old;
+        return this;
+    };
+
+
     /* CHSIMPLESCROLLABLE DATA-API
-     * ================= */
+     * =========================== */
+
     $(function() {
         $('div.ch-simple-scrollable').ch_simple_scrollable('enable');
     })

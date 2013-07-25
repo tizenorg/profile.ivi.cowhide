@@ -2,6 +2,12 @@ $(function () {
 
     module("cowhide-simple-scrollable")
 
+      test("should provide no conflict", function () {
+        var simple_scrollable = $.fn.ch_simple_scrollable.noConflict()
+        ok(!$.fn.ch_simple_scrollable, 'simple_scrollable was set back to undefined (org value)')
+        $.fn.ch_simple_scrollable = simple_scrollable
+      })
+
       test("widget has been made scrollable", function () {
         var page = $('<div class="page"></div>')
         var scrollable = $('<div class="ch-simple-scrollable"><p>Test</p></div>')

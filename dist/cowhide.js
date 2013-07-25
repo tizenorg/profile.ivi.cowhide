@@ -32750,6 +32750,12 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHBUTTON PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_button;
+
     $.fn.ch_button = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -32773,8 +32779,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_button.Constructor = ChButton;
 
+
+    /* CHBUTTON NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_button.noConflict = function() {
+        $.fn.ch_button = old;
+        return this;
+    };
+
+
     /* CHBUTTON DATA-API
      * ================= */
+
     $(function() {
         $('.btn, button, input[type=button]').ch_button();
     })
@@ -33017,6 +33034,11 @@ $.widget( "ui.tooltip", {
         }
     );
 
+    /* CHRADIOINPUT PLUGIN DEFINITION
+     * ============================== */
+
+    var old = $.fn.ch_radio_input;
+
     $.fn.ch_radio_input = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -33032,8 +33054,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_radio_input.Constructor = ChRadioInput;
 
+
+    /* CHRADIOINPUT NO CONFLICT
+     * ======================== */
+
+    $.fn.ch_radio_input.noConflict = function() {
+        $.fn.ch_radio_input = old;
+        return this;
+    };
+
+
     /* CHRADIOINPUT DATA-API
-     * ================= */
+     * ===================== */
+
     $(function() {
         $('input[type=radio]').ch_radio_input();
     })
@@ -33070,6 +33103,12 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHCHECKBOXINPUT PLUGIN DEFINITION
+     * ================================= */
+
+    var old = $.fn.ch_checkbox_input;
+
     $.fn.ch_checkbox_input = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -33085,8 +33124,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_checkbox_input.Constructor = ChCheckboxInput;
 
+
+    /* CHCHECKBOXINPUT NO CONFLICT
+     * =========================== */
+
+    $.fn.ch_checkbox_input.noConflict = function() {
+        $.fn.ch_checkbox_input = old;
+        return this;
+    };
+
+
     /* CHCHECKBOXINPUT DATA-API
      * ================= */
+
     $(function() {
         $('input[type=checkbox]').ch_checkbox_input();
     })
@@ -33123,6 +33173,12 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHSELECT PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_select;
+
     $.fn.ch_select = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -33138,8 +33194,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_select.Constructor = ChSelect;
 
+
+    /* CHSELECT NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_select.noConflict = function() {
+        $.fn.ch_select = old;
+        return this;
+    };
+
+
     /* CHBUTTON DATA-API
      * ================= */
+
     $(function() {
         $('select').ch_select();
     })
@@ -33197,6 +33264,10 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHPAGE PLUGIN DEFINITION
+     * ======================== */
+
     $.fn.ch_page = function(option, value) {
         return this.each(function() {
             var $this = $(this),
@@ -33220,8 +33291,10 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_page.Constructor = ChPage;
 
+
     /* CHPAGE DATA-API
      * ================= */
+
     $(function() {
         $('div.page').ch_page();
     })
@@ -33274,6 +33347,12 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHHEADER PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_header;
+
     $.fn.ch_header = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -33296,8 +33375,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_button.Constructor = ChHeader;
 
+
+    /* CHHEADER NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_header.noConflict = function() {
+        $.fn.ch_header = old;
+        return this;
+    };
+
+
     /* CHHEADER DATA-API
      * ================= */
+
     $(function() {
         $('.ch-header').ch_header('show');
     })
@@ -33360,6 +33450,12 @@ $.widget( "ui.tooltip", {
         }
     );
 
+
+    /* CHSIMPLESCROLLABLE PLUGIN DEFINITION
+     * ==================================== */
+
+    var old = $.fn.ch_simple_scrollable;
+
     $.fn.ch_simple_scrollable = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -33378,8 +33474,19 @@ $.widget( "ui.tooltip", {
 
     $.fn.ch_simple_scrollable.Constructor = ChSimpleScrollable;
 
+
+    /* CHSIMPLESCROLLABLE NO CONFLICT
+     * ============================== */
+
+    $.fn.ch_simple_scrollable.noConflict = function() {
+        $.fn.ch_simple_scrollable = old;
+        return this;
+    };
+
+
     /* CHSIMPLESCROLLABLE DATA-API
-     * ================= */
+     * =========================== */
+
     $(function() {
         $('div.ch-simple-scrollable').ch_simple_scrollable('enable');
     })

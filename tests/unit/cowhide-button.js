@@ -7,6 +7,12 @@ $(function () {
       }
     })
 
+      test("should provide no conflict", function () {
+        var button = $.fn.ch_button.noConflict()
+        ok(!$.fn.ch_button, 'button was set back to undefined (org value)')
+        $.fn.ch_button = button
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var btn = $('<button class="btn">test</button>')

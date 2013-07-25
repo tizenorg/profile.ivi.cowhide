@@ -7,6 +7,12 @@ $(function () {
       }
     })
 
+      test("should provide no conflict", function () {
+        var input = $.fn.ch_radio_input.noConflict()
+        ok(!$.fn.ch_radio_input, 'radio_input was set back to undefined (org value)')
+        $.fn.ch_radio_input = input
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<input type="radio">test</input>')

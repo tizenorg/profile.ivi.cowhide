@@ -73,6 +73,12 @@
         }
     );
 
+
+    /* CHBUTTON PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_button;
+
     $.fn.ch_button = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -96,8 +102,19 @@
 
     $.fn.ch_button.Constructor = ChButton;
 
+
+    /* CHBUTTON NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_button.noConflict = function() {
+        $.fn.ch_button = old;
+        return this;
+    };
+
+
     /* CHBUTTON DATA-API
      * ================= */
+
     $(function() {
         $('.btn, button, input[type=button]').ch_button();
     })

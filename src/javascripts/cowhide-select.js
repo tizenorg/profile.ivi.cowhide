@@ -29,6 +29,12 @@
         }
     );
 
+
+    /* CHSELECT PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_select;
+
     $.fn.ch_select = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -44,8 +50,19 @@
 
     $.fn.ch_select.Constructor = ChSelect;
 
+
+    /* CHSELECT NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_select.noConflict = function() {
+        $.fn.ch_select = old;
+        return this;
+    };
+
+
     /* CHBUTTON DATA-API
      * ================= */
+
     $(function() {
         $('select').ch_select();
     })

@@ -2,6 +2,12 @@ $(function () {
 
     module("cowhide-header")
 
+      test("should provide no conflict", function () {
+        var header = $.fn.ch_header.noConflict()
+        ok(!$.fn.ch_header, 'header was set back to undefined (org value)')
+        $.fn.ch_header = header
+      })
+
       test("header contains h1 element", function () {
         var page = $('<div class="page"></div>')
         var header = $('<div class="ch-header">Test title</div>')

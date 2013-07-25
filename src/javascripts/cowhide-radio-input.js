@@ -29,6 +29,11 @@
         }
     );
 
+    /* CHRADIOINPUT PLUGIN DEFINITION
+     * ============================== */
+
+    var old = $.fn.ch_radio_input;
+
     $.fn.ch_radio_input = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -44,8 +49,19 @@
 
     $.fn.ch_radio_input.Constructor = ChRadioInput;
 
+
+    /* CHRADIOINPUT NO CONFLICT
+     * ======================== */
+
+    $.fn.ch_radio_input.noConflict = function() {
+        $.fn.ch_radio_input = old;
+        return this;
+    };
+
+
     /* CHRADIOINPUT DATA-API
-     * ================= */
+     * ===================== */
+
     $(function() {
         $('input[type=radio]').ch_radio_input();
     })

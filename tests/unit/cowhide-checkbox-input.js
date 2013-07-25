@@ -7,6 +7,12 @@ $(function () {
       }
     })
 
+      test("should provide no conflict", function () {
+        var input = $.fn.ch_checkbox_input.noConflict()
+        ok(!$.fn.ch_checkbox_input, 'checkbox_input was set back to undefined (org value)')
+        $.fn.ch_checkbox_input = input
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<input type="checkbox">test</input>')

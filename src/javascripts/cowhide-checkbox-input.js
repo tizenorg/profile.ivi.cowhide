@@ -29,6 +29,12 @@
         }
     );
 
+
+    /* CHCHECKBOXINPUT PLUGIN DEFINITION
+     * ================================= */
+
+    var old = $.fn.ch_checkbox_input;
+
     $.fn.ch_checkbox_input = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -44,8 +50,19 @@
 
     $.fn.ch_checkbox_input.Constructor = ChCheckboxInput;
 
+
+    /* CHCHECKBOXINPUT NO CONFLICT
+     * =========================== */
+
+    $.fn.ch_checkbox_input.noConflict = function() {
+        $.fn.ch_checkbox_input = old;
+        return this;
+    };
+
+
     /* CHCHECKBOXINPUT DATA-API
      * ================= */
+
     $(function() {
         $('input[type=checkbox]').ch_checkbox_input();
     })

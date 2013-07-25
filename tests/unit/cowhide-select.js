@@ -7,6 +7,12 @@ $(function () {
       }
     })
 
+      test("should provide no conflict", function () {
+        var select = $.fn.ch_select.noConflict()
+        ok(!$.fn.ch_select, 'select was set back to undefined (org value)')
+        $.fn.ch_select = select
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<select><option>test</option></select>')

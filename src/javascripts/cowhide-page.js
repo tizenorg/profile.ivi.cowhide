@@ -50,6 +50,10 @@
         }
     );
 
+
+    /* CHPAGE PLUGIN DEFINITION
+     * ======================== */
+
     $.fn.ch_page = function(option, value) {
         return this.each(function() {
             var $this = $(this),
@@ -73,8 +77,10 @@
 
     $.fn.ch_page.Constructor = ChPage;
 
+
     /* CHPAGE DATA-API
      * ================= */
+
     $(function() {
         $('div.page').ch_page();
     })

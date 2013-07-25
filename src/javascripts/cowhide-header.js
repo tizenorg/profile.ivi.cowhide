@@ -45,6 +45,12 @@
         }
     );
 
+
+    /* CHHEADER PLUGIN DEFINITION
+     * ========================== */
+
+    var old = $.fn.ch_header;
+
     $.fn.ch_header = function(option) {
         return this.each(function() {
             var $this = $(this),
@@ -67,8 +73,19 @@
 
     $.fn.ch_button.Constructor = ChHeader;
 
+
+    /* CHHEADER NO CONFLICT
+     * ==================== */
+
+    $.fn.ch_header.noConflict = function() {
+        $.fn.ch_header = old;
+        return this;
+    };
+
+
     /* CHHEADER DATA-API
      * ================= */
+
     $(function() {
         $('.ch-header').ch_header('show');
     })
