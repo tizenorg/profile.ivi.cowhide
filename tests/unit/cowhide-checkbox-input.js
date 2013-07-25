@@ -13,6 +13,10 @@ $(function () {
         $.fn.ch_checkbox_input = input
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_checkbox_input, 'checkbox_input method is defined')
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<input type="checkbox">test</input>')

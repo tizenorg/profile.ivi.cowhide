@@ -13,6 +13,10 @@ $(function () {
         $.fn.ch_radio_input = input
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_radio_input, 'radio_input method is defined')
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<input type="radio">test</input>')

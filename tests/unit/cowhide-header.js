@@ -8,6 +8,10 @@ $(function () {
         $.fn.ch_header = header
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_header, 'header method is defined')
+      })
+
       test("header contains h1 element", function () {
         var page = $('<div class="page"></div>')
         var header = $('<div class="ch-header">Test title</div>')

@@ -2,6 +2,10 @@ $(function () {
 
     module("cowhide-page")
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_page, 'page method is defined')
+      })
+
       test("pages cannot be nested", function () {
         var page = $('<div class="page"></div>')
         var nested = $('<div class="page"></div>')

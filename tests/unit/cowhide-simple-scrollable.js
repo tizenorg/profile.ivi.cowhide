@@ -8,6 +8,10 @@ $(function () {
         $.fn.ch_simple_scrollable = simple_scrollable
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_simple_scrollable, 'simple_scrollable method is defined')
+      })
+
       test("widget has been made scrollable", function () {
         var page = $('<div class="page"></div>')
         var scrollable = $('<div class="ch-simple-scrollable"><p>Test</p></div>')

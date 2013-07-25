@@ -13,6 +13,10 @@ $(function () {
         $.fn.ch_select = select
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_select, 'select method is defined')
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var input = $('<select><option>test</option></select>')

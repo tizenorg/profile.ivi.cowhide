@@ -13,6 +13,10 @@ $(function () {
         $.fn.ch_button = button
       })
 
+      test("should be defined on jquery object", function () {
+        ok($(document.body).ch_button, 'button method is defined')
+      })
+
       test("should be disabled when driving", function () {
         var page = $('<div class="page"></div>')
         var btn = $('<button class="btn">test</button>')
