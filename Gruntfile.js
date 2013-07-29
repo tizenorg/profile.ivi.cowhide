@@ -207,6 +207,13 @@ module.exports = function(grunt) {
         ]
       },
     },
+    sed: {
+        images: {
+            path: ['dist/cowhide-default.css', 'dist/cowhide-default.min.css'],
+            pattern: 'img\/glyphicons',
+            replacement: 'images/glyphicons'
+        }
+    },
     exec: {
       build_docs: {
         command: 'node dist/docs/build'
@@ -234,6 +241,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-sed');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-compress');
 
@@ -249,6 +257,7 @@ module.exports = function(grunt) {
     'uglify',
     'cssmin',
     'copy',
+    'sed',
     'exec:build_docs',
     'compress']);
 };
