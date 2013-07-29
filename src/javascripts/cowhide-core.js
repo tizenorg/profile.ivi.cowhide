@@ -58,6 +58,16 @@
             if (_.indexOf(guids, widget.guid) == -1) {
                 self.registeredWidgets.push(widget);
             }
+
+            /* TODO: core should ask `page` what a page looks like. */
+            if(!(widget.$element[0].tagName == 'DIV' && widget.$element.hasClass('page'))) {
+                var $page = widget.$element.parent().closest('div.page');
+                if ($page.length === 0) {
+                    $.cowhide.fatal("#30: every widget must be within a div with class='page'.", this.$element);
+                } else {
+                    $page.ch_page('register', widget);
+                }
+            }
         },
 
         // TODO: use `backdrop` from Bootstrap's modal

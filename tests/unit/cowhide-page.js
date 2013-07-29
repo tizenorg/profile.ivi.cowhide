@@ -2,6 +2,12 @@ $(function () {
 
     module("cowhide-page")
 
+      test("should provide no conflict", function () {
+        var button = $.fn.ch_button.noConflict()
+        ok(!$.fn.ch_button, 'button was set back to undefined (org value)')
+        $.fn.ch_button = button
+      })
+
       test("should be defined on jquery object", function () {
         ok($(document.body).ch_page, 'page method is defined')
       })
