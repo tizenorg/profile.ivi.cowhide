@@ -1,0 +1,15 @@
+* Wed Aug 14 2013 Salvatore Iovene <salvatore@iovene.com> submit/tizen/20130808.105344@509187f
+- Split Tizen packages in -lib and -docs.
+- Remove accidentally committed conflicts in spec file.
+- Use grunt-sed to replace img to images (from bootstrap icon path).
+- Capital letters are not allowed in npm packages.
+- Move page registration code from widget to core.
+- Add new unit tests.
+- Add noConflict to many widgets.
+- Update api.js to latest version from GhostCluster.
+
+* Sat Jul 20 2013 Salvatore Iovene <salvatore@iovene.com> 878a518
+- Add initial Tizen packaging.
+- Updated gitignore.
+- Add /dist/ to git.
+
