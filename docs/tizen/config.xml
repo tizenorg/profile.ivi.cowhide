@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+        xmlns:tizen = "http://tizen.org/ns/widgets"
+        id          = "http://otc.intel.com/cowhide-docs"
+        version     = "2.2"
+        viewmodes   = "fullscreen">
+
+    <name short="Cowhide docs">
+        Cowhide documentation
+    </name>
+
+    <description>
+        The documentation for the Cowhide UI framework.
+    </description>
+
+    <author email="salvatore.iovene@intel.com">
+        Salvatore Iovene
+    </author>
+
+    <icon src="cowhide-icon.png" />
+    <content src="index.html" />
+
+    <access origin="*" subdomains="true" />
+
+    <tizen:application id="1234567890.CowhideDocs" package="1234567890" required_version="2.1"/>
+    <tizen:privilege name="http://tizen.org/privilege/application" />
+    <tizen:privilege name="http://tizen.org/privilege/tizen" />
+</widget>
