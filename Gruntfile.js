@@ -42,8 +42,7 @@ module.exports = function(grunt) {
         "devel"    : true,
         "boss"     : true,
         "expr"     : true,
-        "asi"      : true,
-        "es5"      : true
+        "asi"      : true
       }
     },
     less: {
