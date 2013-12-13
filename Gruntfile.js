@@ -84,7 +84,11 @@ module.exports = function(grunt) {
       cowhide_js: {
         src: [
           'lib/jquery/dist/jquery.js',
-          'lib/jquery-ui/dist/jquery-ui.js',
+
+          'lib/jquery-ui/ui/jquery.ui.widget.js',
+          'lib/jquery-ui/ui/jquery.ui.mouse.js',
+          'lib/jquery-ui/ui/jquery.ui.slider.js',
+
           'lib/lodash/lodash.js',
 
           // Bootstrap files must preserve order.
