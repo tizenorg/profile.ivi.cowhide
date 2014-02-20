@@ -1,5 +1,5 @@
 Name:       cowhide
-Version:    0.1.5
+Version:    0.1.16
 Release:    0
 Summary:    UI Framework Library based on Twitter Bootstrap
 Group:      Development/Other
@@ -50,6 +50,9 @@ UI Framework Library based on Twitter Bootstrap, documentation package
 
 
 %changelog
+
+* Thu Feb 20 2014 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.16
+- Add NightMode support via websocket connection
 
 * Wed Aug 14 2013 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.5
 - Package the library and the docs separately

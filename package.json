@@ -1,7 +1,7 @@
 {
     "name": "cowhide",
         "description": "HTML5 components for fast UI development and support for Tizen IVI.",
-        "version": "0.1.5",
+        "version": "0.1.16",
         "keywords": [
             "tizen",
             "ivi",
