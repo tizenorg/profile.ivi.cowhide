@@ -5,16 +5,17 @@
 
 CONFIG_FILE=config.xml
 PROJECT_NAME=cowhide-docs
+DOCS_DIR=$(pwd)
+DIST_DIR=$(pwd)/../../dist
 
 if [[ -f $PROJECT_NAME.wgt ]] ; then
   rm $PROJECT_NAME.wgt
 fi
 
-cd ../../dist
-zip -r ../docs/tizen/$PROJECT_NAME.wgt * -x cowhide.zip
+cd $DIST_DIR
+zip -r $DOCS_DIR/$PROJECT_NAME.wgt * -x cowhide.zip
 
-cd ../docs/tizen
+cd $DOCS_DIR
 zip -j $PROJECT_NAME.wgt $CONFIG_FILE
 
-cd ..
-zip -j tizen/$PROJECT_NAME.wgt cowhide-icon.png
+zip -j $PROJECT_NAME.wgt ../cowhide-icon.png
