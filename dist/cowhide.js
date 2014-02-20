@@ -19328,7 +19328,7 @@ return (window.jQuery = window.$ = jQuery);
         version: '0.0.1',
         options: {
           monitorFrameworkRestrictions: false,
-          connectToAMB: false
+          connectToAMB: true
         },
         themeEngineOptions: {
             path: 'css',
