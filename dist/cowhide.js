@@ -19471,8 +19471,12 @@ return (window.jQuery = window.$ = jQuery);
 
             self.vehicle = new window.Vehicle(
                 function() {
-                    $(document).on("VehicleSpeed", function(data) {
-                        self.setDrivingMode(data.originalEvent.value > 0);
+                    $(document).on("DrivingMode", function(e) {
+                        self.setDrivingMode(e.originalEvent.value == 1);
+                    });
+
+                    $(document).on("NightMode", function(e) {
+                        self.setNightMode(e.originalEvent.value);
                     });
                 },
                 function() {
