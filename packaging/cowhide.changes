@@ -1,3 +1,20 @@
+* Fri Feb 21 2014 Mikko Ylinen <mikko.ylinen@intel.com> accepted/tizen/ivi/genivi/20140131.070609@57e5e9d
+- Bump version.
+- Add widgets.js to dist dir.
+- Don't connect to AMB from unit tests, for now.
+- Fix Tizen widget generation.
+- Remove reference to remote object.
+- Connect to AMB by default.
+- Add NightMode support."
+- Update build, fix wgt generation.
+- Update lodash version.
+- Fix paths in widget file.
+- Restore including jquery-ui entirely.
+- Add missing jQuery-UI inclusions.
+- Update jQuery version.
+- Updated lodash version.
+- Add icon and scripts for Tizen deployment.
+
 * Wed Aug 14 2013 Salvatore Iovene <salvatore@iovene.com> submit/tizen/20130808.105344@509187f
 - Split Tizen packages in -lib and -docs.
 - Remove accidentally committed conflicts in spec file.
