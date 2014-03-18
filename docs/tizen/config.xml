@@ -25,4 +25,5 @@
     <tizen:application id="1234567890.CowhideDocs" package="1234567890" required_version="2.1"/>
     <tizen:privilege name="http://tizen.org/privilege/application" />
     <tizen:privilege name="http://tizen.org/privilege/tizen" />
+    <tizen:privilege name="http://tizen.org/privilege/vehicle"/>
 </widget>

@@ -8,8 +8,6 @@
  */
 
 (function($, undefined) {
-    'use strict';
-
     var ChCheckboxInput = function(element, options) {
         $.fn.ch_widget.Constructor(element, options);
         this.$element = $(element);

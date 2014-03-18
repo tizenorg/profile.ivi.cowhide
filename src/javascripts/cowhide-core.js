@@ -8,14 +8,11 @@
  */
 
 (function($, _, undefined) {
-	'use strict';
-
     $.cowhide = $.cowhide || {}
     $.extend($.cowhide, {
         version: '0.0.1',
         options: {
-          monitorFrameworkRestrictions: false,
-          connectToAMB: true
+          monitorFrameworkRestrictions: false
         },
         themeEngineOptions: {
             path: 'css',
@@ -29,8 +26,6 @@
         drivingMode: false,
         nightMode: false,
         currentTheme: 'default',
-
-        vehicle: null,
 
         GUID: function() {
             var S4 = function () {
@@ -152,24 +147,36 @@
             });
         },
 
+        initialize: function() {
+            var self = this;
+
+            if (window.tizen !== undefined &&
+                window.tizen.vehicle !== undefined)
+            {
+                window.tizen.vehicle.getAsync("DrivingMode", function(data) {
+                    self.setNightMode(data.drivingMode);
+                });
+
+                window.tizen.vehicle.getAsync("NightMode", function(data) {
+                    self.setNightMode(data.nightMode);
+                });
+            }
+        },
 
         listenToVehicle: function() {
             var self = this;
 
-            self.vehicle = new window.Vehicle(
-                function() {
-                    $(document).on("DrivingMode", function(e) {
-                        self.setDrivingMode(e.originalEvent.value == 1);
-                    });
+            if (window.tizen !== undefined &&
+                window.tizen.vehicle !== undefined)
+            {
+                window.tizen.vehicle.subscribe("DrivingMode", function(data) {
+                    self.setDrivingMode(data.drivingMode);
+                });
 
-                    $(document).on("NightMode", function(e) {
-                        self.setNightMode(e.originalEvent.value);
-                    });
-                },
-                function() {
-                    self.fatal("There was a problem connecting to AMB's web socket.");
-                }
-            );
+                window.tizen.vehicle.subscribe("NightMode", function(data) {
+                    self.setNightMode(data.nightMode);
+                });
+            }
         },
 
         verifyFrameworkRestrictions: function() {
@@ -203,10 +210,8 @@
     });
 
     $(function() {
-        if ($.cowhide.options.connectToAMB) {
-          $.cowhide.listenToVehicle();
-        }
-
+        $.cowhide.initialize();
+        $.cowhide.listenToVehicle();
         if ($.cowhide.options.monitorFrameworkRestrictions) {
           setInterval(function() {
               $.cowhide.verifyFrameworkRestrictions();
