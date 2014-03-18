@@ -2,7 +2,7 @@
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:tizen = "http://tizen.org/ns/widgets"
         id          = "http://otc.intel.com/cowhide-docs"
-        version     = "0.1.16"
+        version     = "0.1.17"
         viewmodes   = "fullscreen">
 
     <name short="Cowhide docs">

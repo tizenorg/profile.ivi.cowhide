@@ -1,3 +1,8 @@
+* Tue Mar 18 2014 Salvatore Iovene <salvatore.iovene@intel.com> submit/tizen/20130819.120707@4d27b6c
+- Bump version to 0.1.17.
+- Fix Driving/NightMode; remove 'use strict'.
+- Update .changes file
+
 * Fri Feb 21 2014 Mikko Ylinen <mikko.ylinen@intel.com> accepted/tizen/ivi/genivi/20140131.070609@57e5e9d
 - Bump version.
 - Add widgets.js to dist dir.
