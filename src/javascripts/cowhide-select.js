@@ -8,8 +8,6 @@
  */
 
 (function($, undefined) {
-    'use strict';
-
     var ChSelect = function(element, options) {
         $.fn.ch_widget.Constructor(element, options);
         this.$element = $(element);

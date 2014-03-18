@@ -8,8 +8,6 @@
  */
 
 (function($, undefined) {
-	'use strict';
-
     var ChWidget = function(element, options) {
         this.$element = $(element);
         this.options = $.extend({}, $.fn.ch_widget.defaults);

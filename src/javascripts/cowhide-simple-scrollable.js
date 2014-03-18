@@ -1,7 +1,5 @@
 /* vi: set et sw=4 ts=4 si: */
 (function($, undefined) {
-    'use strict';
-
     var ChSimpleScrollable = function(element, options) {
         $.fn.ch_widget.Constructor(element, options);
         this.$element = $(element);
