@@ -1,5 +1,5 @@
 Name:       cowhide
-Version:    0.1.16
+Version:    0.1.17
 Release:    0
 Summary:    UI Framework Library based on Twitter Bootstrap
 Group:      Development/Other
