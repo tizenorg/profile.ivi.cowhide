@@ -1,6 +1,6 @@
 PROJECT = CowhideDocs
 
-VERSION := 0.1.17
+VERSION := 0.1.18
 PACKAGE = $(PROJECT)-$(VERSION)
 
 INSTALL_DIR = ${DESTDIR}/opt/usr/apps/.preinstallWidgets
