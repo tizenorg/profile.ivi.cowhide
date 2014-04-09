@@ -5,6 +5,8 @@ Summary:    UI Framework Library based on Twitter Bootstrap
 Group:      Development/Other
 License:    Apache 2.0
 BuildArch:  noarch
+BuildRequires: zip
+Requires: wrt-installer
 
 Source0:    %{name}-%{version}.tar.gz
 
@@ -22,7 +24,8 @@ cp -ar %{name}-%{version}/dist/*.css %{buildroot}/usr/share/cowhide/
 cp -ar %{name}-%{version}/dist/images %{buildroot}/usr/share/cowhide/
 cp -ar %{name}-%{version}/dist/README.md %{buildroot}/usr/share/cowhide/
 cp -ar %{name}-%{version}/dist/docs %{buildroot}/usr/share/cowhide/
-
+mkdir -p %{buildroot}/opt/usr/apps/.preinstallWidgets
+cp -ar %{name}-%{version}/CowhideDocs.wgt %{buildroot}/opt/usr/apps/.preinstallWidgets
 
 # "lib" package, including the development files
 %package lib
@@ -37,8 +40,9 @@ UI Framework Library based on Twitter Bootstrap
 /usr/share/cowhide/images
 /usr/share/cowhide/README.md
 
+%build
+(cd %{name}-%{version}; make widget)
 
-# "docs" package, including documentation and examples
 %package docs
 Summary: UI Framework Library based on Twitter Bootstrap, documentation package
 
@@ -47,6 +51,16 @@ UI Framework Library based on Twitter Bootstrap, documentation package
 
 %files docs
 /usr/share/cowhide/docs
+/opt/usr/apps/.preinstallWidgets/CowhideDocs.wgt
+
+%post docs
+if [ -f /opt/usr/apps/.preinstallWidgets/preinstallDone ]; then
+	echo "Installing package"
+	wrt-installer -i /opt/usr/apps/.preinstallWidgets/CowhideDocs.wgt
+fi
+
+%postun docs
+wrt-installer -un 1234567890.CowhideDocs
 
 
 %changelog
