@@ -64,6 +64,14 @@ wrt-installer -un 1234567890.CowhideDocs
 
 
 %changelog
+* Wed Apr 09 2014 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.18
+- Modify spec file so to generate and install widget.
+
+* Tue Mar 18 2014 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.17
+- Bump version to 0.1.17.
+- Fix Driving/NightMode by using Vehicle API.
+- Remove 'use strict' because it causes problems with the Chrome debugger.
+- Update .changes file.
 
 * Thu Feb 20 2014 Salvatore Iovene <salvatore.iovene@intel.com> 0.1.16
 - Add NightMode support via websocket connection

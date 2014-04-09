@@ -1,3 +1,6 @@
+* Wed Apr 09 2014 Salvatore Iovene <salvatore.iovene@intel.com> submit/tizen/20140320.073840@2c316b7
+- Modify spec file so to generate and install widget.
+
 * Tue Mar 18 2014 Salvatore Iovene <salvatore.iovene@intel.com> submit/tizen/20130819.120707@4d27b6c
 - Bump version to 0.1.17.
 - Fix Driving/NightMode by using Vehicle API.
