@@ -18,7 +18,7 @@
     </author>
 
     <icon src="cowhide-icon.png" />
-    <content src="docs/index.html" />
+    <content src="docs\\index.html" />
 
     <access origin="*" subdomains="true" />
 
